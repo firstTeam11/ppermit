@@ -29,7 +29,7 @@ public class DBUtil {
         mysqlDriver = "com.mysql.jdbc.Driver";
         mysqlurl = "jdbc:mysql://localhost:3306/new_env";
         user = "root";
-        password = "18342212808y";
+        password = "root";
     }
 
 

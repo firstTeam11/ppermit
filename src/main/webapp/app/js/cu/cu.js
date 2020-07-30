@@ -1,4 +1,4 @@
-console.log("kzdyJbxx");//控制台显示
+﻿console.log("kzdyJbxx");//控制台显示
 $(document).ready(function() {
 	$('#addButton').click(function(){
 		var url = "rest/page/addCUnit";

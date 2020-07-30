@@ -19,16 +19,7 @@
 		"involve_river" : "涉及河流名称",
 		"unit_type" : "控制单元类别",
 		"water_resource" : "水资源区",
-	    "hr_river" : "汇入河流",
-
-		"include_sx":"包含水系",
-		"include_gl":"所含干流",
-		"include_1jzl":"所含一级支流",
-		"include_2jzl":"所含二级支流",
-		"include_3jzl":"所含三级支流",
-		"include_4jzl":"所含四级支流",
-		"kzdy_time":"控制单元划分时间"
-
+	    "hr_river" : "汇入河流"
 	}
 
 	var reHash = {
@@ -44,16 +35,7 @@
 		"涉及河流名称" : "involve_river",
 		"控制单元类别" : "unit_type",
 		"水资源区" : "water_resource",
-	    "汇入河流" : "hr_river",
-
-		"包含水系":"include_sx",
-		"所含干流":"include_gl",
-		"所含一级支流":"include_1jzl",
-		"所含二级支流":"include_2jzl",
-		"所含三级支流":"include_3jzl",
-		"所含四级支流":"include_4jzl",
-		"控制单元划分时间":"kzdy_time"
-
+	    "汇入河流" : "hr_river" 
 	}
 	
 	function JSONLength(obj) {

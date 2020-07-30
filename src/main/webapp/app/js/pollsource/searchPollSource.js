@@ -30,36 +30,8 @@ $(function() {
 				"FSGPFL_QK"		: "镉",		 
 				"FSGPFL_QK_DUP1": "汞",		 
 				"FSZGPFL_QK"	: "总铬",		 	
-				"FSLJGPFL_QK"	: "六价铬",
-
-
-
-                "WTXHL_D"      :"煤炭消耗量",
-				"RLYXHL_D"      :"燃料油消耗量",
-		        "JTXHL_D"		: "焦炭消耗量",
-			    "TRQXHL_WLFM"	: "天然气消耗量",
-			    "QTRYXHL_DBZM"	: "其他燃油消耗量",
-			    "YDL_WQWS"		: "用电量",
-			    "GYYSL_D"		: "工业用水量",
-			    "ZDPFL_D"		: "总氮",
-			    "ZPPFL_D"		: "总磷",
-			    "GYFQPFL_WLFM" : "工业废气",
-			    "EYHSPFL_D"	    : "二氧化硫",
-			    "DYHWPFL_D"  	: "氮氧化物",
-			    "YCPFL_D"		: "烟尘",
-			    "VOCSPFL_D"		: "挥发性有机物",
-			    "FQSPFL_QK"		: "废气砷",
-			    "FQQPFL_QK"		: "废气铅",
-			    "FQGPFL_QK"		: "废气镉",
-			    "FQZGPFL_QK"	: "废气总铬",
-			    "FQLJGPFL_QK"   : "废气六价铬",
-			    "YBGYGTFWDQL_D"	: "一般工业固体废物倾倒丢弃量",
-			    "WXFWDQL_D"	    : "危险废物倾倒丢弃量"
-
-
-
-
-
+				"FSLJGPFL_QK"	: "六价铬" 			 	
+						 
 		} 
 		reHash = {
 
@@ -82,35 +54,8 @@ $(function() {
 				"镉" 				: "FSGPFL_QK",				
 				"汞" 				: "FSGPFL_QK_DUP1",			
 				"总铬" 				: "FSZGPFL_QK",	 			
-				"六价铬" 			: "FSLJGPFL_QK"
-
-
-
-
-
-			   "煤炭消耗量"          :"WTXHL_D"      ,
-			   "燃料油消耗量"         :"RLYXHL_D"      ,
-			   "焦炭消耗量"          :"JTXHL_D"		,
-			   "天然气消耗量"         :"TRQXHL_WLFM"	,
-			   "其他燃油消耗量"       :"QTRYXHL_DBZM"	,
-			   "用电量"              :"YDL_WQWS"		,
-			   "工业用水量"           :"GYYSL_D"		,
-			   "总氮"                :"ZDPFL_D"		,
-			   "总磷"                :"ZPPFL_D"		,
-			   "工业废气"             :"GYFQPFL_WLFM" ,
-			   "二氧化硫"             :"EYHSPFL_D"	    ,
-			   "氮氧化物"             :"DYHWPFL_D"  	,
-			   "烟尘"                 :"YCPFL_D"		,
-			   "挥发性有机物"          :"VOCSPFL_D"		,
-			   "废气砷"               :"FQSPFL_QK"		,
-			   "废气铅"               :"FQQPFL_QK"		,
-			   "废气镉"               :"FQGPFL_QK"		,
-			   "废气总铬"              :"FQZGPFL_QK"	,
-			   "废气六价铬"            :"FQLJGPFL_QK"   ,
-			   "一般工业固体废物倾倒丢弃量":"YBGYGTFWDQL_D"	,
-			   "危险废物倾倒丢弃量"      :"WXFWDQL_D"
-
-
+				"六价铬" 			: "FSLJGPFL_QK"					
+									
 		}
 	}else if( marks == "pfty"){
 	
@@ -146,30 +91,8 @@ $(function() {
 			"ZDCKND_HK_S"     :"总氮出口浓度（毫克/升）"      ,
 			"ZLQCL_QK"         :"总磷去除量（千克） "          ,
 			"ZLJKND_HK_S"     :"总磷进口浓度（毫克/升）"      ,
-			"ZLCKND_HK_S"     :"总磷出口浓度（毫克/升）",
-
-
-
-			"WNQDDQL_D"       :"污泥倾倒丢弃量（吨） "      ,
-			"SHXYLQCL_D"   :"生化需氧量去除量（吨）",
-			"SHXYLJKND_HK_S"   :"生化需氧量进口浓度（毫克/升）",
-			"SHXYCKND_HK_S"         :"生化需氧量出口浓度（毫克/升） "            ,
-			"XFWQCL_D"     :"悬浮物去除量（吨）"      ,
-			"XFWJKND_HK_S"     :"悬浮物进口浓度（毫克/升）"      ,
-			"XFWCKND_HK_S"         :"悬浮物出口浓度（毫克/升） "            ,
-			"DZWYQCL_D"     :"动植物油去除量（吨）"      ,
-			"DZWYJKND_HK_S"     :"动植物油进口浓度（毫克/升））"      ,
-			"DZWYCKND_HK_S"         :"动植物油出口浓度（毫克/升） "          ,
-			"SYLQCL_D"     :"石油类去除量（吨）"      ,
-			"SYLJKND_HK_S"     :"石油类进口浓度（毫克/升）",
-			"SYLCKND_HK_S"     :"石油类出口浓度（毫克/升）"      ,
-			"YLZHXJQCL_D"         :"阴离子活性剂去除量（吨） "            ,
-			"YLZHXJJKND_HK_S"     :"阴离子活性剂进口浓度（毫克/升）"      ,
-			"YLZHXJCKND_HK_S"     :"阴离子活性剂出口浓度（毫克/升）"
-
-
-
-	}
+			"ZLCKND_HK_S"     :"总磷出口浓度（毫克/升）"      
+		}
 		reHash = {
 
 			"行政区划名称"                 :"XZQHMC"           ,
@@ -202,27 +125,7 @@ $(function() {
 			"总氮出口浓度（毫克/升）"      :"ZDCKND_HK_S"     ,
 			"总磷去除量（千克） "          :"ZLQCL_QK"        ,
 			"总磷进口浓度（毫克/升）"      :"ZLJKND_HK_S"     ,
-			"总磷出口浓度（毫克/升）"      :"ZLCKND_HK_S"     ,
-
-
-
-			"污泥倾倒丢弃量（吨）"  :"WNQDDQL_D"           ,
-			"生化需氧量去除量（吨）":"SHXYLQCL_D"   ,
-			"生化需氧量进口浓度（毫克/升）":"SHXYLJKND_HK_S"   ,
-			"生化需氧量出口浓度（毫克/升） " :"SHXYCKND_HK_S"                    ,
-			"悬浮物去除量（吨）"  :"XFWQCL_D"         ,
-			"悬浮物进口浓度（毫克/升）"  :"XFWJKND_HK_S"         ,
-			"悬浮物出口浓度（毫克/升） " :"XFWCKND_HK_S"                    ,
-			"动植物油去除量（吨）"  :"DZWYQCL_D"         ,
-			"动植物油进口浓度（毫克/升））"  :"DZWYJKND_HK_S"         ,
-			"动植物油出口浓度（毫克/升） " :"DZWYCKND_HK_S"                  ,
-			"石油类去除量（吨）" :"SYLQCL_D"          ,
-			"石油类进口浓度（毫克/升）":"SYLJKND_HK_S"     ,
-			"石油类出口浓度（毫克/升）" :"SYLCKND_HK_S"          ,
-			"阴离子活性剂去除量（吨） "  :"YLZHXJQCL_D"                   ,
-			"阴离子活性剂进口浓度（毫克/升）" :"YLZHXJJKND_HK_S"          ,
-			"阴离子活性剂出口浓度（毫克/升）":"YLZHXJCKND_HK_S"
-
+			"总磷出口浓度（毫克/升）"      :"ZLCKND_HK_S"     
 		}
 	}else if( marks == "pyz"){
 	

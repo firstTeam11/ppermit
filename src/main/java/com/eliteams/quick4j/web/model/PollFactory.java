@@ -3,13 +3,11 @@ package com.eliteams.quick4j.web.model;
 public class PollFactory {
     private Integer id;
 
-    private Integer tjnf;
-
     private String xzqhdm;
 
     private String xzqhmc;
 
-    private String shxydm;
+    private String tjnf;
 
     private String zzjgdm;
 
@@ -33,21 +31,21 @@ public class PollFactory {
 
     private String qyxxdzJCMph;
 
-    private Integer zxjdD;
+    private String zxjdD;
 
-    private Integer zxjdF;
+    private String zxjdF;
 
-    private Integer zxjdM;
+    private String zxjdM;
 
-    private Double jd;
+    private String jd;
 
-    private Integer zxwdD;
+    private String zxwdD;
 
-    private Integer zxwdF;
+    private String zxwdF;
 
-    private Integer zxwdM;
+    private String zxwdM;
 
-    private Double wd;
+    private String wd;
 
     private String lxfsdhhm;
 
@@ -59,9 +57,7 @@ public class PollFactory {
 
     private String wsclsslx;
 
-    private String wsclcsmc;
-
-    private Integer jcsj;
+    private String jcsj;
 
     private String wscljb;
 
@@ -73,10 +69,6 @@ public class PollFactory {
 
     private String wsclffdm2;
 
-    private String wsclffmc3;
-
-    private String wsclffdm3;
-
     private String psqxlxmc;
 
     private String psqxlxdm;
@@ -85,227 +77,161 @@ public class PollFactory {
 
     private String snstdm;
 
-    private String wnyyxhzz;
+    private String yxtsT;
 
-    private String wnyyxhzzmc;
+    private String ljwctzWy;
 
-    private String zxpfbz;
+    private String xzgdzctzWy;
 
-    private String zxpfbzmc;
+    private String yxfyWy;
 
-    private String zxpfbzxzjb;
+    private String ydlWqws;
 
-    private String zxpfbzxzjbmc;
+    private String wssjclnlDR;
 
-    private Integer yxtsT;
+    private String wssjcllWd;
 
-    private Double ljwctzWy;
+    private String qzClshwslWd;
 
-    private Double xzgdzctzWy;
+    private String qzClgyfslWd;
 
-    private Double yxfyWy;
+    private String qzClbxqwdslWd;
 
-    private Long ydlWqws;
+    private String zsssclWd;
 
-    private Double wssjclnlDR;
+    private String zsslylWd;
 
-    private Double wssjcllWd;
+    private String qzGyyslWd;
 
-    private Double qzClshwslWd;
+    private String qzSzysWd;
 
-    private Double qzClgyfslWd;
+    private String qzJgyslWd;
 
-    private Double qzClbxqwdslWd;
+    private String wncslD;
 
-    private Double zsssclWd;
+    private String wnczlD;
 
-    private Double zsslylWd;
+    private String qzTdlylD;
 
-    private Double qzGyyslWd;
+    private String qzTmczlD;
 
-    private Double qzSzysWd;
+    private String qzJzcllylD;
 
-    private Double qzJgyslWd;
+    private String qzFsczlD;
 
-    private Double wncslD;
+    private String wnqddqlD;
 
-    private Double wnczlD;
+    private String hxxylqclD;
 
-    private Double qzTdlylD;
+    private String hxxyljkndHkS;
 
-    private Double qzTmczlD;
+    private String hxxylckndHkS;
 
-    private Double qzJzcllylD;
+    private String adqclD;
 
-    private Double qzFsczlD;
+    private String adjkndHkS;
 
-    private Double wnqddqlD;
+    private String adckndHkS;
 
-    private Double wnyyxhcqlLfm;
+    private String ylqclD;
 
-    private Double hxxylqclD;
+    private String yljkndHkS;
 
-    private Double hxxyljkndHkS;
+    private String ylckndHkS;
 
-    private Double hxxylckndHkS;
+    private String zdqclD;
 
-    private Double shxylqclD;
+    private String zdjkndHkS;
 
-    private Double shxyljkndHkS;
+    private String zdckndHkS;
 
-    private Double shxylckndHkS;
+    private String zlqclQk;
 
-    private Double xfwqclD;
+    private String zljkndHkS;
 
-    private Double xfwjkndHkS;
+    private String zlckndHkS;
 
-    private Double xfwckndHkS;
+    private String hffqclQk;
 
-    private Double dzwyqclD;
+    private String hffjkndHkS;
 
-    private Double dzwyjkndHkS;
+    private String hffckndHkS;
 
-    private Double dzwyckndHkS;
+    private String qhwqclQk;
 
-    private Double sylqclD;
+    private String qhwjkndHkS;
 
-    private Double syljkndHkS;
+    private String qhwckndHkS;
 
-    private Double sylckndHkS;
+    private String sqclQk;
 
-    private Double ylzhxjqclD;
+    private String sjkndHkS;
 
-    private Double ylzhxjjkndHkS;
+    private String sckndHkS;
 
-    private Double ylzhxjckndHkS;
+    private String qqclQk;
 
-    private Double adqclD;
+    private String qjkndHkS;
 
-    private Double adjkndHkS;
+    private String qckndHkS;
 
-    private Double adckndHkS;
+    private String gqclQk;
 
-    private Double ylqclD;
+    private String gjkndHkS;
 
-    private Double yljkndHkS;
+    private String gckndHkS;
 
-    private Double ylckndHkS;
+    private String gqclQkDup1;
 
-    private Double zdqclD;
+    private String gjkndWkS;
 
-    private Double zdjkndHkS;
+    private String gckndWkS;
 
-    private Double zdckndHkS;
+    private String zgqclQk;
 
-    private Double zlqclQk;
+    private String zgjkndHkS;
 
-    private Double zljkndHkS;
+    private String zgckndHkS;
 
-    private Double zlckndHkS;
+    private String ljgqclQk;
 
-    private Double hffqclQk;
+    private String ljgjkndHkS;
 
-    private Double hffjkndHkS;
+    private String ljgckndHkS;
 
-    private Double hffckndHkS;
+    private String gyClslWdR;
 
-    private Double qhwqclQk;
+    private String gyXzclslWdR;
 
-    private Double qhwjkndHkS;
+    private String gyYxtsT;
 
-    private Double qhwckndHkS;
+    private String gyCodjkndHkS;
 
-    private Double sqclQk;
+    private String gyCodckndHkS;
 
-    private Double sjkndHkS;
+    private String gyAdjkndHkS;
 
-    private Double sckndHkS;
+    private String gyAdckndHkS;
 
-    private Double qqclQk;
+    private String shClslWdR;
 
-    private Double qjkndHkS;
+    private String shXzclslWdR;
 
-    private Double qckndHkS;
+    private String shCodjkndHkS;
 
-    private Double gqclQk;
+    private String shCodckndHkS;
 
-    private Double gjkndHkS;
+    private String shAdjkndHkS;
 
-    private Double gckndHkS;
+    private String shAdckndHkS;
 
-    private Double gqclQkDup1;
+    private String hdxzshcodqclD;
 
-    private Double gjkndWkS;
-
-    private Double gckndWkS;
-
-    private Double zgqclQk;
-
-    private Double zgjkndHkS;
-
-    private Double zgckndHkS;
-
-    private Double ljgqclQk;
-
-    private Double ljgjkndHkS;
-
-    private Double ljgckndHkS;
-
-    private Double gyClslWdR;
-
-    private Double gyXzclslWdR;
-
-    private Double gyYxtsT;
-
-    private Double gyCodjkndHkS;
-
-    private Double gyCodckndHkS;
-
-    private Double gyAdjkndHkS;
-
-    private Double gyAdckndHkS;
-
-    private Double shClslWdR;
-
-    private Double shXzclslWdR;
-
-    private Double shCodjkndHkS;
-
-    private Double shCodckndHkS;
-
-    private Double shAdjkndHkS;
-
-    private Double shAdckndHkS;
-
-    private Double hdxzshcodqclD;
-
-    private Double hdxzshadqclD;
-
-    private Double jytlcM;
+    private String hdxzshadqclD;
 
     private String bz;
 
     private Integer isDel;
-
-    private String pollBl1;
-
-    private String pollBl2;
-
-    private String pollBl3;
-
-    private String pollBl4;
-
-    private String pollBl5;
-
-    private String pollBl6;
-
-    private String pollBl7;
-
-    private String pollBl8;
-
-    private String pollBl9;
-
-    private String pollBl10;
 
     public Integer getId() {
         return id;
@@ -313,14 +239,6 @@ public class PollFactory {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getTjnf() {
-        return tjnf;
-    }
-
-    public void setTjnf(Integer tjnf) {
-        this.tjnf = tjnf;
     }
 
     public String getXzqhdm() {
@@ -339,12 +257,12 @@ public class PollFactory {
         this.xzqhmc = xzqhmc == null ? null : xzqhmc.trim();
     }
 
-    public String getShxydm() {
-        return shxydm;
+    public String getTjnf() {
+        return tjnf;
     }
 
-    public void setShxydm(String shxydm) {
-        this.shxydm = shxydm == null ? null : shxydm.trim();
+    public void setTjnf(String tjnf) {
+        this.tjnf = tjnf == null ? null : tjnf.trim();
     }
 
     public String getZzjgdm() {
@@ -435,68 +353,68 @@ public class PollFactory {
         this.qyxxdzJCMph = qyxxdzJCMph == null ? null : qyxxdzJCMph.trim();
     }
 
-    public Integer getZxjdD() {
+    public String getZxjdD() {
         return zxjdD;
     }
 
-    public void setZxjdD(Integer zxjdD) {
-        this.zxjdD = zxjdD;
+    public void setZxjdD(String zxjdD) {
+        this.zxjdD = zxjdD == null ? null : zxjdD.trim();
     }
 
-    public Integer getZxjdF() {
+    public String getZxjdF() {
         return zxjdF;
     }
 
-    public void setZxjdF(Integer zxjdF) {
-        this.zxjdF = zxjdF;
+    public void setZxjdF(String zxjdF) {
+        this.zxjdF = zxjdF == null ? null : zxjdF.trim();
     }
 
-    public Integer getZxjdM() {
+    public String getZxjdM() {
         return zxjdM;
     }
 
-    public void setZxjdM(Integer zxjdM) {
-        this.zxjdM = zxjdM;
+    public void setZxjdM(String zxjdM) {
+        this.zxjdM = zxjdM == null ? null : zxjdM.trim();
     }
 
-    public Double getJd() {
+    public String getJd() {
         return jd;
     }
 
-    public void setJd(Double jd) {
-        this.jd = jd;
+    public void setJd(String jd) {
+        this.jd = jd == null ? null : jd.trim();
     }
 
-    public Integer getZxwdD() {
+    public String getZxwdD() {
         return zxwdD;
     }
 
-    public void setZxwdD(Integer zxwdD) {
-        this.zxwdD = zxwdD;
+    public void setZxwdD(String zxwdD) {
+        this.zxwdD = zxwdD == null ? null : zxwdD.trim();
     }
 
-    public Integer getZxwdF() {
+    public String getZxwdF() {
         return zxwdF;
     }
 
-    public void setZxwdF(Integer zxwdF) {
-        this.zxwdF = zxwdF;
+    public void setZxwdF(String zxwdF) {
+        this.zxwdF = zxwdF == null ? null : zxwdF.trim();
     }
 
-    public Integer getZxwdM() {
+    public String getZxwdM() {
         return zxwdM;
     }
 
-    public void setZxwdM(Integer zxwdM) {
-        this.zxwdM = zxwdM;
+    public void setZxwdM(String zxwdM) {
+        this.zxwdM = zxwdM == null ? null : zxwdM.trim();
     }
 
-    public Double getWd() {
+    public String getWd() {
         return wd;
     }
 
-    public void setWd(Double wd) {
-        this.wd = wd;
+    public void setWd(String wd) {
+        this.wd = wd == null ? null : wd.trim();
     }
 
     public String getLxfsdhhm() {
@@ -539,20 +457,12 @@ public class PollFactory {
         this.wsclsslx = wsclsslx == null ? null : wsclsslx.trim();
     }
 
-    public String getWsclcsmc() {
-        return wsclcsmc;
-    }
-
-    public void setWsclcsmc(String wsclcsmc) {
-        this.wsclcsmc = wsclcsmc == null ? null : wsclcsmc.trim();
-    }
-
-    public Integer getJcsj() {
+    public String getJcsj() {
         return jcsj;
     }
 
-    public void setJcsj(Integer jcsj) {
-        this.jcsj = jcsj;
+    public void setJcsj(String jcsj) {
+        this.jcsj = jcsj == null ? null : jcsj.trim();
     }
 
     public String getWscljb() {
@@ -595,22 +505,6 @@ public class PollFactory {
         this.wsclffdm2 = wsclffdm2 == null ? null : wsclffdm2.trim();
     }
 
-    public String getWsclffmc3() {
-        return wsclffmc3;
-    }
-
-    public void setWsclffmc3(String wsclffmc3) {
-        this.wsclffmc3 = wsclffmc3 == null ? null : wsclffmc3.trim();
-    }
-
-    public String getWsclffdm3() {
-        return wsclffdm3;
-    }
-
-    public void setWsclffdm3(String wsclffdm3) {
-        this.wsclffdm3 = wsclffdm3 == null ? null : wsclffdm3.trim();
-    }
-
     public String getPsqxlxmc() {
         return psqxlxmc;
     }
@@ -643,796 +537,612 @@ public class PollFactory {
         this.snstdm = snstdm == null ? null : snstdm.trim();
     }
 
-    public String getWnyyxhzz() {
-        return wnyyxhzz;
-    }
-
-    public void setWnyyxhzz(String wnyyxhzz) {
-        this.wnyyxhzz = wnyyxhzz == null ? null : wnyyxhzz.trim();
-    }
-
-    public String getWnyyxhzzmc() {
-        return wnyyxhzzmc;
-    }
-
-    public void setWnyyxhzzmc(String wnyyxhzzmc) {
-        this.wnyyxhzzmc = wnyyxhzzmc == null ? null : wnyyxhzzmc.trim();
-    }
-
-    public String getZxpfbz() {
-        return zxpfbz;
-    }
-
-    public void setZxpfbz(String zxpfbz) {
-        this.zxpfbz = zxpfbz == null ? null : zxpfbz.trim();
-    }
-
-    public String getZxpfbzmc() {
-        return zxpfbzmc;
-    }
-
-    public void setZxpfbzmc(String zxpfbzmc) {
-        this.zxpfbzmc = zxpfbzmc == null ? null : zxpfbzmc.trim();
-    }
-
-    public String getZxpfbzxzjb() {
-        return zxpfbzxzjb;
-    }
-
-    public void setZxpfbzxzjb(String zxpfbzxzjb) {
-        this.zxpfbzxzjb = zxpfbzxzjb == null ? null : zxpfbzxzjb.trim();
-    }
-
-    public String getZxpfbzxzjbmc() {
-        return zxpfbzxzjbmc;
-    }
-
-    public void setZxpfbzxzjbmc(String zxpfbzxzjbmc) {
-        this.zxpfbzxzjbmc = zxpfbzxzjbmc == null ? null : zxpfbzxzjbmc.trim();
-    }
-
-    public Integer getYxtsT() {
+    public String getYxtsT() {
         return yxtsT;
     }
 
-    public void setYxtsT(Integer yxtsT) {
-        this.yxtsT = yxtsT;
+    public void setYxtsT(String yxtsT) {
+        this.yxtsT = yxtsT == null ? null : yxtsT.trim();
     }
 
-    public Double getLjwctzWy() {
+    public String getLjwctzWy() {
         return ljwctzWy;
     }
 
-    public void setLjwctzWy(Double ljwctzWy) {
-        this.ljwctzWy = ljwctzWy;
+    public void setLjwctzWy(String ljwctzWy) {
+        this.ljwctzWy = ljwctzWy == null ? null : ljwctzWy.trim();
     }
 
-    public Double getXzgdzctzWy() {
+    public String getXzgdzctzWy() {
         return xzgdzctzWy;
     }
 
-    public void setXzgdzctzWy(Double xzgdzctzWy) {
-        this.xzgdzctzWy = xzgdzctzWy;
+    public void setXzgdzctzWy(String xzgdzctzWy) {
+        this.xzgdzctzWy = xzgdzctzWy == null ? null : xzgdzctzWy.trim();
     }
 
-    public Double getYxfyWy() {
+    public String getYxfyWy() {
         return yxfyWy;
     }
 
-    public void setYxfyWy(Double yxfyWy) {
-        this.yxfyWy = yxfyWy;
+    public void setYxfyWy(String yxfyWy) {
+        this.yxfyWy = yxfyWy == null ? null : yxfyWy.trim();
     }
 
-    public Long getYdlWqws() {
+    public String getYdlWqws() {
         return ydlWqws;
     }
 
-    public void setYdlWqws(Long ydlWqws) {
-        this.ydlWqws = ydlWqws;
+    public void setYdlWqws(String ydlWqws) {
+        this.ydlWqws = ydlWqws == null ? null : ydlWqws.trim();
     }
 
-    public Double getWssjclnlDR() {
+    public String getWssjclnlDR() {
         return wssjclnlDR;
     }
 
-    public void setWssjclnlDR(Double wssjclnlDR) {
-        this.wssjclnlDR = wssjclnlDR;
+    public void setWssjclnlDR(String wssjclnlDR) {
+        this.wssjclnlDR = wssjclnlDR == null ? null : wssjclnlDR.trim();
     }
 
-    public Double getWssjcllWd() {
+    public String getWssjcllWd() {
         return wssjcllWd;
     }
 
-    public void setWssjcllWd(Double wssjcllWd) {
-        this.wssjcllWd = wssjcllWd;
+    public void setWssjcllWd(String wssjcllWd) {
+        this.wssjcllWd = wssjcllWd == null ? null : wssjcllWd.trim();
     }
 
-    public Double getQzClshwslWd() {
+    public String getQzClshwslWd() {
         return qzClshwslWd;
     }
 
-    public void setQzClshwslWd(Double qzClshwslWd) {
-        this.qzClshwslWd = qzClshwslWd;
+    public void setQzClshwslWd(String qzClshwslWd) {
+        this.qzClshwslWd = qzClshwslWd == null ? null : qzClshwslWd.trim();
     }
 
-    public Double getQzClgyfslWd() {
+    public String getQzClgyfslWd() {
         return qzClgyfslWd;
     }
 
-    public void setQzClgyfslWd(Double qzClgyfslWd) {
-        this.qzClgyfslWd = qzClgyfslWd;
+    public void setQzClgyfslWd(String qzClgyfslWd) {
+        this.qzClgyfslWd = qzClgyfslWd == null ? null : qzClgyfslWd.trim();
     }
 
-    public Double getQzClbxqwdslWd() {
+    public String getQzClbxqwdslWd() {
         return qzClbxqwdslWd;
     }
 
-    public void setQzClbxqwdslWd(Double qzClbxqwdslWd) {
-        this.qzClbxqwdslWd = qzClbxqwdslWd;
+    public void setQzClbxqwdslWd(String qzClbxqwdslWd) {
+        this.qzClbxqwdslWd = qzClbxqwdslWd == null ? null : qzClbxqwdslWd.trim();
     }
 
-    public Double getZsssclWd() {
+    public String getZsssclWd() {
         return zsssclWd;
     }
 
-    public void setZsssclWd(Double zsssclWd) {
-        this.zsssclWd = zsssclWd;
+    public void setZsssclWd(String zsssclWd) {
+        this.zsssclWd = zsssclWd == null ? null : zsssclWd.trim();
     }
 
-    public Double getZsslylWd() {
+    public String getZsslylWd() {
         return zsslylWd;
     }
 
-    public void setZsslylWd(Double zsslylWd) {
-        this.zsslylWd = zsslylWd;
+    public void setZsslylWd(String zsslylWd) {
+        this.zsslylWd = zsslylWd == null ? null : zsslylWd.trim();
     }
 
-    public Double getQzGyyslWd() {
+    public String getQzGyyslWd() {
         return qzGyyslWd;
     }
 
-    public void setQzGyyslWd(Double qzGyyslWd) {
-        this.qzGyyslWd = qzGyyslWd;
+    public void setQzGyyslWd(String qzGyyslWd) {
+        this.qzGyyslWd = qzGyyslWd == null ? null : qzGyyslWd.trim();
     }
 
-    public Double getQzSzysWd() {
+    public String getQzSzysWd() {
         return qzSzysWd;
     }
 
-    public void setQzSzysWd(Double qzSzysWd) {
-        this.qzSzysWd = qzSzysWd;
+    public void setQzSzysWd(String qzSzysWd) {
+        this.qzSzysWd = qzSzysWd == null ? null : qzSzysWd.trim();
     }
 
-    public Double getQzJgyslWd() {
+    public String getQzJgyslWd() {
         return qzJgyslWd;
     }
 
-    public void setQzJgyslWd(Double qzJgyslWd) {
-        this.qzJgyslWd = qzJgyslWd;
+    public void setQzJgyslWd(String qzJgyslWd) {
+        this.qzJgyslWd = qzJgyslWd == null ? null : qzJgyslWd.trim();
     }
 
-    public Double getWncslD() {
+    public String getWncslD() {
         return wncslD;
     }
 
-    public void setWncslD(Double wncslD) {
-        this.wncslD = wncslD;
+    public void setWncslD(String wncslD) {
+        this.wncslD = wncslD == null ? null : wncslD.trim();
     }
 
-    public Double getWnczlD() {
+    public String getWnczlD() {
         return wnczlD;
     }
 
-    public void setWnczlD(Double wnczlD) {
-        this.wnczlD = wnczlD;
+    public void setWnczlD(String wnczlD) {
+        this.wnczlD = wnczlD == null ? null : wnczlD.trim();
     }
 
-    public Double getQzTdlylD() {
+    public String getQzTdlylD() {
         return qzTdlylD;
     }
 
-    public void setQzTdlylD(Double qzTdlylD) {
-        this.qzTdlylD = qzTdlylD;
+    public void setQzTdlylD(String qzTdlylD) {
+        this.qzTdlylD = qzTdlylD == null ? null : qzTdlylD.trim();
     }
 
-    public Double getQzTmczlD() {
+    public String getQzTmczlD() {
         return qzTmczlD;
     }
 
-    public void setQzTmczlD(Double qzTmczlD) {
-        this.qzTmczlD = qzTmczlD;
+    public void setQzTmczlD(String qzTmczlD) {
+        this.qzTmczlD = qzTmczlD == null ? null : qzTmczlD.trim();
     }
 
-    public Double getQzJzcllylD() {
+    public String getQzJzcllylD() {
         return qzJzcllylD;
     }
 
-    public void setQzJzcllylD(Double qzJzcllylD) {
-        this.qzJzcllylD = qzJzcllylD;
+    public void setQzJzcllylD(String qzJzcllylD) {
+        this.qzJzcllylD = qzJzcllylD == null ? null : qzJzcllylD.trim();
     }
 
-    public Double getQzFsczlD() {
+    public String getQzFsczlD() {
         return qzFsczlD;
     }
 
-    public void setQzFsczlD(Double qzFsczlD) {
-        this.qzFsczlD = qzFsczlD;
+    public void setQzFsczlD(String qzFsczlD) {
+        this.qzFsczlD = qzFsczlD == null ? null : qzFsczlD.trim();
     }
 
-    public Double getWnqddqlD() {
+    public String getWnqddqlD() {
         return wnqddqlD;
     }
 
-    public void setWnqddqlD(Double wnqddqlD) {
-        this.wnqddqlD = wnqddqlD;
+    public void setWnqddqlD(String wnqddqlD) {
+        this.wnqddqlD = wnqddqlD == null ? null : wnqddqlD.trim();
     }
 
-    public Double getWnyyxhcqlLfm() {
-        return wnyyxhcqlLfm;
-    }
-
-    public void setWnyyxhcqlLfm(Double wnyyxhcqlLfm) {
-        this.wnyyxhcqlLfm = wnyyxhcqlLfm;
-    }
-
-    public Double getHxxylqclD() {
+    public String getHxxylqclD() {
         return hxxylqclD;
     }
 
-    public void setHxxylqclD(Double hxxylqclD) {
-        this.hxxylqclD = hxxylqclD;
+    public void setHxxylqclD(String hxxylqclD) {
+        this.hxxylqclD = hxxylqclD == null ? null : hxxylqclD.trim();
     }
 
-    public Double getHxxyljkndHkS() {
+    public String getHxxyljkndHkS() {
         return hxxyljkndHkS;
     }
 
-    public void setHxxyljkndHkS(Double hxxyljkndHkS) {
-        this.hxxyljkndHkS = hxxyljkndHkS;
+    public void setHxxyljkndHkS(String hxxyljkndHkS) {
+        this.hxxyljkndHkS = hxxyljkndHkS == null ? null : hxxyljkndHkS.trim();
     }
 
-    public Double getHxxylckndHkS() {
+    public String getHxxylckndHkS() {
         return hxxylckndHkS;
     }
 
-    public void setHxxylckndHkS(Double hxxylckndHkS) {
-        this.hxxylckndHkS = hxxylckndHkS;
+    public void setHxxylckndHkS(String hxxylckndHkS) {
+        this.hxxylckndHkS = hxxylckndHkS == null ? null : hxxylckndHkS.trim();
     }
 
-    public Double getShxylqclD() {
-        return shxylqclD;
-    }
-
-    public void setShxylqclD(Double shxylqclD) {
-        this.shxylqclD = shxylqclD;
-    }
-
-    public Double getShxyljkndHkS() {
-        return shxyljkndHkS;
-    }
-
-    public void setShxyljkndHkS(Double shxyljkndHkS) {
-        this.shxyljkndHkS = shxyljkndHkS;
-    }
-
-    public Double getShxylckndHkS() {
-        return shxylckndHkS;
-    }
-
-    public void setShxylckndHkS(Double shxylckndHkS) {
-        this.shxylckndHkS = shxylckndHkS;
-    }
-
-    public Double getXfwqclD() {
-        return xfwqclD;
-    }
-
-    public void setXfwqclD(Double xfwqclD) {
-        this.xfwqclD = xfwqclD;
-    }
-
-    public Double getXfwjkndHkS() {
-        return xfwjkndHkS;
-    }
-
-    public void setXfwjkndHkS(Double xfwjkndHkS) {
-        this.xfwjkndHkS = xfwjkndHkS;
-    }
-
-    public Double getXfwckndHkS() {
-        return xfwckndHkS;
-    }
-
-    public void setXfwckndHkS(Double xfwckndHkS) {
-        this.xfwckndHkS = xfwckndHkS;
-    }
-
-    public Double getDzwyqclD() {
-        return dzwyqclD;
-    }
-
-    public void setDzwyqclD(Double dzwyqclD) {
-        this.dzwyqclD = dzwyqclD;
-    }
-
-    public Double getDzwyjkndHkS() {
-        return dzwyjkndHkS;
-    }
-
-    public void setDzwyjkndHkS(Double dzwyjkndHkS) {
-        this.dzwyjkndHkS = dzwyjkndHkS;
-    }
-
-    public Double getDzwyckndHkS() {
-        return dzwyckndHkS;
-    }
-
-    public void setDzwyckndHkS(Double dzwyckndHkS) {
-        this.dzwyckndHkS = dzwyckndHkS;
-    }
-
-    public Double getSylqclD() {
-        return sylqclD;
-    }
-
-    public void setSylqclD(Double sylqclD) {
-        this.sylqclD = sylqclD;
-    }
-
-    public Double getSyljkndHkS() {
-        return syljkndHkS;
-    }
-
-    public void setSyljkndHkS(Double syljkndHkS) {
-        this.syljkndHkS = syljkndHkS;
-    }
-
-    public Double getSylckndHkS() {
-        return sylckndHkS;
-    }
-
-    public void setSylckndHkS(Double sylckndHkS) {
-        this.sylckndHkS = sylckndHkS;
-    }
-
-    public Double getYlzhxjqclD() {
-        return ylzhxjqclD;
-    }
-
-    public void setYlzhxjqclD(Double ylzhxjqclD) {
-        this.ylzhxjqclD = ylzhxjqclD;
-    }
-
-    public Double getYlzhxjjkndHkS() {
-        return ylzhxjjkndHkS;
-    }
-
-    public void setYlzhxjjkndHkS(Double ylzhxjjkndHkS) {
-        this.ylzhxjjkndHkS = ylzhxjjkndHkS;
-    }
-
-    public Double getYlzhxjckndHkS() {
-        return ylzhxjckndHkS;
-    }
-
-    public void setYlzhxjckndHkS(Double ylzhxjckndHkS) {
-        this.ylzhxjckndHkS = ylzhxjckndHkS;
-    }
-
-    public Double getAdqclD() {
+    public String getAdqclD() {
         return adqclD;
     }
 
-    public void setAdqclD(Double adqclD) {
-        this.adqclD = adqclD;
+    public void setAdqclD(String adqclD) {
+        this.adqclD = adqclD == null ? null : adqclD.trim();
     }
 
-    public Double getAdjkndHkS() {
+    public String getAdjkndHkS() {
         return adjkndHkS;
     }
 
-    public void setAdjkndHkS(Double adjkndHkS) {
-        this.adjkndHkS = adjkndHkS;
+    public void setAdjkndHkS(String adjkndHkS) {
+        this.adjkndHkS = adjkndHkS == null ? null : adjkndHkS.trim();
     }
 
-    public Double getAdckndHkS() {
+    public String getAdckndHkS() {
         return adckndHkS;
     }
 
-    public void setAdckndHkS(Double adckndHkS) {
-        this.adckndHkS = adckndHkS;
+    public void setAdckndHkS(String adckndHkS) {
+        this.adckndHkS = adckndHkS == null ? null : adckndHkS.trim();
     }
 
-    public Double getYlqclD() {
+    public String getYlqclD() {
         return ylqclD;
     }
 
-    public void setYlqclD(Double ylqclD) {
-        this.ylqclD = ylqclD;
+    public void setYlqclD(String ylqclD) {
+        this.ylqclD = ylqclD == null ? null : ylqclD.trim();
     }
 
-    public Double getYljkndHkS() {
+    public String getYljkndHkS() {
         return yljkndHkS;
     }
 
-    public void setYljkndHkS(Double yljkndHkS) {
-        this.yljkndHkS = yljkndHkS;
+    public void setYljkndHkS(String yljkndHkS) {
+        this.yljkndHkS = yljkndHkS == null ? null : yljkndHkS.trim();
     }
 
-    public Double getYlckndHkS() {
+    public String getYlckndHkS() {
         return ylckndHkS;
     }
 
-    public void setYlckndHkS(Double ylckndHkS) {
-        this.ylckndHkS = ylckndHkS;
+    public void setYlckndHkS(String ylckndHkS) {
+        this.ylckndHkS = ylckndHkS == null ? null : ylckndHkS.trim();
     }
 
-    public Double getZdqclD() {
+    public String getZdqclD() {
         return zdqclD;
     }
 
-    public void setZdqclD(Double zdqclD) {
-        this.zdqclD = zdqclD;
+    public void setZdqclD(String zdqclD) {
+        this.zdqclD = zdqclD == null ? null : zdqclD.trim();
     }
 
-    public Double getZdjkndHkS() {
+    public String getZdjkndHkS() {
         return zdjkndHkS;
     }
 
-    public void setZdjkndHkS(Double zdjkndHkS) {
-        this.zdjkndHkS = zdjkndHkS;
+    public void setZdjkndHkS(String zdjkndHkS) {
+        this.zdjkndHkS = zdjkndHkS == null ? null : zdjkndHkS.trim();
     }
 
-    public Double getZdckndHkS() {
+    public String getZdckndHkS() {
         return zdckndHkS;
     }
 
-    public void setZdckndHkS(Double zdckndHkS) {
-        this.zdckndHkS = zdckndHkS;
+    public void setZdckndHkS(String zdckndHkS) {
+        this.zdckndHkS = zdckndHkS == null ? null : zdckndHkS.trim();
     }
 
-    public Double getZlqclQk() {
+    public String getZlqclQk() {
         return zlqclQk;
     }
 
-    public void setZlqclQk(Double zlqclQk) {
-        this.zlqclQk = zlqclQk;
+    public void setZlqclQk(String zlqclQk) {
+        this.zlqclQk = zlqclQk == null ? null : zlqclQk.trim();
     }
 
-    public Double getZljkndHkS() {
+    public String getZljkndHkS() {
         return zljkndHkS;
     }
 
-    public void setZljkndHkS(Double zljkndHkS) {
-        this.zljkndHkS = zljkndHkS;
+    public void setZljkndHkS(String zljkndHkS) {
+        this.zljkndHkS = zljkndHkS == null ? null : zljkndHkS.trim();
     }
 
-    public Double getZlckndHkS() {
+    public String getZlckndHkS() {
         return zlckndHkS;
     }
 
-    public void setZlckndHkS(Double zlckndHkS) {
-        this.zlckndHkS = zlckndHkS;
+    public void setZlckndHkS(String zlckndHkS) {
+        this.zlckndHkS = zlckndHkS == null ? null : zlckndHkS.trim();
     }
 
-    public Double getHffqclQk() {
+    public String getHffqclQk() {
         return hffqclQk;
     }
 
-    public void setHffqclQk(Double hffqclQk) {
-        this.hffqclQk = hffqclQk;
+    public void setHffqclQk(String hffqclQk) {
+        this.hffqclQk = hffqclQk == null ? null : hffqclQk.trim();
     }
 
-    public Double getHffjkndHkS() {
+    public String getHffjkndHkS() {
         return hffjkndHkS;
     }
 
-    public void setHffjkndHkS(Double hffjkndHkS) {
-        this.hffjkndHkS = hffjkndHkS;
+    public void setHffjkndHkS(String hffjkndHkS) {
+        this.hffjkndHkS = hffjkndHkS == null ? null : hffjkndHkS.trim();
     }
 
-    public Double getHffckndHkS() {
+    public String getHffckndHkS() {
         return hffckndHkS;
     }
 
-    public void setHffckndHkS(Double hffckndHkS) {
-        this.hffckndHkS = hffckndHkS;
+    public void setHffckndHkS(String hffckndHkS) {
+        this.hffckndHkS = hffckndHkS == null ? null : hffckndHkS.trim();
     }
 
-    public Double getQhwqclQk() {
+    public String getQhwqclQk() {
         return qhwqclQk;
     }
 
-    public void setQhwqclQk(Double qhwqclQk) {
-        this.qhwqclQk = qhwqclQk;
+    public void setQhwqclQk(String qhwqclQk) {
+        this.qhwqclQk = qhwqclQk == null ? null : qhwqclQk.trim();
     }
 
-    public Double getQhwjkndHkS() {
+    public String getQhwjkndHkS() {
         return qhwjkndHkS;
     }
 
-    public void setQhwjkndHkS(Double qhwjkndHkS) {
-        this.qhwjkndHkS = qhwjkndHkS;
+    public void setQhwjkndHkS(String qhwjkndHkS) {
+        this.qhwjkndHkS = qhwjkndHkS == null ? null : qhwjkndHkS.trim();
     }
 
-    public Double getQhwckndHkS() {
+    public String getQhwckndHkS() {
         return qhwckndHkS;
     }
 
-    public void setQhwckndHkS(Double qhwckndHkS) {
-        this.qhwckndHkS = qhwckndHkS;
+    public void setQhwckndHkS(String qhwckndHkS) {
+        this.qhwckndHkS = qhwckndHkS == null ? null : qhwckndHkS.trim();
     }
 
-    public Double getSqclQk() {
+    public String getSqclQk() {
         return sqclQk;
     }
 
-    public void setSqclQk(Double sqclQk) {
-        this.sqclQk = sqclQk;
+    public void setSqclQk(String sqclQk) {
+        this.sqclQk = sqclQk == null ? null : sqclQk.trim();
     }
 
-    public Double getSjkndHkS() {
+    public String getSjkndHkS() {
         return sjkndHkS;
     }
 
-    public void setSjkndHkS(Double sjkndHkS) {
-        this.sjkndHkS = sjkndHkS;
+    public void setSjkndHkS(String sjkndHkS) {
+        this.sjkndHkS = sjkndHkS == null ? null : sjkndHkS.trim();
     }
 
-    public Double getSckndHkS() {
+    public String getSckndHkS() {
         return sckndHkS;
     }
 
-    public void setSckndHkS(Double sckndHkS) {
-        this.sckndHkS = sckndHkS;
+    public void setSckndHkS(String sckndHkS) {
+        this.sckndHkS = sckndHkS == null ? null : sckndHkS.trim();
     }
 
-    public Double getQqclQk() {
+    public String getQqclQk() {
         return qqclQk;
     }
 
-    public void setQqclQk(Double qqclQk) {
-        this.qqclQk = qqclQk;
+    public void setQqclQk(String qqclQk) {
+        this.qqclQk = qqclQk == null ? null : qqclQk.trim();
     }
 
-    public Double getQjkndHkS() {
+    public String getQjkndHkS() {
         return qjkndHkS;
     }
 
-    public void setQjkndHkS(Double qjkndHkS) {
-        this.qjkndHkS = qjkndHkS;
+    public void setQjkndHkS(String qjkndHkS) {
+        this.qjkndHkS = qjkndHkS == null ? null : qjkndHkS.trim();
     }
 
-    public Double getQckndHkS() {
+    public String getQckndHkS() {
         return qckndHkS;
     }
 
-    public void setQckndHkS(Double qckndHkS) {
-        this.qckndHkS = qckndHkS;
+    public void setQckndHkS(String qckndHkS) {
+        this.qckndHkS = qckndHkS == null ? null : qckndHkS.trim();
     }
 
-    public Double getGqclQk() {
+    public String getGqclQk() {
         return gqclQk;
     }
 
-    public void setGqclQk(Double gqclQk) {
-        this.gqclQk = gqclQk;
+    public void setGqclQk(String gqclQk) {
+        this.gqclQk = gqclQk == null ? null : gqclQk.trim();
     }
 
-    public Double getGjkndHkS() {
+    public String getGjkndHkS() {
         return gjkndHkS;
     }
 
-    public void setGjkndHkS(Double gjkndHkS) {
-        this.gjkndHkS = gjkndHkS;
+    public void setGjkndHkS(String gjkndHkS) {
+        this.gjkndHkS = gjkndHkS == null ? null : gjkndHkS.trim();
     }
 
-    public Double getGckndHkS() {
+    public String getGckndHkS() {
         return gckndHkS;
     }
 
-    public void setGckndHkS(Double gckndHkS) {
-        this.gckndHkS = gckndHkS;
+    public void setGckndHkS(String gckndHkS) {
+        this.gckndHkS = gckndHkS == null ? null : gckndHkS.trim();
     }
 
-    public Double getGqclQkDup1() {
+    public String getGqclQkDup1() {
         return gqclQkDup1;
     }
 
-    public void setGqclQkDup1(Double gqclQkDup1) {
-        this.gqclQkDup1 = gqclQkDup1;
+    public void setGqclQkDup1(String gqclQkDup1) {
+        this.gqclQkDup1 = gqclQkDup1 == null ? null : gqclQkDup1.trim();
     }
 
-    public Double getGjkndWkS() {
+    public String getGjkndWkS() {
         return gjkndWkS;
     }
 
-    public void setGjkndWkS(Double gjkndWkS) {
-        this.gjkndWkS = gjkndWkS;
+    public void setGjkndWkS(String gjkndWkS) {
+        this.gjkndWkS = gjkndWkS == null ? null : gjkndWkS.trim();
     }
 
-    public Double getGckndWkS() {
+    public String getGckndWkS() {
         return gckndWkS;
     }
 
-    public void setGckndWkS(Double gckndWkS) {
-        this.gckndWkS = gckndWkS;
+    public void setGckndWkS(String gckndWkS) {
+        this.gckndWkS = gckndWkS == null ? null : gckndWkS.trim();
     }
 
-    public Double getZgqclQk() {
+    public String getZgqclQk() {
         return zgqclQk;
     }
 
-    public void setZgqclQk(Double zgqclQk) {
-        this.zgqclQk = zgqclQk;
+    public void setZgqclQk(String zgqclQk) {
+        this.zgqclQk = zgqclQk == null ? null : zgqclQk.trim();
     }
 
-    public Double getZgjkndHkS() {
+    public String getZgjkndHkS() {
         return zgjkndHkS;
     }
 
-    public void setZgjkndHkS(Double zgjkndHkS) {
-        this.zgjkndHkS = zgjkndHkS;
+    public void setZgjkndHkS(String zgjkndHkS) {
+        this.zgjkndHkS = zgjkndHkS == null ? null : zgjkndHkS.trim();
     }
 
-    public Double getZgckndHkS() {
+    public String getZgckndHkS() {
         return zgckndHkS;
     }
 
-    public void setZgckndHkS(Double zgckndHkS) {
-        this.zgckndHkS = zgckndHkS;
+    public void setZgckndHkS(String zgckndHkS) {
+        this.zgckndHkS = zgckndHkS == null ? null : zgckndHkS.trim();
     }
 
-    public Double getLjgqclQk() {
+    public String getLjgqclQk() {
         return ljgqclQk;
     }
 
-    public void setLjgqclQk(Double ljgqclQk) {
-        this.ljgqclQk = ljgqclQk;
+    public void setLjgqclQk(String ljgqclQk) {
+        this.ljgqclQk = ljgqclQk == null ? null : ljgqclQk.trim();
     }
 
-    public Double getLjgjkndHkS() {
+    public String getLjgjkndHkS() {
         return ljgjkndHkS;
     }
 
-    public void setLjgjkndHkS(Double ljgjkndHkS) {
-        this.ljgjkndHkS = ljgjkndHkS;
+    public void setLjgjkndHkS(String ljgjkndHkS) {
+        this.ljgjkndHkS = ljgjkndHkS == null ? null : ljgjkndHkS.trim();
     }
 
-    public Double getLjgckndHkS() {
+    public String getLjgckndHkS() {
         return ljgckndHkS;
     }
 
-    public void setLjgckndHkS(Double ljgckndHkS) {
-        this.ljgckndHkS = ljgckndHkS;
+    public void setLjgckndHkS(String ljgckndHkS) {
+        this.ljgckndHkS = ljgckndHkS == null ? null : ljgckndHkS.trim();
     }
 
-    public Double getGyClslWdR() {
+    public String getGyClslWdR() {
         return gyClslWdR;
     }
 
-    public void setGyClslWdR(Double gyClslWdR) {
-        this.gyClslWdR = gyClslWdR;
+    public void setGyClslWdR(String gyClslWdR) {
+        this.gyClslWdR = gyClslWdR == null ? null : gyClslWdR.trim();
     }
 
-    public Double getGyXzclslWdR() {
+    public String getGyXzclslWdR() {
         return gyXzclslWdR;
     }
 
-    public void setGyXzclslWdR(Double gyXzclslWdR) {
-        this.gyXzclslWdR = gyXzclslWdR;
+    public void setGyXzclslWdR(String gyXzclslWdR) {
+        this.gyXzclslWdR = gyXzclslWdR == null ? null : gyXzclslWdR.trim();
     }
 
-    public Double getGyYxtsT() {
+    public String getGyYxtsT() {
         return gyYxtsT;
     }
 
-    public void setGyYxtsT(Double gyYxtsT) {
-        this.gyYxtsT = gyYxtsT;
+    public void setGyYxtsT(String gyYxtsT) {
+        this.gyYxtsT = gyYxtsT == null ? null : gyYxtsT.trim();
     }
 
-    public Double getGyCodjkndHkS() {
+    public String getGyCodjkndHkS() {
         return gyCodjkndHkS;
     }
 
-    public void setGyCodjkndHkS(Double gyCodjkndHkS) {
-        this.gyCodjkndHkS = gyCodjkndHkS;
+    public void setGyCodjkndHkS(String gyCodjkndHkS) {
+        this.gyCodjkndHkS = gyCodjkndHkS == null ? null : gyCodjkndHkS.trim();
     }
 
-    public Double getGyCodckndHkS() {
+    public String getGyCodckndHkS() {
         return gyCodckndHkS;
     }
 
-    public void setGyCodckndHkS(Double gyCodckndHkS) {
-        this.gyCodckndHkS = gyCodckndHkS;
+    public void setGyCodckndHkS(String gyCodckndHkS) {
+        this.gyCodckndHkS = gyCodckndHkS == null ? null : gyCodckndHkS.trim();
     }
 
-    public Double getGyAdjkndHkS() {
+    public String getGyAdjkndHkS() {
         return gyAdjkndHkS;
     }
 
-    public void setGyAdjkndHkS(Double gyAdjkndHkS) {
-        this.gyAdjkndHkS = gyAdjkndHkS;
+    public void setGyAdjkndHkS(String gyAdjkndHkS) {
+        this.gyAdjkndHkS = gyAdjkndHkS == null ? null : gyAdjkndHkS.trim();
     }
 
-    public Double getGyAdckndHkS() {
+    public String getGyAdckndHkS() {
         return gyAdckndHkS;
     }
 
-    public void setGyAdckndHkS(Double gyAdckndHkS) {
-        this.gyAdckndHkS = gyAdckndHkS;
+    public void setGyAdckndHkS(String gyAdckndHkS) {
+        this.gyAdckndHkS = gyAdckndHkS == null ? null : gyAdckndHkS.trim();
     }
 
-    public Double getShClslWdR() {
+    public String getShClslWdR() {
         return shClslWdR;
     }
 
-    public void setShClslWdR(Double shClslWdR) {
-        this.shClslWdR = shClslWdR;
+    public void setShClslWdR(String shClslWdR) {
+        this.shClslWdR = shClslWdR == null ? null : shClslWdR.trim();
     }
 
-    public Double getShXzclslWdR() {
+    public String getShXzclslWdR() {
         return shXzclslWdR;
     }
 
-    public void setShXzclslWdR(Double shXzclslWdR) {
-        this.shXzclslWdR = shXzclslWdR;
+    public void setShXzclslWdR(String shXzclslWdR) {
+        this.shXzclslWdR = shXzclslWdR == null ? null : shXzclslWdR.trim();
     }
 
-    public Double getShCodjkndHkS() {
+    public String getShCodjkndHkS() {
         return shCodjkndHkS;
     }
 
-    public void setShCodjkndHkS(Double shCodjkndHkS) {
-        this.shCodjkndHkS = shCodjkndHkS;
+    public void setShCodjkndHkS(String shCodjkndHkS) {
+        this.shCodjkndHkS = shCodjkndHkS == null ? null : shCodjkndHkS.trim();
     }
 
-    public Double getShCodckndHkS() {
+    public String getShCodckndHkS() {
         return shCodckndHkS;
     }
 
-    public void setShCodckndHkS(Double shCodckndHkS) {
-        this.shCodckndHkS = shCodckndHkS;
+    public void setShCodckndHkS(String shCodckndHkS) {
+        this.shCodckndHkS = shCodckndHkS == null ? null : shCodckndHkS.trim();
     }
 
-    public Double getShAdjkndHkS() {
+    public String getShAdjkndHkS() {
         return shAdjkndHkS;
     }
 
-    public void setShAdjkndHkS(Double shAdjkndHkS) {
-        this.shAdjkndHkS = shAdjkndHkS;
+    public void setShAdjkndHkS(String shAdjkndHkS) {
+        this.shAdjkndHkS = shAdjkndHkS == null ? null : shAdjkndHkS.trim();
     }
 
-    public Double getShAdckndHkS() {
+    public String getShAdckndHkS() {
         return shAdckndHkS;
     }
 
-    public void setShAdckndHkS(Double shAdckndHkS) {
-        this.shAdckndHkS = shAdckndHkS;
+    public void setShAdckndHkS(String shAdckndHkS) {
+        this.shAdckndHkS = shAdckndHkS == null ? null : shAdckndHkS.trim();
     }
 
-    public Double getHdxzshcodqclD() {
+    public String getHdxzshcodqclD() {
         return hdxzshcodqclD;
     }
 
-    public void setHdxzshcodqclD(Double hdxzshcodqclD) {
-        this.hdxzshcodqclD = hdxzshcodqclD;
+    public void setHdxzshcodqclD(String hdxzshcodqclD) {
+        this.hdxzshcodqclD = hdxzshcodqclD == null ? null : hdxzshcodqclD.trim();
     }
 
-    public Double getHdxzshadqclD() {
+    public String getHdxzshadqclD() {
         return hdxzshadqclD;
     }
 
-    public void setHdxzshadqclD(Double hdxzshadqclD) {
-        this.hdxzshadqclD = hdxzshadqclD;
-    }
-
-    public Double getJytlcM() {
-        return jytlcM;
-    }
-
-    public void setJytlcM(Double jytlcM) {
-        this.jytlcM = jytlcM;
+    public void setHdxzshadqclD(String hdxzshadqclD) {
+        this.hdxzshadqclD = hdxzshadqclD == null ? null : hdxzshadqclD.trim();
     }
 
     public String getBz() {
@@ -1450,85 +1160,4 @@ public class PollFactory {
     public void setIsDel(Integer isDel) {
         this.isDel = isDel;
     }
-
-    public String getPollBl1() {
-        return pollBl1;
-    }
-
-    public void setPollBl1(String pollBl1) {
-        this.pollBl1 = pollBl1 == null ? null : pollBl1.trim();
-    }
-
-    public String getPollBl2() {
-        return pollBl2;
-    }
-
-    public void setPollBl2(String pollBl2) {
-        this.pollBl2 = pollBl2 == null ? null : pollBl2.trim();
-    }
-
-    public String getPollBl3() {
-        return pollBl3;
-    }
-
-    public void setPollBl3(String pollBl3) {
-        this.pollBl3 = pollBl3 == null ? null : pollBl3.trim();
-    }
-
-    public String getPollBl4() {
-        return pollBl4;
-    }
-
-    public void setPollBl4(String pollBl4) {
-        this.pollBl4 = pollBl4 == null ? null : pollBl4.trim();
-    }
-
-    public String getPollBl5() {
-        return pollBl5;
-    }
-
-    public void setPollBl5(String pollBl5) {
-        this.pollBl5 = pollBl5 == null ? null : pollBl5.trim();
-    }
-
-    public String getPollBl6() {
-        return pollBl6;
-    }
-
-    public void setPollBl6(String pollBl6) {
-        this.pollBl6 = pollBl6 == null ? null : pollBl6.trim();
-    }
-
-    public String getPollBl7() {
-        return pollBl7;
-    }
-
-    public void setPollBl7(String pollBl7) {
-        this.pollBl7 = pollBl7 == null ? null : pollBl7.trim();
-    }
-
-    public String getPollBl8() {
-        return pollBl8;
-    }
-
-    public void setPollBl8(String pollBl8) {
-        this.pollBl8 = pollBl8 == null ? null : pollBl8.trim();
-    }
-
-    public String getPollBl9() {
-        return pollBl9;
-    }
-
-    public void setPollBl9(String pollBl9) {
-        this.pollBl9 = pollBl9 == null ? null : pollBl9.trim();
-    }
-
-    public String getPollBl10() {
-        return pollBl10;
-    }
-
-    public void setPollBl10(String pollBl10) {
-        this.pollBl10 = pollBl10 == null ? null : pollBl10.trim();
-    }
-
 }

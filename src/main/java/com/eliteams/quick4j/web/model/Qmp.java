@@ -1,17 +1,11 @@
 package com.eliteams.quick4j.web.model;
 
-import java.math.BigDecimal;
-
 public class Qmp {
     private Integer id;
 
-    private String sectionBh;
+    private String tjnf;
 
-    private String sectionDybh;
-
-    private String sectionDymc;
-
-    private String watershed;
+	private String watershed;
 
     private String riverName;
 
@@ -47,35 +41,17 @@ public class Qmp {
 
     private Integer locLonM;
 
-    private Integer locLonS;
+    private Double locLonS;
 
     private Integer locLatD;
 
     private Integer locLatM;
 
-    private Integer locLatS;
+    private Double locLatS;
 
     private String qualityTarget;
 
-    private BigDecimal locLon;
-
-    private BigDecimal locLat;
-
-    private String sectionShhl;
-
-    private Integer tjnf;
-
-    private String isDel;
-
-    private String sectionBl1;
-
-    private String sectionBl2;
-
-    private String sectionBl3;
-
-    private String sectionBl4;
-
-    private String sectionBl5;
+    private Integer isDel;
 
     public Integer getId() {
         return id;
@@ -85,30 +61,14 @@ public class Qmp {
         this.id = id;
     }
 
-    public String getSectionBh() {
-        return sectionBh;
-    }
+    public String getTjnf() {
+		return tjnf;
+	}
 
-    public void setSectionBh(String sectionBh) {
-        this.sectionBh = sectionBh == null ? null : sectionBh.trim();
-    }
-
-    public String getSectionDybh() {
-        return sectionDybh;
-    }
-
-    public void setSectionDybh(String sectionDybh) {
-        this.sectionDybh = sectionDybh == null ? null : sectionDybh.trim();
-    }
-
-    public String getSectionDymc() {
-        return sectionDymc;
-    }
-
-    public void setSectionDymc(String sectionDymc) {
-        this.sectionDymc = sectionDymc == null ? null : sectionDymc.trim();
-    }
-
+	public void setTjnf(String tjnf) {
+		this.tjnf = tjnf == null ? null : tjnf.trim();
+	}
+	
     public String getWatershed() {
         return watershed;
     }
@@ -253,11 +213,11 @@ public class Qmp {
         this.locLonM = locLonM;
     }
 
-    public Integer getLocLonS() {
+    public Double getLocLonS() {
         return locLonS;
     }
 
-    public void setLocLonS(Integer locLonS) {
+    public void setLocLonS(Double locLonS) {
         this.locLonS = locLonS;
     }
 
@@ -277,11 +237,11 @@ public class Qmp {
         this.locLatM = locLatM;
     }
 
-    public Integer getLocLatS() {
+    public Double getLocLatS() {
         return locLatS;
     }
 
-    public void setLocLatS(Integer locLatS) {
+    public void setLocLatS(Double locLatS) {
         this.locLatS = locLatS;
     }
 
@@ -293,83 +253,11 @@ public class Qmp {
         this.qualityTarget = qualityTarget == null ? null : qualityTarget.trim();
     }
 
-    public BigDecimal getLocLon() {
-        return locLon;
-    }
-
-    public void setLocLon(BigDecimal locLon) {
-        this.locLon = locLon;
-    }
-
-    public BigDecimal getLocLat() {
-        return locLat;
-    }
-
-    public void setLocLat(BigDecimal locLat) {
-        this.locLat = locLat;
-    }
-
-    public String getSectionShhl() {
-        return sectionShhl;
-    }
-
-    public void setSectionShhl(String sectionShhl) {
-        this.sectionShhl = sectionShhl == null ? null : sectionShhl.trim();
-    }
-
-    public Integer getTjnf() {
-        return tjnf;
-    }
-
-    public void setTjnf(Integer tjnf) {
-        this.tjnf = tjnf;
-    }
-
-    public String getIsDel() {
+    public Integer getIsDel() {
         return isDel;
     }
 
-    public void setIsDel(String isDel) {
-        this.isDel = isDel == null ? null : isDel.trim();
-    }
-
-    public String getSectionBl1() {
-        return sectionBl1;
-    }
-
-    public void setSectionBl1(String sectionBl1) {
-        this.sectionBl1 = sectionBl1 == null ? null : sectionBl1.trim();
-    }
-
-    public String getSectionBl2() {
-        return sectionBl2;
-    }
-
-    public void setSectionBl2(String sectionBl2) {
-        this.sectionBl2 = sectionBl2 == null ? null : sectionBl2.trim();
-    }
-
-    public String getSectionBl3() {
-        return sectionBl3;
-    }
-
-    public void setSectionBl3(String sectionBl3) {
-        this.sectionBl3 = sectionBl3 == null ? null : sectionBl3.trim();
-    }
-
-    public String getSectionBl4() {
-        return sectionBl4;
-    }
-
-    public void setSectionBl4(String sectionBl4) {
-        this.sectionBl4 = sectionBl4 == null ? null : sectionBl4.trim();
-    }
-
-    public String getSectionBl5() {
-        return sectionBl5;
-    }
-
-    public void setSectionBl5(String sectionBl5) {
-        this.sectionBl5 = sectionBl5 == null ? null : sectionBl5.trim();
+    public void setIsDel(Integer isDel) {
+        this.isDel = isDel;
     }
 }

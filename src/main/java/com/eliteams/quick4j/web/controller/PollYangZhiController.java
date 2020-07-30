@@ -80,7 +80,7 @@ public class PollYangZhiController {
 				List<String> list=new ArrayList<String>();
 				try{  
 		            Class.forName("com.mysql.jdbc.Driver");  
-		            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env","root","18342212808y");
+		            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env","root","root");
 		            pstmt = (PreparedStatement)conn.prepareStatement(sql);
 		            ResultSet rs = pstmt.executeQuery();
 		            int col = rs.getMetaData().getColumnCount();
@@ -337,13 +337,13 @@ public class PollYangZhiController {
     @RequestMapping("/getTableName")
 	public void getTableName(HttpServletRequest request,HttpServletResponse response) {
 
-		String sql = "select column_name from information_schema.columns where table_schema='new_env' and table_name='poll_yangzhi';";
+		String sql = "select column_name from information_schema.columns where table_schema='quick4j' and table_name='poll_yangzhi';";
 		PreparedStatement pstmt;
 		List<String> list=new ArrayList<String>();
 		
 		try{  
             Class.forName("com.mysql.jdbc.Driver");  
-            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env","root","18342212808y");
+            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env","root","root");
             pstmt = (PreparedStatement)conn.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
             int col = rs.getMetaData().getColumnCount();

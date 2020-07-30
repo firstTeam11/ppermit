@@ -81,7 +81,7 @@ public class PollFactoryController {
 				List<String> list=new ArrayList<String>();
 				try{  
 		            Class.forName("com.mysql.jdbc.Driver");  
-		            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env","root","18342212808y" );
+		            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env","root","root");
 		            pstmt = (PreparedStatement)conn.prepareStatement(sql);
 		            ResultSet rs = pstmt.executeQuery();
 		            int col = rs.getMetaData().getColumnCount();
@@ -224,25 +224,6 @@ public class PollFactoryController {
     	map.put("zljkndHkS",(String)request.getParameter("ZLJKND_HK_S"));
     	map.put("zlckndHkS",(String)request.getParameter("ZLCKND_HK_S"));
 
-
-
-		map.put("wnqddqlD",(String)request.getParameter("WNQDDQL_D"));
-		map.put("shxylqclD",(String)request.getParameter("SHXYLQCL_D"));
-		map.put("shxyljkndHKS",(String)request.getParameter("SHXYLJKND_HK_S"));
-		map.put("shxylckndHKS",(String)request.getParameter("SHXYCKND_HK_S"));
-		map.put("xfwqclD",(String)request.getParameter("XFWQCL_D"));
-		map.put("xfwjkndHKS",(String)request.getParameter("XFWJKND_HK_S"));
-		map.put("xfwckndHKS",(String)request.getParameter("XFWCKND_HK_S"));
-		map.put("dzwyqclD",(String)request.getParameter("DZWYQCL_D"));
-		map.put("dzwyjkndHKS",(String)request.getParameter("DZWYJKND_HK_S"));
-		map.put("dzwyckndHKS",(String)request.getParameter("DZWYCKND_HK_S"));
-		map.put("sylqclD",(String)request.getParameter("SYLQCL_D"));
-		map.put("syljkndHKS",(String)request.getParameter("SYLJKND_HK_S"));
-		map.put("sylckndHKS",(String)request.getParameter("SYLCKND_HK_S"));
-		map.put("ylzhxjqclD",(String)request.getParameter("YLZHXJQCL_D"));
-		map.put("ylzhxjjkndHKS",(String)request.getParameter("YLZHXJJKND_HK_S"));
-		map.put("ylzhxjckndHKS",(String)request.getParameter("YLZHXJCKND_HK_S"));
-
 		map.put("username",(String) request.getSession().getAttribute("userName"));
 
 		if(request.getParameter("ID")!=null){
@@ -294,26 +275,6 @@ public class PollFactoryController {
     	map.put("zlqclQk",(String)request.getParameter("ZLQCL_QK"));
     	map.put("zljkndHkS",(String)request.getParameter("ZLJKND_HK_S"));
     	map.put("zlckndHkS",(String)request.getParameter("ZLCKND_HK_S"));
-
-
-
-		map.put("wnqddqlD",(String)request.getParameter("WNQDDQL_D"));
-		map.put("shxylqclD",(String)request.getParameter("SHXYLQCL_D"));
-		map.put("shxyljkndHKS",(String)request.getParameter("SHXYLJKND_HK_S"));
-		map.put("shxylckndHKS",(String)request.getParameter("SHXYCKND_HK_S"));
-		map.put("xfwqclD",(String)request.getParameter("XFWQCL_D"));
-		map.put("xfwjkndHKS",(String)request.getParameter("XFWJKND_HK_S"));
-		map.put("xfwckndHKS",(String)request.getParameter("XFWCKND_HK_S"));
-		map.put("dzwyqclD",(String)request.getParameter("DZWYQCL_D"));
-		map.put("dzwyjkndHKS",(String)request.getParameter("DZWYJKND_HK_S"));
-		map.put("dzwyckndHKS",(String)request.getParameter("DZWYCKND_HK_S"));
-		map.put("sylqclD",(String)request.getParameter("SYLQCL_D"));
-		map.put("syljkndHKS",(String)request.getParameter("SYLJKND_HK_S"));
-		map.put("sylckndHKS",(String)request.getParameter("SYLCKND_HK_S"));
-		map.put("ylzhxjqclD",(String)request.getParameter("YLZHXJQCL_D"));
-		map.put("ylzhxjjkndHKS",(String)request.getParameter("YLZHXJJKND_HK_S"));
-		map.put("ylzhxjckndHKS",(String)request.getParameter("YLZHXJCKND_HK_S"));
-
 		map.put("username",(String) request.getSession().getAttribute("userName"));
  
 		if(request.getParameter("ID")!=null){
@@ -403,13 +364,13 @@ public class PollFactoryController {
     @RequestMapping("/getTableName")
 	public void getTableName(HttpServletRequest request,HttpServletResponse response) {
 
-		String sql = "select column_name from information_schema.columns where table_schema='new_env' and table_name='poll_factory';";
+		String sql = "select column_name from information_schema.columns where table_schema='quick4j' and table_name='poll_factory';";
 		PreparedStatement pstmt;
 		List<String> list=new ArrayList<String>();
 		
 		try{  
             Class.forName("com.mysql.jdbc.Driver");  
-            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env","root","18342212808y");
+            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env","root","root");
             pstmt = (PreparedStatement)conn.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
             int col = rs.getMetaData().getColumnCount();
@@ -474,27 +435,6 @@ public class PollFactoryController {
     	map.put("zlqclQk",(String)request.getParameter("ZLQCL_QK"));
     	map.put("zljkndHkS",(String)request.getParameter("ZLJKND_HK_S"));
     	map.put("zlckndHkS",(String)request.getParameter("ZLCKND_HK_S"));
-
-
-
-
-		map.put("wnqddqlD",(String)request.getParameter("WNQDDQL_D"));
-		map.put("shxylqclD",(String)request.getParameter("SHXYLQCL_D"));
-		map.put("shxyljkndHKS",(String)request.getParameter("SHXYLJKND_HK_S"));
-		map.put("shxylckndHKS",(String)request.getParameter("SHXYCKND_HK_S"));
-		map.put("xfwqclD",(String)request.getParameter("XFWQCL_D"));
-		map.put("xfwjkndHKS",(String)request.getParameter("XFWJKND_HK_S"));
-		map.put("xfwckndHKS",(String)request.getParameter("XFWCKND_HK_S"));
-		map.put("dzwyqclD",(String)request.getParameter("DZWYQCL_D"));
-		map.put("dzwyjkndHKS",(String)request.getParameter("DZWYJKND_HK_S"));
-		map.put("dzwyckndHKS",(String)request.getParameter("DZWYCKND_HK_S"));
-		map.put("sylqclD",(String)request.getParameter("SYLQCL_D"));
-		map.put("syljkndHKS",(String)request.getParameter("SYLJKND_HK_S"));
-		map.put("sylckndHKS",(String)request.getParameter("SYLCKND_HK_S"));
-		map.put("ylzhxjqclD",(String)request.getParameter("YLZHXJQCL_D"));
-		map.put("ylzhxjjkndHKS",(String)request.getParameter("YLZHXJJKND_HK_S"));
-		map.put("ylzhxjckndHKS",(String)request.getParameter("YLZHXJCKND_HK_S"));
-
 		map.put("username",(String) request.getSession().getAttribute("userName"));
 		if(request.getParameter("id")!=null){
 			map.put("id",(String) request.getParameter("id"));

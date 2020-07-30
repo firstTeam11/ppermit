@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.eliteams.quick4j.web.dao.KzdyJbxxMapper" >
+  <resultMap id="BaseResultMap" type="com.eliteams.quick4j.web.model.KzdyJbxx" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="kzdy_bh" property="kzdyBh" jdbcType="INTEGER" />
+    <result column="kzdy_mc" property="kzdyMc" jdbcType="VARCHAR" />
+    <result column="kzdy_jb" property="kzdyJb" jdbcType="INTEGER" />
+    <result column="kzdy_sheng" property="kzdySheng" jdbcType="VARCHAR" />
+    <result column="kzdy_shi" property="kzdyShi" jdbcType="VARCHAR" />
+    <result column="kzdy_qx" property="kzdyQx" jdbcType="VARCHAR" />
+    <result column="kzdy_xz" property="kzdyXz" jdbcType="VARCHAR" />
+    <result column="kzdy_xzs" property="kzdyXzs" jdbcType="INTEGER" />
+    <result column="kzdy_lymc" property="kzdyLymc" jdbcType="VARCHAR" />
+    <result column="kzdy_sx" property="kzdySx" jdbcType="VARCHAR" />
+    <result column="kzdy_gl" property="kzdyGl" jdbcType="VARCHAR" />
+    <result column="kzdy_1jzl" property="kzdy1jzl" jdbcType="VARCHAR" />
+    <result column="kzdy_2jzl" property="kzdy2jzl" jdbcType="VARCHAR" />
+    <result column="kzdy_3jzl" property="kzdy3jzl" jdbcType="VARCHAR" />
+    <result column="kzdy_4jzl" property="kzdy4jzl" jdbcType="VARCHAR" />
+    <result column="kzdy_syd" property="kzdySyd" jdbcType="VARCHAR" />
+    <result column="kzdy_time" property="kzdyTime" jdbcType="VARCHAR" />
+    <result column="kzdy_bl1" property="kzdyBl1" jdbcType="VARCHAR" />
+    <result column="kzdy_bl2" property="kzdyBl2" jdbcType="VARCHAR" />
+    <result column="kzdy_bl3" property="kzdyBl3" jdbcType="VARCHAR" />
+    <result column="kzdy_bl4" property="kzdyBl4" jdbcType="VARCHAR" />
+    <result column="kzdy_bl5" property="kzdyBl5" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, kzdy_bh, kzdy_mc, kzdy_jb, kzdy_sheng, kzdy_shi, kzdy_qx, kzdy_xz, kzdy_xzs, 
+    kzdy_lymc, kzdy_sx, kzdy_gl, kzdy_1jzl, kzdy_2jzl, kzdy_3jzl, kzdy_4jzl, kzdy_syd, kzdy_time,
+    kzdy_bl1, kzdy_bl2, kzdy_bl3, kzdy_bl4, kzdy_bl5
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.eliteams.quick4j.web.model.KzdyJbxxExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_kzdy_jbxx
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_kzdy_jbxx
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tbl_kzdy_jbxx
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.eliteams.quick4j.web.model.KzdyJbxxExample" >
+    delete from tbl_kzdy_jbxx
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.eliteams.quick4j.web.model.KzdyJbxx" >
+    insert into tbl_kzdy_jbxx (id, kzdy_bh, kzdy_mc, 
+      kzdy_jb, kzdy_sheng, kzdy_shi, 
+      kzdy_qx, kzdy_xz, kzdy_xzs, 
+      kzdy_lymc, kzdy_sx, kzdy_gl,
+      kzdy_1jzl, kzdy_2jzl, kzdy_3jzl,
+      kzdy_4jzl, kzdy_syd, kzdy_time,
+      kzdy_bl1, kzdy_bl2, kzdy_bl3,
+      kzdy_bl4, kzdy_bl5)
+    values (#{id,jdbcType=INTEGER}, #{kzdyBh,jdbcType=INTEGER}, #{kzdyMc,jdbcType=VARCHAR}, 
+      #{kzdyJb,jdbcType=INTEGER}, #{kzdySheng,jdbcType=VARCHAR}, #{kzdyShi,jdbcType=VARCHAR}, 
+      #{kzdyQx,jdbcType=VARCHAR}, #{kzdyXz,jdbcType=VARCHAR}, #{kzdyXzs,jdbcType=INTEGER}, 
+      #{kzdyLymc,jdbcType=VARCHAR}, #{kzdySx,jdbcType=VARCHAR}, #{kzdyGl,jdbcType=VARCHAR},
+      #{kzdy1jzl,jdbcType=VARCHAR}, #{kzdy2jzl,jdbcType=VARCHAR}, #{kzdy3jzl,jdbcType=VARCHAR},
+      #{kzdy4jzl,jdbcType=VARCHAR}, #{kzdySyd,jdbcType=VARCHAR}, #{kzdyTime,jdbcType=VARCHAR},
+      #{kzdyBl1,jdbcType=VARCHAR}, #{kzdyBl2,jdbcType=VARCHAR}, #{kzdyBl3,jdbcType=VARCHAR},
+      #{kzdyBl4,jdbcType=VARCHAR}, #{kzdyBl5,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.eliteams.quick4j.web.model.KzdyJbxx" >
+    insert into tbl_kzdy_jbxx
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="kzdyBh != null" >
+        kzdy_bh,
+      </if>
+      <if test="kzdyMc != null" >
+        kzdy_mc,
+      </if>
+      <if test="kzdyJb != null" >
+        kzdy_jb,
+      </if>
+      <if test="kzdySheng != null" >
+        kzdy_sheng,
+      </if>
+      <if test="kzdyShi != null" >
+        kzdy_shi,
+      </if>
+      <if test="kzdyQx != null" >
+        kzdy_qx,
+      </if>
+      <if test="kzdyXz != null" >
+        kzdy_xz,
+      </if>
+      <if test="kzdyXzs != null" >
+        kzdy_xzs,
+      </if>
+      <if test="kzdyLymc != null" >
+        kzdy_lymc,
+      </if>
+      <if test="kzdySx != null" >
+        kzdy_sx,
+      </if>
+      <if test="kzdyGl != null" >
+        kzdy_gl,
+      </if>
+      <if test="kzdy1jzl != null" >
+        kzdy_1jzl,
+      </if>
+      <if test="kzdy2jzl != null" >
+        kzdy_2jzl,
+      </if>
+      <if test="kzdy3jzl != null" >
+        kzdy_3jzl,
+      </if>
+      <if test="kzdy4jzl != null" >
+        kzdy_4jzl,
+      </if>
+      <if test="kzdySyd != null" >
+        kzdy_syd,
+      </if>
+      <if test="kzdyTime != null" >
+        kzdy_time,
+      </if>
+      <if test="kzdyBl1 != null" >
+        kzdy_bl1,
+      </if>
+      <if test="kzdyBl2 != null" >
+        kzdy_bl2,
+      </if>
+      <if test="kzdyBl3 != null" >
+        kzdy_bl3,
+      </if>
+      <if test="kzdyBl4 != null" >
+        kzdy_bl4,
+      </if>
+      <if test="kzdyBl5 != null" >
+        kzdy_bl5,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="kzdyBh != null" >
+        #{kzdyBh,jdbcType=INTEGER},
+      </if>
+      <if test="kzdyMc != null" >
+        #{kzdyMc,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyJb != null" >
+        #{kzdyJb,jdbcType=INTEGER},
+      </if>
+      <if test="kzdySheng != null" >
+        #{kzdySheng,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyShi != null" >
+        #{kzdyShi,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyQx != null" >
+        #{kzdyQx,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyXz != null" >
+        #{kzdyXz,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyXzs != null" >
+        #{kzdyXzs,jdbcType=INTEGER},
+      </if>
+      <if test="kzdyLymc != null" >
+        #{kzdyLymc,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdySx != null" >
+        #{kzdySx,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyGl != null" >
+        #{kzdyGl,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdy1jzl != null" >
+        #{kzdy1jzl,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdy2jzl != null" >
+        #{kzdy2jzl,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdy3jzl != null" >
+        #{kzdy3jzl,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdy4jzl != null" >
+        #{kzdy4jzl,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdySyd != null" >
+        #{kzdySyd,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyTime != null" >
+        #{kzdyTime,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyBl1 != null" >
+        #{kzdyBl1,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyBl2 != null" >
+        #{kzdyBl2,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyBl3 != null" >
+        #{kzdyBl3,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyBl4 != null" >
+        #{kzdyBl4,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyBl5 != null" >
+        #{kzdyBl5,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.eliteams.quick4j.web.model.KzdyJbxxExample" resultType="java.lang.Integer" >
+    select count(*) from tbl_kzdy_jbxx
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tbl_kzdy_jbxx
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.kzdyBh != null" >
+        kzdy_bh = #{record.kzdyBh,jdbcType=INTEGER},
+      </if>
+      <if test="record.kzdyMc != null" >
+        kzdy_mc = #{record.kzdyMc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdyJb != null" >
+        kzdy_jb = #{record.kzdyJb,jdbcType=INTEGER},
+      </if>
+      <if test="record.kzdySheng != null" >
+        kzdy_sheng = #{record.kzdySheng,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdyShi != null" >
+        kzdy_shi = #{record.kzdyShi,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdyQx != null" >
+        kzdy_qx = #{record.kzdyQx,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdyXz != null" >
+        kzdy_xz = #{record.kzdyXz,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdyXzs != null" >
+        kzdy_xzs = #{record.kzdyXzs,jdbcType=INTEGER},
+      </if>
+      <if test="record.kzdyLymc != null" >
+        kzdy_lymc = #{record.kzdyLymc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdySx != null" >
+        kzdy_sx = #{record.kzdySx,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdyGl != null" >
+        kzdy_gl = #{record.kzdyGl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdy1jzl != null" >
+        kzdy_1jzl = #{record.kzdy1jzl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdy2jzl != null" >
+        kzdy_2jzl = #{record.kzdy2jzl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdy3jzl != null" >
+        kzdy_3jzl = #{record.kzdy3jzl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdy4jzl != null" >
+        kzdy_4jzl = #{record.kzdy4jzl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdySyd != null" >
+        kzdy_syd = #{record.kzdySyd,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdyTime != null" >
+        kzdy_time = #{record.kzdyTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdyBl1 != null" >
+        kzdy_bl1 = #{record.kzdyBl1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdyBl2 != null" >
+        kzdy_bl2 = #{record.kzdyBl2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdyBl3 != null" >
+        kzdy_bl3 = #{record.kzdyBl3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdyBl4 != null" >
+        kzdy_bl4 = #{record.kzdyBl4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdyBl5 != null" >
+        kzdy_bl5 = #{record.kzdyBl5,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tbl_kzdy_jbxx
+    set id = #{record.id,jdbcType=INTEGER},
+      kzdy_bh = #{record.kzdyBh,jdbcType=INTEGER},
+      kzdy_mc = #{record.kzdyMc,jdbcType=VARCHAR},
+      kzdy_jb = #{record.kzdyJb,jdbcType=INTEGER},
+      kzdy_sheng = #{record.kzdySheng,jdbcType=VARCHAR},
+      kzdy_shi = #{record.kzdyShi,jdbcType=VARCHAR},
+      kzdy_qx = #{record.kzdyQx,jdbcType=VARCHAR},
+      kzdy_xz = #{record.kzdyXz,jdbcType=VARCHAR},
+      kzdy_xzs = #{record.kzdyXzs,jdbcType=INTEGER},
+      kzdy_lymc = #{record.kzdyLymc,jdbcType=VARCHAR},
+      kzdy_sx = #{record.kzdySx,jdbcType=VARCHAR},
+      kzdy_gl = #{record.kzdyGl,jdbcType=VARCHAR},
+      kzdy_1jzl = #{record.kzdy1jzl,jdbcType=VARCHAR},
+      kzdy_2jzl = #{record.kzdy2jzl,jdbcType=VARCHAR},
+      kzdy_3jzl = #{record.kzdy3jzl,jdbcType=VARCHAR},
+      kzdy_4jzl = #{record.kzdy4jzl,jdbcType=VARCHAR},
+      kzdy_syd = #{record.kzdySyd,jdbcType=VARCHAR},
+      kzdy_time = #{record.kzdyTime,jdbcType=VARCHAR},
+      kzdy_bl1 = #{record.kzdyBl1,jdbcType=VARCHAR},
+      kzdy_bl2 = #{record.kzdyBl2,jdbcType=VARCHAR},
+      kzdy_bl3 = #{record.kzdyBl3,jdbcType=VARCHAR},
+      kzdy_bl4 = #{record.kzdyBl4,jdbcType=VARCHAR},
+      kzdy_bl5 = #{record.kzdyBl5,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.eliteams.quick4j.web.model.KzdyJbxx" >
+    update tbl_kzdy_jbxx
+    <set >
+      <if test="kzdyBh != null" >
+        kzdy_bh = #{kzdyBh,jdbcType=INTEGER},
+      </if>
+      <if test="kzdyMc != null" >
+        kzdy_mc = #{kzdyMc,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyJb != null" >
+        kzdy_jb = #{kzdyJb,jdbcType=INTEGER},
+      </if>
+      <if test="kzdySheng != null" >
+        kzdy_sheng = #{kzdySheng,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyShi != null" >
+        kzdy_shi = #{kzdyShi,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyQx != null" >
+        kzdy_qx = #{kzdyQx,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyXz != null" >
+        kzdy_xz = #{kzdyXz,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyXzs != null" >
+        kzdy_xzs = #{kzdyXzs,jdbcType=INTEGER},
+      </if>
+      <if test="kzdyLymc != null" >
+        kzdy_lymc = #{kzdyLymc,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdySx != null" >
+        kzdy_sx = #{kzdySx,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyGl != null" >
+        kzdy_gl = #{kzdyGl,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdy1jzl != null" >
+        kzdy_1jzl = #{kzdy1jzl,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdy2jzl != null" >
+        kzdy_2jzl = #{kzdy2jzl,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdy3jzl != null" >
+        kzdy_3jzl = #{kzdy3jzl,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdy4jzl != null" >
+        kzdy_4jzl = #{kzdy4jzl,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdySyd != null" >
+        kzdy_syd = #{kzdySyd,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyTime != null" >
+        kzdy_time = #{kzdyTime,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyBl1 != null" >
+        kzdy_bl1 = #{kzdyBl1,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyBl2 != null" >
+        kzdy_bl2 = #{kzdyBl2,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyBl3 != null" >
+        kzdy_bl3 = #{kzdyBl3,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyBl4 != null" >
+        kzdy_bl4 = #{kzdyBl4,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdyBl5 != null" >
+        kzdy_bl5 = #{kzdyBl5,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.eliteams.quick4j.web.model.KzdyJbxx" >
+    update tbl_kzdy_jbxx
+    set kzdy_bh = #{kzdyBh,jdbcType=INTEGER},
+      kzdy_mc = #{kzdyMc,jdbcType=VARCHAR},
+      kzdy_jb = #{kzdyJb,jdbcType=INTEGER},
+      kzdy_sheng = #{kzdySheng,jdbcType=VARCHAR},
+      kzdy_shi = #{kzdyShi,jdbcType=VARCHAR},
+      kzdy_qx = #{kzdyQx,jdbcType=VARCHAR},
+      kzdy_xz = #{kzdyXz,jdbcType=VARCHAR},
+      kzdy_xzs = #{kzdyXzs,jdbcType=INTEGER},
+      kzdy_lymc = #{kzdyLymc,jdbcType=VARCHAR},
+      kzdy_sx = #{kzdySx,jdbcType=VARCHAR},
+      kzdy_gl = #{kzdyGl,jdbcType=VARCHAR},
+      kzdy_1jzl = #{kzdy1jzl,jdbcType=VARCHAR},
+      kzdy_2jzl = #{kzdy2jzl,jdbcType=VARCHAR},
+      kzdy_3jzl = #{kzdy3jzl,jdbcType=VARCHAR},
+      kzdy_4jzl = #{kzdy4jzl,jdbcType=VARCHAR},
+      kzdy_syd = #{kzdySyd,jdbcType=VARCHAR},
+      kzdy_time = #{kzdyTime,jdbcType=VARCHAR},
+      kzdy_bl1 = #{kzdyBl1,jdbcType=VARCHAR},
+      kzdy_bl2 = #{kzdyBl2,jdbcType=VARCHAR},
+      kzdy_bl3 = #{kzdyBl3,jdbcType=VARCHAR},
+      kzdy_bl4 = #{kzdyBl4,jdbcType=VARCHAR},
+      kzdy_bl5 = #{kzdyBl5,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+
+
+  <!-- 分页SQL语句 -->
+  <select id="selectKzdyByPage" resultMap="BaseResultMap">
+    select
+    *
+    from tbl_kzdy_jbxx
+
+    <where>
+      <if test="map.kzdy_shi != null">
+        kzdy_shi LIKE CONCAT('%', #{map.kzdy_shi}, '%')
+      </if>
+      <if test="map.kzdy_qx != null">
+        and  kzdy_qx LIKE CONCAT('%', #{map.kzdy_qx}, '%')
+      </if>
+    </where>
+    limit #{startPos},#{pageSize}
+  </select>
+  <!-- 取得记录的总数 -->
+  <select id="getKzdyCount" resultType="long">
+    select
+    count(*)
+    from tbl_kzdy_jbxx
+
+    <where>
+      <if test="map.kzdy_shi != null">
+        kzdy_shi LIKE CONCAT('%', #{map.kzdy_shi}, '%')
+      </if>
+      <if test="map.kzdy_qx != null">
+        and  kzdy_qx LIKE CONCAT('%', #{map.kzdy_qx}, '%')
+      </if>
+    </where>
+  </select>
+
+
+  <select id="selectSearchByPage" resultMap="BaseResultMap" parameterType="java.util.Map">
+    select
+    *
+    from tbl_kzdy_jbxx
+    <where>
+      <if test="map.id != null">
+        id = #{map.id}
+      </if>
+      <if test="map.kzdy_bh != null">
+        and kzdy_bh LIKE CONCAT('%', #{map.kzdy_bh}, '%')
+      </if>
+      <if test="map.kzdy_mc != null">
+        and kzdy_mc LIKE CONCAT('%', #{map.kzdy_mc}, '%')
+      </if>
+      <if test="map.kzdy_jb != null">
+        and kzdy_jb LIKE CONCAT('%', #{map.kzdy_jb}, '%')
+      </if>
+      <if test="map.kzdy_sheng != null">
+        and kzdy_sheng LIKE CONCAT('%', #{map.kzdy_sheng}, '%')
+      </if>
+      <if test="map.kzdy_shi != null">
+        and kzdy_shi LIKE CONCAT('%', #{map.kzdy_shi}, '%')
+      </if>
+      <if test="map.kzdy_qx != null">
+        and kzdy_qx LIKE CONCAT('%', #{map.kzdy_qx}, '%')
+      </if>
+      <if test="map.kzdy_xz != null">
+        and  kzdy_xz LIKE CONCAT('%', #{map.kzdy_xz}, '%')
+      </if>
+      <if test="map.kzdy_xzs != null">
+        and  kzdy_xzs LIKE CONCAT('%', #{map.kzdy_xzs}, '%')
+      </if>
+      <if test="map.kzdy_lymc != null">
+        and  kzdy_lymc LIKE CONCAT('%', #{map.kzdy_lymc}, '%')
+      </if>
+      <if test="map.kzdy_sx != null">
+        and  kzdy_sx LIKE CONCAT('%', #{map.kzdy_sx}, '%')
+      </if>
+      <if test="map.kzdy_gl != null">
+        and kzdy_gl LIKE CONCAT('%', #{map.kzdy_gl}, '%')
+      </if>
+      <if test="map.kzdy_1jzl != null">
+        and kzdy_1jzl LIKE CONCAT('%', #{map.kzdy_1jzl}, '%')
+      </if>
+      <if test="map.kzdy_2jzl != null">
+        and kzdy_2jzl LIKE CONCAT('%', #{map.kzdy_2jzl}, '%')
+      </if>
+      <if test="map.kzdy_3jzl != null">
+        and  kzdy_3jzl LIKE CONCAT('%', #{map.kzdy_3jzl}, '%')
+      </if>
+      <if test="map.kzdy_4jzl != null">
+        and  kzdy_4jzl LIKE CONCAT('%', #{map.kzdy_4jzl}, '%')
+      </if>
+      <if test="map.kzdy_syd != null">
+        and  kzdy_syd LIKE CONCAT('%', #{map.kzdy_syd}, '%')
+      </if>
+      <if test="map.kzdy_time != null">
+        and kzdy_time LIKE CONCAT('%', #{map.kzdy_time}, '%')
+      </if>
+    </where>
+  </select>
+
+  <select id="selectAllForLeft" resultMap="BaseResultMap">
+    select * from tbl_kzdy_jbxx
+    <where>
+      <if test="map.kzdy_shi != null">
+        kzdy_shi LIKE CONCAT('%', #{map.kzdy_shi}, '%')
+      </if>
+      <if test="map.kzdy_qx != null">
+        and kzdy_qx LIKE CONCAT('%', #{map.kzdy_qx}, '%')
+      </if>
+    </where>
+  </select>
+
+
+
+  <select id="selectForMap" resultMap="BaseResultMap">
+    select
+    *
+    from
+    tbl_kzdy_jbxx
+   <where>
+
+      <if test="map.id != null">
+        id = #{map.id}
+      </if>
+      <if test="map.kzdy_bh != null">
+        and  kzdy_bh LIKE CONCAT('%', #{map.kzdy_bh}, '%')
+      </if>
+      <if test="map.kzdy_mc != null">
+        and kzdy_mc LIKE CONCAT('%', #{map.kzdy_mc}, '%')
+      </if>
+      <if test="map.kzdy_jb != null">
+        and kzdy_jb LIKE CONCAT('%', #{map.kzdy_jb}, '%')
+      </if>
+      <if test="map.kzdy_sheng != null">
+        and kzdy_sheng LIKE CONCAT('%', #{map.kzdy_sheng}, '%')
+      </if>
+      <if test="map.kzdy_shi != null">
+        and  kzdy_shi LIKE CONCAT('%', #{map.kzdy_shi}, '%')
+      </if>
+      <if test="map.kzdy_qx != null">
+        and  kzdy_qx LIKE CONCAT('%', #{map.kzdy_qx}, '%')
+      </if>
+      <if test="map.kzdy_xz != null">
+        and kzdy_xz LIKE CONCAT('%', #{map.kzdy_xz}, '%')
+      </if>
+      <if test="map.kzdy_xzs != null">
+        and kzdy_xzs LIKE CONCAT('%', #{map.kzdy_xzs}, '%')
+      </if>
+      <if test="map.kzdy_lymc != null">
+        and kzdy_lymc LIKE CONCAT('%', #{map.kzdy_lymc}, '%')
+      </if>
+      <if test="map.kzdy_sx != null">
+        and kzdy_sx LIKE CONCAT('%', #{map.kzdy_sx}, '%')
+      </if>
+      <if test="map.kzdy_gl != null">
+        and  kzdy_gl LIKE CONCAT('%', #{map.kzdy_gl}, '%')
+      </if>
+      <if test="map.kzdy_1jzl != null">
+        and kzdy_1jzl LIKE CONCAT('%', #{map.kzdy_1jzl}, '%')
+      </if>
+      <if test="map.kzdy_2jzl != null">
+        and kzdy_2jzl LIKE CONCAT('%', #{map.kzdy_2jzl}, '%')
+      </if>
+      <if test="map.kzdy_3jzl != null">
+        and kzdy_3jzl LIKE CONCAT('%', #{map.kzdy_3jzl}, '%')
+      </if>
+      <if test="map.kzdy_4jzl != null">
+        and  kzdy_4jzl LIKE CONCAT('%', #{map.kzdy_4jzl}, '%')
+      </if>
+      <if test="map.kzdy_syd != null">
+        and kzdy_syd LIKE CONCAT('%', #{map.kzdy_syd}, '%')
+      </if>
+      <if test="map.kzdy_time != null">
+        and kzdy_time LIKE CONCAT('%', #{map.kzdy_time}, '%')
+      </if>
+      <if test="map.kzdy_bl1 != null">
+        and  kzdy_bl1 LIKE CONCAT('%', #{map.kzdy_bl1}, '%')
+      </if>
+      <if test="map.kzdy_bl2 != null">
+        and  kzdy_bl2 LIKE CONCAT('%', #{map.kzdy_bl2}, '%')
+      </if>
+      <if test="map.kzdy_bl3 != null">
+        and  kzdy_bl3 LIKE CONCAT('%', #{map.kzdy_bl3}, '%')
+      </if>
+      <if test="map.kzdy_bl4 != null">
+        and kzdy_bl4 LIKE CONCAT('%', #{map.kzdy_bl4}, '%')
+      </if>
+      <if test="map.kzdy_bl5 != null">
+        and kzdy_bl5 LIKE CONCAT('%', #{map.kzdy_bl5}, '%')
+      </if>
+
+    </where>
+  </select>
+
+  <select id="getSearchCount" resultType="java.lang.Integer" parameterType="java.util.Map">
+    select
+    count(*)
+     from tbl_kzdy_jbxx
+    <where>
+
+        <if test="map.id != null">
+          id = #{map.id}
+        </if>
+        <if test="map.kzdy_bh != null">
+          and  kzdy_bh LIKE CONCAT('%', #{map.kzdy_bh}, '%')
+        </if>
+        <if test="map.kzdy_mc != null">
+          and kzdy_mc LIKE CONCAT('%', #{map.kzdy_mc}, '%')
+        </if>
+        <if test="map.kzdy_jb != null">
+          and kzdy_jb LIKE CONCAT('%', #{map.kzdy_jb}, '%')
+        </if>
+        <if test="map.kzdy_sheng != null">
+          and kzdy_sheng LIKE CONCAT('%', #{map.kzdy_sheng}, '%')
+        </if>
+        <if test="map.kzdy_shi != null">
+          and  kzdy_shi LIKE CONCAT('%', #{map.kzdy_shi}, '%')
+        </if>
+        <if test="map.kzdy_qx != null">
+          and  kzdy_qx LIKE CONCAT('%', #{map.kzdy_qx}, '%')
+        </if>
+        <if test="map.kzdy_xz != null">
+          and kzdy_xz LIKE CONCAT('%', #{map.kzdy_xz}, '%')
+        </if>
+        <if test="map.kzdy_xzs != null">
+          and kzdy_xzs LIKE CONCAT('%', #{map.kzdy_xzs}, '%')
+        </if>
+        <if test="map.kzdy_lymc != null">
+          and kzdy_lymc LIKE CONCAT('%', #{map.kzdy_lymc}, '%')
+        </if>
+        <if test="map.kzdy_sx != null">
+          and kzdy_sx LIKE CONCAT('%', #{map.kzdy_sx}, '%')
+        </if>
+        <if test="map.kzdy_gl != null">
+          and  kzdy_gl LIKE CONCAT('%', #{map.kzdy_gl}, '%')
+        </if>
+        <if test="map.kzdy_1jzl != null">
+          and kzdy_1jzl LIKE CONCAT('%', #{map.kzdy_1jzl}, '%')
+        </if>
+        <if test="map.kzdy_2jzl != null">
+          and kzdy_2jzl LIKE CONCAT('%', #{map.kzdy_2jzl}, '%')
+        </if>
+        <if test="map.kzdy_3jzl != null">
+          and kzdy_3jzl LIKE CONCAT('%', #{map.kzdy_3jzl}, '%')
+        </if>
+        <if test="map.kzdy_4jzl != null">
+          and  kzdy_4jzl LIKE CONCAT('%', #{map.kzdy_4jzl}, '%')
+        </if>
+        <if test="map.kzdy_syd != null">
+          and kzdy_syd LIKE CONCAT('%', #{map.kzdy_syd}, '%')
+        </if>
+        <if test="map.kzdy_time != null">
+          and kzdy_time LIKE CONCAT('%', #{map.kzdy_time}, '%')
+        </if>
+        <if test="map.kzdy_bl1 != null">
+          and  kzdy_bl1 LIKE CONCAT('%', #{map.kzdy_bl1}, '%')
+        </if>
+        <if test="map.kzdy_bl2 != null">
+          and  kzdy_bl2 LIKE CONCAT('%', #{map.kzdy_bl2}, '%')
+        </if>
+        <if test="map.kzdy_bl3 != null">
+          and  kzdy_bl3 LIKE CONCAT('%', #{map.kzdy_bl3}, '%')
+        </if>
+        <if test="map.kzdy_bl4 != null">
+          and kzdy_bl4 LIKE CONCAT('%', #{map.kzdy_bl4}, '%')
+        </if>
+        <if test="map.kzdy_bl5 != null">
+          and kzdy_bl5 LIKE CONCAT('%', #{map.kzdy_bl5}, '%')
+        </if>
+
+    </where>
+  </select>
+
+  <select id="searchByPage" resultMap="BaseResultMap" parameterType="java.util.Map">
+    select
+    *
+    from tbl_kzdy_jbxx
+    <where>
+
+        <if test="map.id != null">
+          id = #{map.id}
+        </if>
+        <if test="map.kzdy_bh != null">
+          and  kzdy_bh LIKE CONCAT('%', #{map.kzdy_bh}, '%')
+        </if>
+        <if test="map.kzdy_mc != null">
+          and kzdy_mc LIKE CONCAT('%', #{map.kzdy_mc}, '%')
+        </if>
+        <if test="map.kzdy_jb != null">
+          and kzdy_jb LIKE CONCAT('%', #{map.kzdy_jb}, '%')
+        </if>
+        <if test="map.kzdy_sheng != null">
+          and kzdy_sheng LIKE CONCAT('%', #{map.kzdy_sheng}, '%')
+        </if>
+        <if test="map.kzdy_shi != null">
+          and  kzdy_shi LIKE CONCAT('%', #{map.kzdy_shi}, '%')
+        </if>
+        <if test="map.kzdy_qx != null">
+          and  kzdy_qx LIKE CONCAT('%', #{map.kzdy_qx}, '%')
+        </if>
+        <if test="map.kzdy_xz != null">
+          and kzdy_xz LIKE CONCAT('%', #{map.kzdy_xz}, '%')
+        </if>
+        <if test="map.kzdy_xzs != null">
+          and kzdy_xzs LIKE CONCAT('%', #{map.kzdy_xzs}, '%')
+        </if>
+        <if test="map.kzdy_lymc != null">
+          and kzdy_lymc LIKE CONCAT('%', #{map.kzdy_lymc}, '%')
+        </if>
+        <if test="map.kzdy_sx != null">
+          and kzdy_sx LIKE CONCAT('%', #{map.kzdy_sx}, '%')
+        </if>
+        <if test="map.kzdy_gl != null">
+          and  kzdy_gl LIKE CONCAT('%', #{map.kzdy_gl}, '%')
+        </if>
+        <if test="map.kzdy_1jzl != null">
+          and kzdy_1jzl LIKE CONCAT('%', #{map.kzdy_1jzl}, '%')
+        </if>
+        <if test="map.kzdy_2jzl != null">
+          and kzdy_2jzl LIKE CONCAT('%', #{map.kzdy_2jzl}, '%')
+        </if>
+        <if test="map.kzdy_3jzl != null">
+          and kzdy_3jzl LIKE CONCAT('%', #{map.kzdy_3jzl}, '%')
+        </if>
+        <if test="map.kzdy_4jzl != null">
+          and  kzdy_4jzl LIKE CONCAT('%', #{map.kzdy_4jzl}, '%')
+        </if>
+        <if test="map.kzdy_syd != null">
+          and kzdy_syd LIKE CONCAT('%', #{map.kzdy_syd}, '%')
+        </if>
+        <if test="map.kzdy_time != null">
+          and kzdy_time LIKE CONCAT('%', #{map.kzdy_time}, '%')
+        </if>
+        <if test="map.kzdy_bl1 != null">
+          and  kzdy_bl1 LIKE CONCAT('%', #{map.kzdy_bl1}, '%')
+        </if>
+        <if test="map.kzdy_bl2 != null">
+          and  kzdy_bl2 LIKE CONCAT('%', #{map.kzdy_bl2}, '%')
+        </if>
+        <if test="map.kzdy_bl3 != null">
+          and  kzdy_bl3 LIKE CONCAT('%', #{map.kzdy_bl3}, '%')
+        </if>
+        <if test="map.kzdy_bl4 != null">
+          and kzdy_bl4 LIKE CONCAT('%', #{map.kzdy_bl4}, '%')
+        </if>
+        <if test="map.kzdy_bl5 != null">
+          and kzdy_bl5 LIKE CONCAT('%', #{map.kzdy_bl5}, '%')
+        </if>
+
+    </where>
+     limit #{startPos},#{pageSize}
+  </select>
+
+</mapper>

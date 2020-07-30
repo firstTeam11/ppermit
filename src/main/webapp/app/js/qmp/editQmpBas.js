@@ -13,7 +13,7 @@ $(function() {
     });
 
     function list(){
-        var url = "rest/qmp/listBas";
+        var url = "rest/qmp/list";
         $.get(url, function(data) {
             $('#main-content').html(data);
         });

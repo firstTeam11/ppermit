@@ -512,7 +512,7 @@ public class ZcfgController {
                             java.util.Date a = new java.util.Date();
                             java.sql.Date date = new java.sql.Date(a.getTime());
                             Class.forName("com.mysql.jdbc.Driver");
-                            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env","root","18342212808y");
+                            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env","root","root");
                             PreparedStatement pstmt = conn.prepareStatement("insert into zcfg (name,generate_date,content,title,publish_date,type) values (?,?,?,?,?,?);");
                             pstmt.setString(1,  uuid.toString()+"."+fopt1);
                             pstmt.setDate(2, date);

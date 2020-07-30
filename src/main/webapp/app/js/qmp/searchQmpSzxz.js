@@ -5,7 +5,7 @@ $(function() {
 	var json = {
 		"test" : "test"
 	};
-//qmp_wrxx
+
 	var hash = {
         "id" : "序号",
 		"year" : "年份",

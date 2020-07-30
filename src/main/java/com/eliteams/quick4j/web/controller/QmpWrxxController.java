@@ -100,7 +100,7 @@ public class QmpWrxxController {
 //        LinkedList<DuanMianDemo> sList2=new LinkedList<DuanMianDemo>(); //tom注释
         try {
             Class.forName(driver);//调用DriverManager的getConnection方法之前，保证相应的Driver类已经被加载到jvm中，并且完成了类的初始化工作
-            Connection conn = DriverManager.getConnection(url, "root", "18342212808y" );
+            Connection conn = DriverManager.getConnection(url, "root", "root");
             pstmt = conn.prepareStatement(sql);
             //pstmt.setString(1,colname);
             ResultSet rs = pstmt.executeQuery();//查找所有断面
@@ -201,7 +201,7 @@ public class QmpWrxxController {
 
         try {
             Class.forName(driver);
-            Connection conn = DriverManager.getConnection(url, "root", "18342212808y");
+            Connection conn = DriverManager.getConnection(url, "root", "root");
             pstmt = conn.prepareStatement(sql);
             // pstmt.setString();
             ResultSet rs = pstmt.executeQuery();
@@ -280,7 +280,7 @@ public class QmpWrxxController {
 //        ChartSeries chartSeries = null;
 //        try{
 //            Class.forName(driver);
-//            Connection conn= DriverManager.getConnection(url,"root","18342212808y");
+//            Connection conn= DriverManager.getConnection(url,"root","root");
 //            pstmt = conn.prepareStatement(sql);
 //            // pstmt.setString();
 //            ResultSet rs = pstmt.executeQuery();
@@ -376,7 +376,7 @@ public class QmpWrxxController {
         ChartSeries chartSeries = null;
         try {
             Class.forName(driver);
-            Connection conn = DriverManager.getConnection(url, "root", "18342212808y");
+            Connection conn = DriverManager.getConnection(url, "root", "root");
             pstmt = conn.prepareStatement(sql);
             // pstmt.setString();
             ResultSet rs = pstmt.executeQuery();
@@ -553,7 +553,7 @@ public class QmpWrxxController {
 
         try {
             Class.forName(driver);
-            Connection conn = DriverManager.getConnection(url, "root", "18342212808y");
+            Connection conn = DriverManager.getConnection(url, "root", "root");
             pstmt = conn.prepareStatement(sql);
             // pstmt.setString();
             ResultSet rs = pstmt.executeQuery();

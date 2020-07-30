@@ -33,13 +33,13 @@ public class QmpWrxxFomat implements Comparable<QmpWrxxFomat>{
 
     public void Assign(QmpWrxx qmpWrxx){
         this.setId(qmpWrxx.getId());
-        this.setYear(Integer.parseInt(String.valueOf(qmpWrxx.getYear()).substring(0,4)));
-        this.setMonth(qmpWrxx.getMonth());
+        this.setYear(Integer.parseInt(qmpWrxx.getYear().substring(0,4)));
+        this.setMonth(Integer.parseInt(qmpWrxx.getMonth()));
 
-        this.setAd(qmpWrxx.getAd());
-        this.setHxxyl(qmpWrxx.getHxxyl());
-        this.setZd(qmpWrxx.getZd());
-        this.setZl(qmpWrxx.getZl());
+        this.setAd(Double.parseDouble(qmpWrxx.getAd()));
+        this.setHxxyl(Double.parseDouble(qmpWrxx.getHxxyl()));
+        this.setZd(Double.parseDouble(qmpWrxx.getZd()));
+        this.setZl(Double.parseDouble(qmpWrxx.getZl()));
     }
 
     @Override

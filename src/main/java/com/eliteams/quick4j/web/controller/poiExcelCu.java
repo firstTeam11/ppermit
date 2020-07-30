@@ -1,6 +1,6 @@
 package com.eliteams.quick4j.web.controller;
 
-//import com.sun.org.apache.xpath.internal.SourceTree;
+import com.sun.org.apache.xpath.internal.SourceTree;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -24,7 +24,7 @@ public class poiExcelCu {
 
         String url = "jdbc:mysql://localhost:3306/new_env";
 //        String url = "jdbc:mysql://127.0.0.1:3306/quick4j";
-        String password = "18342212808y";
+        String password = "root";
 //        String password = "123456";
 
         String username = "root";
@@ -124,7 +124,7 @@ public class poiExcelCu {
 
         String url = "jdbc:mysql://localhost:3306/new_env";
 //        String url = "jdbc:mysql://127.0.0.1:3306/quick4j";
-        String password = "18342212808y";
+        String password = "root";
 //        String password = "123456";
         String username = "root";
         Connection conn = null;

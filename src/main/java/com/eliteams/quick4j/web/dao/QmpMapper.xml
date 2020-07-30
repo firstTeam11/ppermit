@@ -3,9 +3,7 @@
 <mapper namespace="com.eliteams.quick4j.web.dao.QmpMapper">
 	<resultMap id="BaseResultMap" type="com.eliteams.quick4j.web.model.Qmp">
 		<id column="id" jdbcType="INTEGER" property="id" />
-		<result column="section_bh" jdbcType="VARCHAR" property="sectionBh" />
-		<result column="section_dybh" jdbcType="VARCHAR" property="sectionDybh" />
-		<result column="section_dymc" jdbcType="VARCHAR" property="sectionDymc" />
+		<result column="tjnf" jdbcType="VARCHAR" property="tjnf" />
 		<result column="watershed" jdbcType="VARCHAR" property="watershed" />
 		<result column="river_name" jdbcType="VARCHAR" property="riverName" />
 		<result column="river_level" jdbcType="VARCHAR" property="riverLevel" />
@@ -24,21 +22,12 @@
 		<result column="test_items" jdbcType="VARCHAR" property="testItems" />
 		<result column="loc_lon_d" jdbcType="INTEGER" property="locLonD" />
 		<result column="loc_lon_m" jdbcType="INTEGER" property="locLonM" />
-		<result column="loc_lon_s" jdbcType="INTEGER" property="locLonS" />
+		<result column="loc_lon_s" jdbcType="DOUBLE" property="locLonS" />
 		<result column="loc_lat_d" jdbcType="INTEGER" property="locLatD" />
 		<result column="loc_lat_m" jdbcType="INTEGER" property="locLatM" />
-		<result column="loc_lat_s" jdbcType="INTEGER" property="locLatS" />
+		<result column="loc_lat_s" jdbcType="DOUBLE" property="locLatS" />
 		<result column="quality_target" jdbcType="VARCHAR" property="qualityTarget" />
-		<result column="loc_lon" jdbcType="DECIMAL" property="locLon" />
-		<result column="loc_lat" jdbcType="DECIMAL" property="locLat" />
-		<result column="section_shhl" jdbcType="VARCHAR" property="sectionShhl" />
-		<result column="tjnf" jdbcType="INTEGER" property="tjnf" />
-		<result column="is_del" jdbcType="VARCHAR" property="isDel" />
-		<result column="section_bl1" jdbcType="VARCHAR" property="sectionBl1" />
-		<result column="section_bl2" jdbcType="VARCHAR" property="sectionBl2" />
-		<result column="section_bl3" jdbcType="VARCHAR" property="sectionBl3" />
-		<result column="section_bl4" jdbcType="VARCHAR" property="sectionBl4" />
-		<result column="section_bl5" jdbcType="VARCHAR" property="sectionBl5" />
+		<result column="is_del" jdbcType="INTEGER" property="isDel" />
 	</resultMap>
 	<sql id="Example_Where_Clause">
 		<where>
@@ -104,11 +93,12 @@
 		</where>
 	</sql>
 	<sql id="Base_Column_List">
-	id, section_bh, section_dybh, section_dymc, watershed, river_name, river_level, river_to,
-    section_name, section_property, loc_province, loc_city, loc_county, test_by, section_level,
-    section_type, is_urban, is_addition, test_frequency, test_items, loc_lon_d, loc_lon_m,
-    loc_lon_s, loc_lat_d, loc_lat_m, loc_lat_s, quality_target, loc_lon, loc_lat, section_shhl,
-    tjnf, is_del, section_bl1, section_bl2, section_bl3, section_bl4, section_bl5
+		id, watershed, river_name, river_level, river_to, section_name,
+		section_property,
+		loc_province, loc_city, loc_county, test_by, section_level, section_type, is_urban,
+		is_addition, test_frequency, test_items, loc_lon_d, loc_lon_m,
+		loc_lon_s, loc_lat_d,
+		loc_lat_m, loc_lat_s, quality_target, is_del
 	</sql>
 	<select id="selectByExample" parameterType="com.eliteams.quick4j.web.model.QmpExample"
 		resultMap="BaseResultMap">
@@ -144,47 +134,34 @@
 		</if>
 	</delete>
 	<insert id="insert" parameterType="com.eliteams.quick4j.web.model.Qmp">
-		insert into qmp (id, section_bh, section_dybh,
-						 section_dymc, watershed, river_name,
-						 river_level, river_to, section_name,
-						 section_property, loc_province, loc_city,
-						 loc_county, test_by, section_level,
-						 section_type, is_urban, is_addition,
-						 test_frequency, test_items, loc_lon_d,
-						 loc_lon_m, loc_lon_s, loc_lat_d,
-						 loc_lat_m, loc_lat_s, quality_target,
-						 loc_lon, loc_lat, section_shhl,
-						 tjnf, is_del, section_bl1,
-						 section_bl2, section_bl3, section_bl4,
-						 section_bl5)
-		values (#{id,jdbcType=INTEGER}, #{sectionBh,jdbcType=VARCHAR}, #{sectionDybh,jdbcType=VARCHAR},
-				#{sectionDymc,jdbcType=VARCHAR}, #{watershed,jdbcType=VARCHAR}, #{riverName,jdbcType=VARCHAR},
-				#{riverLevel,jdbcType=VARCHAR}, #{riverTo,jdbcType=VARCHAR}, #{sectionName,jdbcType=VARCHAR},
-				#{sectionProperty,jdbcType=VARCHAR}, #{locProvince,jdbcType=VARCHAR}, #{locCity,jdbcType=VARCHAR},
-				#{locCounty,jdbcType=VARCHAR}, #{testBy,jdbcType=VARCHAR}, #{sectionLevel,jdbcType=VARCHAR},
-				#{sectionType,jdbcType=VARCHAR}, #{isUrban,jdbcType=VARCHAR}, #{isAddition,jdbcType=VARCHAR},
-				#{testFrequency,jdbcType=VARCHAR}, #{testItems,jdbcType=VARCHAR}, #{locLonD,jdbcType=INTEGER},
-				#{locLonM,jdbcType=INTEGER}, #{locLonS,jdbcType=INTEGER}, #{locLatD,jdbcType=INTEGER},
-				#{locLatM,jdbcType=INTEGER}, #{locLatS,jdbcType=INTEGER}, #{qualityTarget,jdbcType=VARCHAR},
-				#{locLon,jdbcType=DECIMAL}, #{locLat,jdbcType=DECIMAL}, #{sectionShhl,jdbcType=VARCHAR},
-				#{tjnf,jdbcType=INTEGER}, #{isDel,jdbcType=VARCHAR}, #{sectionBl1,jdbcType=VARCHAR},
-				#{sectionBl2,jdbcType=VARCHAR}, #{sectionBl3,jdbcType=VARCHAR}, #{sectionBl4,jdbcType=VARCHAR},
-				#{sectionBl5,jdbcType=VARCHAR})
+		insert into qmp (id, watershed, river_name,
+		river_level, river_to, section_name,
+		section_property, loc_province, loc_city,
+		loc_county, test_by, section_level,
+		section_type, is_urban, is_addition,
+		test_frequency, test_items, loc_lon_d,
+		loc_lon_m, loc_lon_s, loc_lat_d,
+		loc_lat_m, loc_lat_s, quality_target,
+		is_del)
+		values (#{id,jdbcType=INTEGER}, #{watershed,jdbcType=VARCHAR},
+		#{riverName,jdbcType=VARCHAR},
+		#{riverLevel,jdbcType=VARCHAR}, #{riverTo,jdbcType=VARCHAR}, #{sectionName,jdbcType=VARCHAR},
+		#{sectionProperty,jdbcType=VARCHAR}, #{locProvince,jdbcType=VARCHAR},
+		#{locCity,jdbcType=VARCHAR},
+		#{locCounty,jdbcType=VARCHAR}, #{testBy,jdbcType=VARCHAR}, #{sectionLevel,jdbcType=VARCHAR},
+		#{sectionType,jdbcType=VARCHAR}, #{isUrban,jdbcType=VARCHAR},
+		#{isAddition,jdbcType=VARCHAR},
+		#{testFrequency,jdbcType=VARCHAR}, #{testItems,jdbcType=VARCHAR}, #{locLonD,jdbcType=INTEGER},
+		#{locLonM,jdbcType=INTEGER}, #{locLonS,jdbcType=DOUBLE},
+		#{locLatD,jdbcType=INTEGER},
+		#{locLatM,jdbcType=INTEGER}, #{locLatS,jdbcType=DOUBLE}, #{qualityTarget,jdbcType=VARCHAR},
+		#{isDel,jdbcType=INTEGER})
 	</insert>
 	<insert id="insertSelective" parameterType="com.eliteams.quick4j.web.model.Qmp">
 		insert into qmp
 		<trim prefix="(" suffix=")" suffixOverrides=",">
 			<if test="id != null">
 				id,
-			</if>
-			<if test="sectionBh != null">
-				section_bh,
-			</if>
-			<if test="sectionDybh != null">
-				section_dybh,
-			</if>
-			<if test="sectionDymc != null">
-				section_dymc,
 			</if>
 			<if test="watershed != null">
 				watershed,
@@ -255,49 +232,13 @@
 			<if test="qualityTarget != null">
 				quality_target,
 			</if>
-			<if test="locLon != null">
-				loc_lon,
-			</if>
-			<if test="locLat != null">
-				loc_lat,
-			</if>
-			<if test="sectionShhl != null">
-				section_shhl,
-			</if>
-			<if test="tjnf != null">
-				tjnf,
-			</if>
 			<if test="isDel != null">
 				is_del,
-			</if>
-			<if test="sectionBl1 != null">
-				section_bl1,
-			</if>
-			<if test="sectionBl2 != null">
-				section_bl2,
-			</if>
-			<if test="sectionBl3 != null">
-				section_bl3,
-			</if>
-			<if test="sectionBl4 != null">
-				section_bl4,
-			</if>
-			<if test="sectionBl5 != null">
-				section_bl5,
 			</if>
 		</trim>
 		<trim prefix="values (" suffix=")" suffixOverrides=",">
 			<if test="id != null">
 				#{id,jdbcType=INTEGER},
-			</if>
-			<if test="sectionBh != null">
-				#{sectionBh,jdbcType=VARCHAR},
-			</if>
-			<if test="sectionDybh != null">
-				#{sectionDybh,jdbcType=VARCHAR},
-			</if>
-			<if test="sectionDymc != null">
-				#{sectionDymc,jdbcType=VARCHAR},
 			</if>
 			<if test="watershed != null">
 				#{watershed,jdbcType=VARCHAR},
@@ -354,7 +295,7 @@
 				#{locLonM,jdbcType=INTEGER},
 			</if>
 			<if test="locLonS != null">
-				#{locLonS,jdbcType=INTEGER},
+				#{locLonS,jdbcType=DOUBLE},
 			</if>
 			<if test="locLatD != null">
 				#{locLatD,jdbcType=INTEGER},
@@ -363,40 +304,13 @@
 				#{locLatM,jdbcType=INTEGER},
 			</if>
 			<if test="locLatS != null">
-				#{locLatS,jdbcType=INTEGER},
+				#{locLatS,jdbcType=DOUBLE},
 			</if>
 			<if test="qualityTarget != null">
 				#{qualityTarget,jdbcType=VARCHAR},
 			</if>
-			<if test="locLon != null">
-				#{locLon,jdbcType=DECIMAL},
-			</if>
-			<if test="locLat != null">
-				#{locLat,jdbcType=DECIMAL},
-			</if>
-			<if test="sectionShhl != null">
-				#{sectionShhl,jdbcType=VARCHAR},
-			</if>
-			<if test="tjnf != null">
-				#{tjnf,jdbcType=INTEGER},
-			</if>
 			<if test="isDel != null">
-				#{isDel,jdbcType=VARCHAR},
-			</if>
-			<if test="sectionBl1 != null">
-				#{sectionBl1,jdbcType=VARCHAR},
-			</if>
-			<if test="sectionBl2 != null">
-				#{sectionBl2,jdbcType=VARCHAR},
-			</if>
-			<if test="sectionBl3 != null">
-				#{sectionBl3,jdbcType=VARCHAR},
-			</if>
-			<if test="sectionBl4 != null">
-				#{sectionBl4,jdbcType=VARCHAR},
-			</if>
-			<if test="sectionBl5 != null">
-				#{sectionBl5,jdbcType=VARCHAR},
+				#{isDel,jdbcType=INTEGER},
 			</if>
 		</trim>
 	</insert>
@@ -412,15 +326,6 @@
 		<set>
 			<if test="record.id != null">
 				id = #{record.id,jdbcType=INTEGER},
-			</if>
-			<if test="record.sectionBh != null">
-				section_bh = #{record.sectionBh,jdbcType=VARCHAR},
-			</if>
-			<if test="record.sectionDybh != null">
-				section_dybh = #{record.sectionDybh,jdbcType=VARCHAR},
-			</if>
-			<if test="record.sectionDymc != null">
-				section_dymc = #{record.sectionDymc,jdbcType=VARCHAR},
 			</if>
 			<if test="record.watershed != null">
 				watershed = #{record.watershed,jdbcType=VARCHAR},
@@ -477,7 +382,7 @@
 				loc_lon_m = #{record.locLonM,jdbcType=INTEGER},
 			</if>
 			<if test="record.locLonS != null">
-				loc_lon_s = #{record.locLonS,jdbcType=INTEGER},
+				loc_lon_s = #{record.locLonS,jdbcType=DOUBLE},
 			</if>
 			<if test="record.locLatD != null">
 				loc_lat_d = #{record.locLatD,jdbcType=INTEGER},
@@ -486,40 +391,13 @@
 				loc_lat_m = #{record.locLatM,jdbcType=INTEGER},
 			</if>
 			<if test="record.locLatS != null">
-				loc_lat_s = #{record.locLatS,jdbcType=INTEGER},
+				loc_lat_s = #{record.locLatS,jdbcType=DOUBLE},
 			</if>
 			<if test="record.qualityTarget != null">
 				quality_target = #{record.qualityTarget,jdbcType=VARCHAR},
 			</if>
-			<if test="record.locLon != null">
-				loc_lon = #{record.locLon,jdbcType=DECIMAL},
-			</if>
-			<if test="record.locLat != null">
-				loc_lat = #{record.locLat,jdbcType=DECIMAL},
-			</if>
-			<if test="record.sectionShhl != null">
-				section_shhl = #{record.sectionShhl,jdbcType=VARCHAR},
-			</if>
-			<if test="record.tjnf != null">
-				tjnf = #{record.tjnf,jdbcType=INTEGER},
-			</if>
 			<if test="record.isDel != null">
-				is_del = #{record.isDel,jdbcType=VARCHAR},
-			</if>
-			<if test="record.sectionBl1 != null">
-				section_bl1 = #{record.sectionBl1,jdbcType=VARCHAR},
-			</if>
-			<if test="record.sectionBl2 != null">
-				section_bl2 = #{record.sectionBl2,jdbcType=VARCHAR},
-			</if>
-			<if test="record.sectionBl3 != null">
-				section_bl3 = #{record.sectionBl3,jdbcType=VARCHAR},
-			</if>
-			<if test="record.sectionBl4 != null">
-				section_bl4 = #{record.sectionBl4,jdbcType=VARCHAR},
-			</if>
-			<if test="record.sectionBl5 != null">
-				section_bl5 = #{record.sectionBl5,jdbcType=VARCHAR},
+				is_del = #{record.isDel,jdbcType=INTEGER},
 			</if>
 		</set>
 		<if test="_parameter != null">
@@ -529,9 +407,6 @@
 	<update id="updateByExample" parameterType="map">
 		update qmp
 		set id = #{record.id,jdbcType=INTEGER},
-		section_bh = #{record.sectionBh,jdbcType=VARCHAR},
-		section_dybh = #{record.sectionDybh,jdbcType=VARCHAR},
-		section_dymc = #{record.sectionDymc,jdbcType=VARCHAR},
 		watershed = #{record.watershed,jdbcType=VARCHAR},
 		river_name = #{record.riverName,jdbcType=VARCHAR},
 		river_level = #{record.riverLevel,jdbcType=VARCHAR},
@@ -550,21 +425,12 @@
 		test_items = #{record.testItems,jdbcType=VARCHAR},
 		loc_lon_d = #{record.locLonD,jdbcType=INTEGER},
 		loc_lon_m = #{record.locLonM,jdbcType=INTEGER},
-		loc_lon_s = #{record.locLonS,jdbcType=INTEGER},
+		loc_lon_s = #{record.locLonS,jdbcType=DOUBLE},
 		loc_lat_d = #{record.locLatD,jdbcType=INTEGER},
 		loc_lat_m = #{record.locLatM,jdbcType=INTEGER},
-		loc_lat_s = #{record.locLatS,jdbcType=INTEGER},
+		loc_lat_s = #{record.locLatS,jdbcType=DOUBLE},
 		quality_target = #{record.qualityTarget,jdbcType=VARCHAR},
-		loc_lon = #{record.locLon,jdbcType=DECIMAL},
-		loc_lat = #{record.locLat,jdbcType=DECIMAL},
-		section_shhl = #{record.sectionShhl,jdbcType=VARCHAR},
-		tjnf = #{record.tjnf,jdbcType=INTEGER},
-		is_del = #{record.isDel,jdbcType=VARCHAR},
-		section_bl1 = #{record.sectionBl1,jdbcType=VARCHAR},
-		section_bl2 = #{record.sectionBl2,jdbcType=VARCHAR},
-		section_bl3 = #{record.sectionBl3,jdbcType=VARCHAR},
-		section_bl4 = #{record.sectionBl4,jdbcType=VARCHAR},
-		section_bl5 = #{record.sectionBl5,jdbcType=VARCHAR}
+		is_del = #{record.isDel,jdbcType=INTEGER}
 		<if test="_parameter != null">
 			<include refid="Update_By_Example_Where_Clause" />
 		</if>
@@ -572,15 +438,6 @@
 	<update id="updateByPrimaryKeySelective" parameterType="com.eliteams.quick4j.web.model.Qmp">
 		update qmp
 		<set>
-			<if test="sectionBh != null">
-				section_bh = #{sectionBh,jdbcType=VARCHAR},
-			</if>
-			<if test="sectionDybh != null">
-				section_dybh = #{sectionDybh,jdbcType=VARCHAR},
-			</if>
-			<if test="sectionDymc != null">
-				section_dymc = #{sectionDymc,jdbcType=VARCHAR},
-			</if>
 			<if test="watershed != null">
 				watershed = #{watershed,jdbcType=VARCHAR},
 			</if>
@@ -636,7 +493,7 @@
 				loc_lon_m = #{locLonM,jdbcType=INTEGER},
 			</if>
 			<if test="locLonS != null">
-				loc_lon_s = #{locLonS,jdbcType=INTEGER},
+				loc_lon_s = #{locLonS,jdbcType=DOUBLE},
 			</if>
 			<if test="locLatD != null">
 				loc_lat_d = #{locLatD,jdbcType=INTEGER},
@@ -645,82 +502,43 @@
 				loc_lat_m = #{locLatM,jdbcType=INTEGER},
 			</if>
 			<if test="locLatS != null">
-				loc_lat_s = #{locLatS,jdbcType=INTEGER},
+				loc_lat_s = #{locLatS,jdbcType=DOUBLE},
 			</if>
 			<if test="qualityTarget != null">
 				quality_target = #{qualityTarget,jdbcType=VARCHAR},
 			</if>
-			<if test="locLon != null">
-				loc_lon = #{locLon,jdbcType=DECIMAL},
-			</if>
-			<if test="locLat != null">
-				loc_lat = #{locLat,jdbcType=DECIMAL},
-			</if>
-			<if test="sectionShhl != null">
-				section_shhl = #{sectionShhl,jdbcType=VARCHAR},
-			</if>
-			<if test="tjnf != null">
-				tjnf = #{tjnf,jdbcType=INTEGER},
-			</if>
 			<if test="isDel != null">
-				is_del = #{isDel,jdbcType=VARCHAR},
-			</if>
-			<if test="sectionBl1 != null">
-				section_bl1 = #{sectionBl1,jdbcType=VARCHAR},
-			</if>
-			<if test="sectionBl2 != null">
-				section_bl2 = #{sectionBl2,jdbcType=VARCHAR},
-			</if>
-			<if test="sectionBl3 != null">
-				section_bl3 = #{sectionBl3,jdbcType=VARCHAR},
-			</if>
-			<if test="sectionBl4 != null">
-				section_bl4 = #{sectionBl4,jdbcType=VARCHAR},
-			</if>
-			<if test="sectionBl5 != null">
-				section_bl5 = #{sectionBl5,jdbcType=VARCHAR},
+				is_del = #{isDel,jdbcType=INTEGER},
 			</if>
 		</set>
 		where id = #{id,jdbcType=INTEGER}
 	</update>
 	<update id="updateByPrimaryKey" parameterType="com.eliteams.quick4j.web.model.Qmp">
 		update qmp
-		set section_bh = #{sectionBh,jdbcType=VARCHAR},
-			section_dybh = #{sectionDybh,jdbcType=VARCHAR},
-			section_dymc = #{sectionDymc,jdbcType=VARCHAR},
-			watershed = #{watershed,jdbcType=VARCHAR},
-			river_name = #{riverName,jdbcType=VARCHAR},
-			river_level = #{riverLevel,jdbcType=VARCHAR},
-			river_to = #{riverTo,jdbcType=VARCHAR},
-			section_name = #{sectionName,jdbcType=VARCHAR},
-			section_property = #{sectionProperty,jdbcType=VARCHAR},
-			loc_province = #{locProvince,jdbcType=VARCHAR},
-			loc_city = #{locCity,jdbcType=VARCHAR},
-			loc_county = #{locCounty,jdbcType=VARCHAR},
-			test_by = #{testBy,jdbcType=VARCHAR},
-			section_level = #{sectionLevel,jdbcType=VARCHAR},
-			section_type = #{sectionType,jdbcType=VARCHAR},
-			is_urban = #{isUrban,jdbcType=VARCHAR},
-			is_addition = #{isAddition,jdbcType=VARCHAR},
-			test_frequency = #{testFrequency,jdbcType=VARCHAR},
-			test_items = #{testItems,jdbcType=VARCHAR},
-			loc_lon_d = #{locLonD,jdbcType=INTEGER},
-			loc_lon_m = #{locLonM,jdbcType=INTEGER},
-			loc_lon_s = #{locLonS,jdbcType=INTEGER},
-			loc_lat_d = #{locLatD,jdbcType=INTEGER},
-			loc_lat_m = #{locLatM,jdbcType=INTEGER},
-			loc_lat_s = #{locLatS,jdbcType=INTEGER},
-			quality_target = #{qualityTarget,jdbcType=VARCHAR},
-			loc_lon = #{locLon,jdbcType=DECIMAL},
-			loc_lat = #{locLat,jdbcType=DECIMAL},
-			section_shhl = #{sectionShhl,jdbcType=VARCHAR},
-			tjnf = #{tjnf,jdbcType=INTEGER},
-			is_del = #{isDel,jdbcType=VARCHAR},
-			section_bl1 = #{sectionBl1,jdbcType=VARCHAR},
-			section_bl2 = #{sectionBl2,jdbcType=VARCHAR},
-			section_bl3 = #{sectionBl3,jdbcType=VARCHAR},
-			section_bl4 = #{sectionBl4,jdbcType=VARCHAR},
-			section_bl5 = #{sectionBl5,jdbcType=VARCHAR}
+		set watershed = #{watershed,jdbcType=VARCHAR},
+		river_name = #{riverName,jdbcType=VARCHAR},
+		river_level = #{riverLevel,jdbcType=VARCHAR},
+		river_to = #{riverTo,jdbcType=VARCHAR},
+		section_name = #{sectionName,jdbcType=VARCHAR},
+		section_property = #{sectionProperty,jdbcType=VARCHAR},
+		loc_province = #{locProvince,jdbcType=VARCHAR},
+		loc_city = #{locCity,jdbcType=VARCHAR},
+		loc_county = #{locCounty,jdbcType=VARCHAR},
+		test_by = #{testBy,jdbcType=VARCHAR},
+		section_level = #{sectionLevel,jdbcType=VARCHAR},
+		section_type = #{sectionType,jdbcType=VARCHAR},
+		is_urban = #{isUrban,jdbcType=VARCHAR},
+		is_addition = #{isAddition,jdbcType=VARCHAR},
+		test_frequency = #{testFrequency,jdbcType=VARCHAR},
+		test_items = #{testItems,jdbcType=VARCHAR},
+		loc_lon_d = #{locLonD,jdbcType=INTEGER},
+		loc_lon_m = #{locLonM,jdbcType=INTEGER},
+		loc_lon_s = #{locLonS,jdbcType=DOUBLE},
+		loc_lat_d = #{locLatD,jdbcType=INTEGER},
+		loc_lat_m = #{locLatM,jdbcType=INTEGER},
+		loc_lat_s = #{locLatS,jdbcType=DOUBLE},
+		quality_target = #{qualityTarget,jdbcType=VARCHAR},
+		is_del = #{isDel,jdbcType=INTEGER}
 		where id = #{id,jdbcType=INTEGER}
 	</update>
 

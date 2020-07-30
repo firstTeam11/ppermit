@@ -3,7 +3,7 @@ package com.eliteams.quick4j.web.util;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 
-//import javax.print.Doc;
+import javax.print.Doc;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;

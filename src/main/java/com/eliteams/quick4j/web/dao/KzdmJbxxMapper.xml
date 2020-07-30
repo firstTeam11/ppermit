@@ -1,0 +1,1164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.eliteams.quick4j.web.dao.KzdmJbxxMapper" >
+  <resultMap id="BaseResultMap" type="com.eliteams.quick4j.web.model.KzdmJbxx" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="kzdm_bh" property="kzdmBh" jdbcType="VARCHAR" />
+    <result column="kzdm_dybh" property="kzdmDybh" jdbcType="VARCHAR" />
+    <result column="kzdm_dymc" property="kzdmDymc" jdbcType="VARCHAR" />
+    <result column="kzdm_lymc" property="kzdmLymc" jdbcType="VARCHAR" />
+    <result column="kzdm_szhl" property="kzdmSzhl" jdbcType="VARCHAR" />
+    <result column="kzdm_hljb" property="kzdmHljb" jdbcType="VARCHAR" />
+    <result column="kzdm_hrhl" property="kzdmHrhl" jdbcType="VARCHAR" />
+    <result column="kzdm_mc" property="kzdmMc" jdbcType="VARCHAR" />
+    <result column="kzdm_sx" property="kzdmSx" jdbcType="VARCHAR" />
+    <result column="kzdm_sheng" property="kzdmSheng" jdbcType="VARCHAR" />
+    <result column="kzdm_shi" property="kzdmShi" jdbcType="VARCHAR" />
+    <result column="kzdm_qx" property="kzdmQx" jdbcType="VARCHAR" />
+    <result column="kzdm_czmc" property="kzdmCzmc" jdbcType="VARCHAR" />
+    <result column="kzdm_jb" property="kzdmJb" jdbcType="VARCHAR" />
+    <result column="kzdm_lx" property="kzdmLx" jdbcType="VARCHAR" />
+    <result column="kzdm_sfcq" property="kzdmSfcq" jdbcType="VARCHAR" />
+    <result column="kzdm_szzk" property="kzdmSzzk" jdbcType="VARCHAR" />
+    <result column="kzdm_jcpc" property="kzdmJcpc" jdbcType="VARCHAR" />
+    <result column="kzdm_jcxm" property="kzdmJcxm" jdbcType="VARCHAR" />
+    <result column="kzdm_jdd" property="kzdmJdd" jdbcType="INTEGER" />
+    <result column="kzdm_jdf" property="kzdmJdf" jdbcType="INTEGER" />
+    <result column="kzdm_jds" property="kzdmJds" jdbcType="INTEGER" />
+    <result column="kzdm_wdd" property="kzdmWdd" jdbcType="INTEGER" />
+    <result column="kzdm_wdf" property="kzdmWdf" jdbcType="INTEGER" />
+    <result column="kzdm_wds" property="kzdmWds" jdbcType="INTEGER" />
+    <result column="kzdm_szmb" property="kzdmSzmb" jdbcType="VARCHAR" />
+    <result column="kzdm_jd" property="kzdmJd" jdbcType="DECIMAL" />
+    <result column="kzdm_wd" property="kzdmWd" jdbcType="DECIMAL" />
+    <result column="kzdm_shhl" property="kzdmShhl" jdbcType="VARCHAR" />
+    <result column="kzdm_time" property="kzdmTime" jdbcType="VARCHAR" />
+    <result column="kzdm_bl1" property="kzdmBl1" jdbcType="VARCHAR" />
+    <result column="kzdm_bl2" property="kzdmBl2" jdbcType="VARCHAR" />
+    <result column="kzdm_bl3" property="kzdmBl3" jdbcType="VARCHAR" />
+    <result column="kzdm_bl4" property="kzdmBl4" jdbcType="VARCHAR" />
+    <result column="kzdm_bl5" property="kzdmBl5" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, kzdm_bh, kzdm_dybh, kzdm_dymc, kzdm_lymc, kzdm_szhl, kzdm_hljb, kzdm_hrhl, kzdm_mc, 
+    kzdm_sx, kzdm_sheng, kzdm_shi, kzdm_qx, kzdm_czmc, kzdm_jb, kzdm_lx, kzdm_sfcq, kzdm_szzk, 
+    kzdm_jcpc, kzdm_jcxm, kzdm_jdd, kzdm_jdf, kzdm_jds, kzdm_wdd, kzdm_wdf, kzdm_wds, 
+    kzdm_szmb, kzdm_jd, kzdm_wd, kzdm_shhl, kzdm_time, kzdm_bl1, kzdm_bl2, kzdm_bl3, 
+    kzdm_bl4, kzdm_bl5
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.eliteams.quick4j.web.model.KzdmJbxxExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_kzdm_jbxx
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_kzdm_jbxx
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tbl_kzdm_jbxx
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.eliteams.quick4j.web.model.KzdmJbxxExample" >
+    delete from tbl_kzdm_jbxx
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.eliteams.quick4j.web.model.KzdmJbxx" >
+    insert into tbl_kzdm_jbxx (id, kzdm_bh, kzdm_dybh, 
+      kzdm_dymc, kzdm_lymc, kzdm_szhl, 
+      kzdm_hljb, kzdm_hrhl, kzdm_mc, 
+      kzdm_sx, kzdm_sheng, kzdm_shi, 
+      kzdm_qx, kzdm_czmc, kzdm_jb, 
+      kzdm_lx, kzdm_sfcq, kzdm_szzk, 
+      kzdm_jcpc, kzdm_jcxm, kzdm_jdd, 
+      kzdm_jdf, kzdm_jds, kzdm_wdd, 
+      kzdm_wdf, kzdm_wds, kzdm_szmb, 
+      kzdm_jd, kzdm_wd, kzdm_shhl, 
+      kzdm_time, kzdm_bl1, kzdm_bl2, 
+      kzdm_bl3, kzdm_bl4, kzdm_bl5
+      )
+    values (#{id,jdbcType=INTEGER}, #{kzdmBh,jdbcType=VARCHAR}, #{kzdmDybh,jdbcType=VARCHAR}, 
+      #{kzdmDymc,jdbcType=VARCHAR}, #{kzdmLymc,jdbcType=VARCHAR}, #{kzdmSzhl,jdbcType=VARCHAR}, 
+      #{kzdmHljb,jdbcType=VARCHAR}, #{kzdmHrhl,jdbcType=VARCHAR}, #{kzdmMc,jdbcType=VARCHAR}, 
+      #{kzdmSx,jdbcType=VARCHAR}, #{kzdmSheng,jdbcType=VARCHAR}, #{kzdmShi,jdbcType=VARCHAR}, 
+      #{kzdmQx,jdbcType=VARCHAR}, #{kzdmCzmc,jdbcType=VARCHAR}, #{kzdmJb,jdbcType=VARCHAR}, 
+      #{kzdmLx,jdbcType=VARCHAR}, #{kzdmSfcq,jdbcType=VARCHAR}, #{kzdmSzzk,jdbcType=VARCHAR}, 
+      #{kzdmJcpc,jdbcType=VARCHAR}, #{kzdmJcxm,jdbcType=VARCHAR}, #{kzdmJdd,jdbcType=INTEGER}, 
+      #{kzdmJdf,jdbcType=INTEGER}, #{kzdmJds,jdbcType=INTEGER}, #{kzdmWdd,jdbcType=INTEGER}, 
+      #{kzdmWdf,jdbcType=INTEGER}, #{kzdmWds,jdbcType=INTEGER}, #{kzdmSzmb,jdbcType=VARCHAR}, 
+      #{kzdmJd,jdbcType=DECIMAL}, #{kzdmWd,jdbcType=DECIMAL}, #{kzdmShhl,jdbcType=VARCHAR}, 
+      #{kzdmTime,jdbcType=VARCHAR}, #{kzdmBl1,jdbcType=VARCHAR}, #{kzdmBl2,jdbcType=VARCHAR}, 
+      #{kzdmBl3,jdbcType=VARCHAR}, #{kzdmBl4,jdbcType=VARCHAR}, #{kzdmBl5,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.eliteams.quick4j.web.model.KzdmJbxx" >
+    insert into tbl_kzdm_jbxx
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="kzdmBh != null" >
+        kzdm_bh,
+      </if>
+      <if test="kzdmDybh != null" >
+        kzdm_dybh,
+      </if>
+      <if test="kzdmDymc != null" >
+        kzdm_dymc,
+      </if>
+      <if test="kzdmLymc != null" >
+        kzdm_lymc,
+      </if>
+      <if test="kzdmSzhl != null" >
+        kzdm_szhl,
+      </if>
+      <if test="kzdmHljb != null" >
+        kzdm_hljb,
+      </if>
+      <if test="kzdmHrhl != null" >
+        kzdm_hrhl,
+      </if>
+      <if test="kzdmMc != null" >
+        kzdm_mc,
+      </if>
+      <if test="kzdmSx != null" >
+        kzdm_sx,
+      </if>
+      <if test="kzdmSheng != null" >
+        kzdm_sheng,
+      </if>
+      <if test="kzdmShi != null" >
+        kzdm_shi,
+      </if>
+      <if test="kzdmQx != null" >
+        kzdm_qx,
+      </if>
+      <if test="kzdmCzmc != null" >
+        kzdm_czmc,
+      </if>
+      <if test="kzdmJb != null" >
+        kzdm_jb,
+      </if>
+      <if test="kzdmLx != null" >
+        kzdm_lx,
+      </if>
+      <if test="kzdmSfcq != null" >
+        kzdm_sfcq,
+      </if>
+      <if test="kzdmSzzk != null" >
+        kzdm_szzk,
+      </if>
+      <if test="kzdmJcpc != null" >
+        kzdm_jcpc,
+      </if>
+      <if test="kzdmJcxm != null" >
+        kzdm_jcxm,
+      </if>
+      <if test="kzdmJdd != null" >
+        kzdm_jdd,
+      </if>
+      <if test="kzdmJdf != null" >
+        kzdm_jdf,
+      </if>
+      <if test="kzdmJds != null" >
+        kzdm_jds,
+      </if>
+      <if test="kzdmWdd != null" >
+        kzdm_wdd,
+      </if>
+      <if test="kzdmWdf != null" >
+        kzdm_wdf,
+      </if>
+      <if test="kzdmWds != null" >
+        kzdm_wds,
+      </if>
+      <if test="kzdmSzmb != null" >
+        kzdm_szmb,
+      </if>
+      <if test="kzdmJd != null" >
+        kzdm_jd,
+      </if>
+      <if test="kzdmWd != null" >
+        kzdm_wd,
+      </if>
+      <if test="kzdmShhl != null" >
+        kzdm_shhl,
+      </if>
+      <if test="kzdmTime != null" >
+        kzdm_time,
+      </if>
+      <if test="kzdmBl1 != null" >
+        kzdm_bl1,
+      </if>
+      <if test="kzdmBl2 != null" >
+        kzdm_bl2,
+      </if>
+      <if test="kzdmBl3 != null" >
+        kzdm_bl3,
+      </if>
+      <if test="kzdmBl4 != null" >
+        kzdm_bl4,
+      </if>
+      <if test="kzdmBl5 != null" >
+        kzdm_bl5,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="kzdmBh != null" >
+        #{kzdmBh,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmDybh != null" >
+        #{kzdmDybh,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmDymc != null" >
+        #{kzdmDymc,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmLymc != null" >
+        #{kzdmLymc,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmSzhl != null" >
+        #{kzdmSzhl,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmHljb != null" >
+        #{kzdmHljb,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmHrhl != null" >
+        #{kzdmHrhl,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmMc != null" >
+        #{kzdmMc,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmSx != null" >
+        #{kzdmSx,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmSheng != null" >
+        #{kzdmSheng,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmShi != null" >
+        #{kzdmShi,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmQx != null" >
+        #{kzdmQx,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmCzmc != null" >
+        #{kzdmCzmc,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmJb != null" >
+        #{kzdmJb,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmLx != null" >
+        #{kzdmLx,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmSfcq != null" >
+        #{kzdmSfcq,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmSzzk != null" >
+        #{kzdmSzzk,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmJcpc != null" >
+        #{kzdmJcpc,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmJcxm != null" >
+        #{kzdmJcxm,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmJdd != null" >
+        #{kzdmJdd,jdbcType=INTEGER},
+      </if>
+      <if test="kzdmJdf != null" >
+        #{kzdmJdf,jdbcType=INTEGER},
+      </if>
+      <if test="kzdmJds != null" >
+        #{kzdmJds,jdbcType=INTEGER},
+      </if>
+      <if test="kzdmWdd != null" >
+        #{kzdmWdd,jdbcType=INTEGER},
+      </if>
+      <if test="kzdmWdf != null" >
+        #{kzdmWdf,jdbcType=INTEGER},
+      </if>
+      <if test="kzdmWds != null" >
+        #{kzdmWds,jdbcType=INTEGER},
+      </if>
+      <if test="kzdmSzmb != null" >
+        #{kzdmSzmb,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmJd != null" >
+        #{kzdmJd,jdbcType=DECIMAL},
+      </if>
+      <if test="kzdmWd != null" >
+        #{kzdmWd,jdbcType=DECIMAL},
+      </if>
+      <if test="kzdmShhl != null" >
+        #{kzdmShhl,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmTime != null" >
+        #{kzdmTime,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmBl1 != null" >
+        #{kzdmBl1,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmBl2 != null" >
+        #{kzdmBl2,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmBl3 != null" >
+        #{kzdmBl3,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmBl4 != null" >
+        #{kzdmBl4,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmBl5 != null" >
+        #{kzdmBl5,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.eliteams.quick4j.web.model.KzdmJbxxExample" resultType="java.lang.Integer" >
+    select count(*) from tbl_kzdm_jbxx
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tbl_kzdm_jbxx
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.kzdmBh != null" >
+        kzdm_bh = #{record.kzdmBh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmDybh != null" >
+        kzdm_dybh = #{record.kzdmDybh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmDymc != null" >
+        kzdm_dymc = #{record.kzdmDymc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmLymc != null" >
+        kzdm_lymc = #{record.kzdmLymc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmSzhl != null" >
+        kzdm_szhl = #{record.kzdmSzhl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmHljb != null" >
+        kzdm_hljb = #{record.kzdmHljb,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmHrhl != null" >
+        kzdm_hrhl = #{record.kzdmHrhl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmMc != null" >
+        kzdm_mc = #{record.kzdmMc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmSx != null" >
+        kzdm_sx = #{record.kzdmSx,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmSheng != null" >
+        kzdm_sheng = #{record.kzdmSheng,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmShi != null" >
+        kzdm_shi = #{record.kzdmShi,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmQx != null" >
+        kzdm_qx = #{record.kzdmQx,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmCzmc != null" >
+        kzdm_czmc = #{record.kzdmCzmc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmJb != null" >
+        kzdm_jb = #{record.kzdmJb,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmLx != null" >
+        kzdm_lx = #{record.kzdmLx,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmSfcq != null" >
+        kzdm_sfcq = #{record.kzdmSfcq,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmSzzk != null" >
+        kzdm_szzk = #{record.kzdmSzzk,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmJcpc != null" >
+        kzdm_jcpc = #{record.kzdmJcpc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmJcxm != null" >
+        kzdm_jcxm = #{record.kzdmJcxm,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmJdd != null" >
+        kzdm_jdd = #{record.kzdmJdd,jdbcType=INTEGER},
+      </if>
+      <if test="record.kzdmJdf != null" >
+        kzdm_jdf = #{record.kzdmJdf,jdbcType=INTEGER},
+      </if>
+      <if test="record.kzdmJds != null" >
+        kzdm_jds = #{record.kzdmJds,jdbcType=INTEGER},
+      </if>
+      <if test="record.kzdmWdd != null" >
+        kzdm_wdd = #{record.kzdmWdd,jdbcType=INTEGER},
+      </if>
+      <if test="record.kzdmWdf != null" >
+        kzdm_wdf = #{record.kzdmWdf,jdbcType=INTEGER},
+      </if>
+      <if test="record.kzdmWds != null" >
+        kzdm_wds = #{record.kzdmWds,jdbcType=INTEGER},
+      </if>
+      <if test="record.kzdmSzmb != null" >
+        kzdm_szmb = #{record.kzdmSzmb,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmJd != null" >
+        kzdm_jd = #{record.kzdmJd,jdbcType=DECIMAL},
+      </if>
+      <if test="record.kzdmWd != null" >
+        kzdm_wd = #{record.kzdmWd,jdbcType=DECIMAL},
+      </if>
+      <if test="record.kzdmShhl != null" >
+        kzdm_shhl = #{record.kzdmShhl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmTime != null" >
+        kzdm_time = #{record.kzdmTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmBl1 != null" >
+        kzdm_bl1 = #{record.kzdmBl1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmBl2 != null" >
+        kzdm_bl2 = #{record.kzdmBl2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmBl3 != null" >
+        kzdm_bl3 = #{record.kzdmBl3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmBl4 != null" >
+        kzdm_bl4 = #{record.kzdmBl4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kzdmBl5 != null" >
+        kzdm_bl5 = #{record.kzdmBl5,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tbl_kzdm_jbxx
+    set id = #{record.id,jdbcType=INTEGER},
+      kzdm_bh = #{record.kzdmBh,jdbcType=VARCHAR},
+      kzdm_dybh = #{record.kzdmDybh,jdbcType=VARCHAR},
+      kzdm_dymc = #{record.kzdmDymc,jdbcType=VARCHAR},
+      kzdm_lymc = #{record.kzdmLymc,jdbcType=VARCHAR},
+      kzdm_szhl = #{record.kzdmSzhl,jdbcType=VARCHAR},
+      kzdm_hljb = #{record.kzdmHljb,jdbcType=VARCHAR},
+      kzdm_hrhl = #{record.kzdmHrhl,jdbcType=VARCHAR},
+      kzdm_mc = #{record.kzdmMc,jdbcType=VARCHAR},
+      kzdm_sx = #{record.kzdmSx,jdbcType=VARCHAR},
+      kzdm_sheng = #{record.kzdmSheng,jdbcType=VARCHAR},
+      kzdm_shi = #{record.kzdmShi,jdbcType=VARCHAR},
+      kzdm_qx = #{record.kzdmQx,jdbcType=VARCHAR},
+      kzdm_czmc = #{record.kzdmCzmc,jdbcType=VARCHAR},
+      kzdm_jb = #{record.kzdmJb,jdbcType=VARCHAR},
+      kzdm_lx = #{record.kzdmLx,jdbcType=VARCHAR},
+      kzdm_sfcq = #{record.kzdmSfcq,jdbcType=VARCHAR},
+      kzdm_szzk = #{record.kzdmSzzk,jdbcType=VARCHAR},
+      kzdm_jcpc = #{record.kzdmJcpc,jdbcType=VARCHAR},
+      kzdm_jcxm = #{record.kzdmJcxm,jdbcType=VARCHAR},
+      kzdm_jdd = #{record.kzdmJdd,jdbcType=INTEGER},
+      kzdm_jdf = #{record.kzdmJdf,jdbcType=INTEGER},
+      kzdm_jds = #{record.kzdmJds,jdbcType=INTEGER},
+      kzdm_wdd = #{record.kzdmWdd,jdbcType=INTEGER},
+      kzdm_wdf = #{record.kzdmWdf,jdbcType=INTEGER},
+      kzdm_wds = #{record.kzdmWds,jdbcType=INTEGER},
+      kzdm_szmb = #{record.kzdmSzmb,jdbcType=VARCHAR},
+      kzdm_jd = #{record.kzdmJd,jdbcType=DECIMAL},
+      kzdm_wd = #{record.kzdmWd,jdbcType=DECIMAL},
+      kzdm_shhl = #{record.kzdmShhl,jdbcType=VARCHAR},
+      kzdm_time = #{record.kzdmTime,jdbcType=VARCHAR},
+      kzdm_bl1 = #{record.kzdmBl1,jdbcType=VARCHAR},
+      kzdm_bl2 = #{record.kzdmBl2,jdbcType=VARCHAR},
+      kzdm_bl3 = #{record.kzdmBl3,jdbcType=VARCHAR},
+      kzdm_bl4 = #{record.kzdmBl4,jdbcType=VARCHAR},
+      kzdm_bl5 = #{record.kzdmBl5,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.eliteams.quick4j.web.model.KzdmJbxx" >
+    update tbl_kzdm_jbxx
+    <set >
+      <if test="kzdmBh != null" >
+        kzdm_bh = #{kzdmBh,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmDybh != null" >
+        kzdm_dybh = #{kzdmDybh,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmDymc != null" >
+        kzdm_dymc = #{kzdmDymc,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmLymc != null" >
+        kzdm_lymc = #{kzdmLymc,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmSzhl != null" >
+        kzdm_szhl = #{kzdmSzhl,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmHljb != null" >
+        kzdm_hljb = #{kzdmHljb,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmHrhl != null" >
+        kzdm_hrhl = #{kzdmHrhl,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmMc != null" >
+        kzdm_mc = #{kzdmMc,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmSx != null" >
+        kzdm_sx = #{kzdmSx,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmSheng != null" >
+        kzdm_sheng = #{kzdmSheng,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmShi != null" >
+        kzdm_shi = #{kzdmShi,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmQx != null" >
+        kzdm_qx = #{kzdmQx,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmCzmc != null" >
+        kzdm_czmc = #{kzdmCzmc,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmJb != null" >
+        kzdm_jb = #{kzdmJb,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmLx != null" >
+        kzdm_lx = #{kzdmLx,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmSfcq != null" >
+        kzdm_sfcq = #{kzdmSfcq,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmSzzk != null" >
+        kzdm_szzk = #{kzdmSzzk,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmJcpc != null" >
+        kzdm_jcpc = #{kzdmJcpc,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmJcxm != null" >
+        kzdm_jcxm = #{kzdmJcxm,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmJdd != null" >
+        kzdm_jdd = #{kzdmJdd,jdbcType=INTEGER},
+      </if>
+      <if test="kzdmJdf != null" >
+        kzdm_jdf = #{kzdmJdf,jdbcType=INTEGER},
+      </if>
+      <if test="kzdmJds != null" >
+        kzdm_jds = #{kzdmJds,jdbcType=INTEGER},
+      </if>
+      <if test="kzdmWdd != null" >
+        kzdm_wdd = #{kzdmWdd,jdbcType=INTEGER},
+      </if>
+      <if test="kzdmWdf != null" >
+        kzdm_wdf = #{kzdmWdf,jdbcType=INTEGER},
+      </if>
+      <if test="kzdmWds != null" >
+        kzdm_wds = #{kzdmWds,jdbcType=INTEGER},
+      </if>
+      <if test="kzdmSzmb != null" >
+        kzdm_szmb = #{kzdmSzmb,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmJd != null" >
+        kzdm_jd = #{kzdmJd,jdbcType=DECIMAL},
+      </if>
+      <if test="kzdmWd != null" >
+        kzdm_wd = #{kzdmWd,jdbcType=DECIMAL},
+      </if>
+      <if test="kzdmShhl != null" >
+        kzdm_shhl = #{kzdmShhl,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmTime != null" >
+        kzdm_time = #{kzdmTime,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmBl1 != null" >
+        kzdm_bl1 = #{kzdmBl1,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmBl2 != null" >
+        kzdm_bl2 = #{kzdmBl2,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmBl3 != null" >
+        kzdm_bl3 = #{kzdmBl3,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmBl4 != null" >
+        kzdm_bl4 = #{kzdmBl4,jdbcType=VARCHAR},
+      </if>
+      <if test="kzdmBl5 != null" >
+        kzdm_bl5 = #{kzdmBl5,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.eliteams.quick4j.web.model.KzdmJbxx" >
+    update tbl_kzdm_jbxx
+    set kzdm_bh = #{kzdmBh,jdbcType=VARCHAR},
+      kzdm_dybh = #{kzdmDybh,jdbcType=VARCHAR},
+      kzdm_dymc = #{kzdmDymc,jdbcType=VARCHAR},
+      kzdm_lymc = #{kzdmLymc,jdbcType=VARCHAR},
+      kzdm_szhl = #{kzdmSzhl,jdbcType=VARCHAR},
+      kzdm_hljb = #{kzdmHljb,jdbcType=VARCHAR},
+      kzdm_hrhl = #{kzdmHrhl,jdbcType=VARCHAR},
+      kzdm_mc = #{kzdmMc,jdbcType=VARCHAR},
+      kzdm_sx = #{kzdmSx,jdbcType=VARCHAR},
+      kzdm_sheng = #{kzdmSheng,jdbcType=VARCHAR},
+      kzdm_shi = #{kzdmShi,jdbcType=VARCHAR},
+      kzdm_qx = #{kzdmQx,jdbcType=VARCHAR},
+      kzdm_czmc = #{kzdmCzmc,jdbcType=VARCHAR},
+      kzdm_jb = #{kzdmJb,jdbcType=VARCHAR},
+      kzdm_lx = #{kzdmLx,jdbcType=VARCHAR},
+      kzdm_sfcq = #{kzdmSfcq,jdbcType=VARCHAR},
+      kzdm_szzk = #{kzdmSzzk,jdbcType=VARCHAR},
+      kzdm_jcpc = #{kzdmJcpc,jdbcType=VARCHAR},
+      kzdm_jcxm = #{kzdmJcxm,jdbcType=VARCHAR},
+      kzdm_jdd = #{kzdmJdd,jdbcType=INTEGER},
+      kzdm_jdf = #{kzdmJdf,jdbcType=INTEGER},
+      kzdm_jds = #{kzdmJds,jdbcType=INTEGER},
+      kzdm_wdd = #{kzdmWdd,jdbcType=INTEGER},
+      kzdm_wdf = #{kzdmWdf,jdbcType=INTEGER},
+      kzdm_wds = #{kzdmWds,jdbcType=INTEGER},
+      kzdm_szmb = #{kzdmSzmb,jdbcType=VARCHAR},
+      kzdm_jd = #{kzdmJd,jdbcType=DECIMAL},
+      kzdm_wd = #{kzdmWd,jdbcType=DECIMAL},
+      kzdm_shhl = #{kzdmShhl,jdbcType=VARCHAR},
+      kzdm_time = #{kzdmTime,jdbcType=VARCHAR},
+      kzdm_bl1 = #{kzdmBl1,jdbcType=VARCHAR},
+      kzdm_bl2 = #{kzdmBl2,jdbcType=VARCHAR},
+      kzdm_bl3 = #{kzdmBl3,jdbcType=VARCHAR},
+      kzdm_bl4 = #{kzdmBl4,jdbcType=VARCHAR},
+      kzdm_bl5 = #{kzdmBl5,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+
+
+
+
+
+  <!-- 分页SQL语句 -->
+  <select id="selectKzdmByPage" resultMap="BaseResultMap">
+    select
+    *
+    from tbl_kzdm_jbxx
+
+    <where>
+      <if test="map.kzdm_shi != null">
+        kzdm_shi LIKE CONCAT('%', #{map.kzdm_shi}, '%')
+      </if>
+      <if test="map.kzdm_qx != null">
+        and  kzdm_qx LIKE CONCAT('%', #{map.kzdm_qx}, '%')
+      </if>
+    </where>
+    limit #{startPos},#{pageSize}
+  </select>
+  <!-- 取得记录的总数 -->
+  <select id="getKzdmCount" resultType="long">
+    select
+    count(*)
+    from tbl_kzdm_jbxx
+
+    <where>
+      <if test="map.kzdm_shi != null">
+        kzdm_shi LIKE CONCAT('%', #{map.kzdm_shi}, '%')
+      </if>
+      <if test="map.kzdm_qx != null">
+        and  kzdm_qx LIKE CONCAT('%', #{map.kzdm_qx}, '%')
+      </if>
+    </where>
+  </select>
+
+
+  <select id="selectSearchByPage" resultMap="BaseResultMap" parameterType="java.util.Map">
+    select
+    *
+    from tbl_kzdm_jbxx
+    <where>
+      <if test="map.id != null">
+        id = #{map.id}
+      </if>
+      <if test="map.kzdm_bh != null">
+        and kzdm_bh LIKE CONCAT('%', #{map.kzdm_bh}, '%')
+      </if>
+      <if test="map.kzdm_dybh != null">
+        and kzdm_dybh LIKE CONCAT('%', #{map.kzdm_dybh}, '%')
+      </if>
+      <if test="map.kzdy_jb != null">
+        and kzdm_dymc LIKE CONCAT('%', #{map.kzdm_dymc}, '%')
+      </if>
+      <if test="map.kzdm_lymc != null">
+        and kzdm_lymc LIKE CONCAT('%', #{map.kzdm_lymc}, '%')
+      </if>
+      <if test="map.kzdm_szhl != null">
+        and kzdm_szhl LIKE CONCAT('%', #{map.kzdm_szhl}, '%')
+      </if>
+      <if test="map.kzdm_hljb != null">
+        and kzdm_hljb LIKE CONCAT('%', #{map.kzdm_hljb}, '%')
+      </if>
+      <if test="map.kzdm_hrhl != null">
+        and  kzdm_hrhl LIKE CONCAT('%', #{map.kzdm_hrhl}, '%')
+      </if>
+      <if test="map.kzdm_mc != null">
+        and  kzdm_mc LIKE CONCAT('%', #{map.kzdm_mc}, '%')
+      </if>
+      <if test="map.kzdm_sx != null">
+        and  kzdm_sx LIKE CONCAT('%', #{map.kzdm_sx}, '%')
+      </if>
+      <if test="map.kzdm_sheng != null">
+        and  kzdm_sheng LIKE CONCAT('%', #{map.kzdm_sheng}, '%')
+      </if>
+      <if test="map.kzdm_shi != null">
+        and kzdm_shi LIKE CONCAT('%', #{map.kzdm_shi}, '%')
+      </if>
+      <if test="map.kzdm_qx != null">
+        and kzdm_qx LIKE CONCAT('%', #{map.kzdm_qx}, '%')
+      </if>
+      <if test="map.kzdm_czmc != null">
+        and kzdm_czmc LIKE CONCAT('%', #{map.kzdm_czmc}, '%')
+      </if>
+      <if test="map.kzdm_jb != null">
+        and  kzdm_jb LIKE CONCAT('%', #{map.kzdm_jb}, '%')
+      </if>
+      <if test="map.kzdm_lx != null">
+        and  kzdm_lx LIKE CONCAT('%', #{map.kzdm_lx}, '%')
+      </if>
+      <if test="map.kzdm_sfcq != null">
+        and  kzdm_sfcq LIKE CONCAT('%', #{map.kzdm_sfcq}, '%')
+      </if>
+      <if test="map.kzdm_szzk != null">
+        and kzdm_szzk LIKE CONCAT('%', #{map.kzdm_szzk}, '%')
+      </if>
+      <if test="map.kzdm_jcpc != null">
+        and kzdm_jcpc LIKE CONCAT('%', #{map.kzdm_jcpc}, '%')
+      </if>
+      <if test="map.kzdm_jcxm != null">
+        and kzdm_jcxm LIKE CONCAT('%', #{map.kzdm_jcxm}, '%')
+      </if>
+      <if test="map.kzdm_jdd != null">
+        and kzdm_jdd LIKE CONCAT('%', #{map.kzdm_jdd}, '%')
+      </if>
+      <if test="map.kzdm_jdf != null">
+        and kzdm_jdf LIKE CONCAT('%', #{map.kzdm_jdf}, '%')
+      </if>
+      <if test="map.kzdm_jds != null">
+        and kzdm_jds LIKE CONCAT('%', #{map.kzdm_jds}, '%')
+      </if>
+      <if test="map.kzdm_wdd != null">
+        and kzdm_wdd LIKE CONCAT('%', #{map.kzdm_wdd}, '%')
+      </if>
+      <if test="map.kzdm_wdf != null">
+        and kzdm_wdf LIKE CONCAT('%', #{map.kzdm_wdf}, '%')
+      </if>
+      <if test="map.kzdm_wds != null">
+        and kzdm_wds LIKE CONCAT('%', #{map.kzdm_wds}, '%')
+      </if>
+      <if test="map.kzdm_szmb != null">
+        and kzdm_szmb LIKE CONCAT('%', #{map.kzdm_szmb}, '%')
+      </if>
+      <if test="map.kzdm_jd != null">
+        and kzdm_jd LIKE CONCAT('%', #{map.kzdm_jd}, '%')
+      </if>
+      <if test="map.kzdm_wd != null">
+        and kzdm_wd LIKE CONCAT('%', #{map.kzdm_wd}, '%')
+      </if>
+      <if test="map.kzdm_shhl != null">
+        and kzdm_shhl LIKE CONCAT('%', #{map.kzdm_shhl}, '%')
+      </if>
+      <if test="map.kzdm_time != null">
+        and kzdm_time LIKE CONCAT('%', #{map.kzdm_time}, '%')
+      </if>
+    </where>
+  </select>
+
+  <select id="selectAllForLeft" resultMap="BaseResultMap">
+    select * from tbl_kzdm_jbxx
+    <where>
+      <if test="map.kzdm_shi != null">
+        kzdm_shi LIKE CONCAT('%', #{map.kzdm_shi}, '%')
+      </if>
+      <if test="map.kzdm_qx != null">
+        and kzdm_qx LIKE CONCAT('%', #{map.kzdm_qx}, '%')
+      </if>
+    </where>
+  </select>
+
+
+
+  <select id="selectForMap" resultMap="BaseResultMap">
+    select
+    *
+    from
+    tbl_kzdm_jbxx
+    <where>
+      <if test="map.id != null">
+        id = #{map.id}
+      </if>
+      <if test="map.kzdm_bh != null">
+        and kzdm_bh LIKE CONCAT('%', #{map.kzdm_bh}, '%')
+      </if>
+      <if test="map.kzdm_dybh != null">
+        and kzdm_dybh LIKE CONCAT('%', #{map.kzdm_dybh}, '%')
+      </if>
+      <if test="map.kzdy_jb != null">
+        and kzdm_dymc LIKE CONCAT('%', #{map.kzdm_dymc}, '%')
+      </if>
+      <if test="map.kzdm_lymc != null">
+        and kzdm_lymc LIKE CONCAT('%', #{map.kzdm_lymc}, '%')
+      </if>
+      <if test="map.kzdm_szhl != null">
+        and kzdm_szhl LIKE CONCAT('%', #{map.kzdm_szhl}, '%')
+      </if>
+      <if test="map.kzdm_hljb != null">
+        and kzdm_hljb LIKE CONCAT('%', #{map.kzdm_hljb}, '%')
+      </if>
+      <if test="map.kzdm_hrhl != null">
+        and  kzdm_hrhl LIKE CONCAT('%', #{map.kzdm_hrhl}, '%')
+      </if>
+      <if test="map.kzdm_mc != null">
+        and  kzdm_mc LIKE CONCAT('%', #{map.kzdm_mc}, '%')
+      </if>
+      <if test="map.kzdm_sx != null">
+        and  kzdm_sx LIKE CONCAT('%', #{map.kzdm_sx}, '%')
+      </if>
+      <if test="map.kzdm_sheng != null">
+        and  kzdm_sheng LIKE CONCAT('%', #{map.kzdm_sheng}, '%')
+      </if>
+      <if test="map.kzdm_shi != null">
+        and kzdm_shi LIKE CONCAT('%', #{map.kzdm_shi}, '%')
+      </if>
+      <if test="map.kzdm_qx != null">
+        and kzdm_qx LIKE CONCAT('%', #{map.kzdm_qx}, '%')
+      </if>
+      <if test="map.kzdm_czmc != null">
+        and kzdm_czmc LIKE CONCAT('%', #{map.kzdm_czmc}, '%')
+      </if>
+      <if test="map.kzdm_jb != null">
+        and  kzdm_jb LIKE CONCAT('%', #{map.kzdm_jb}, '%')
+      </if>
+      <if test="map.kzdm_lx != null">
+        and  kzdm_lx LIKE CONCAT('%', #{map.kzdm_lx}, '%')
+      </if>
+      <if test="map.kzdm_sfcq != null">
+        and  kzdm_sfcq LIKE CONCAT('%', #{map.kzdm_sfcq}, '%')
+      </if>
+      <if test="map.kzdm_szzk != null">
+        and kzdm_szzk LIKE CONCAT('%', #{map.kzdm_szzk}, '%')
+      </if>
+      <if test="map.kzdm_jcpc != null">
+        and kzdm_jcpc LIKE CONCAT('%', #{map.kzdm_jcpc}, '%')
+      </if>
+      <if test="map.kzdm_jcxm != null">
+        and kzdm_jcxm LIKE CONCAT('%', #{map.kzdm_jcxm}, '%')
+      </if>
+      <if test="map.kzdm_jdd != null">
+        and kzdm_jdd LIKE CONCAT('%', #{map.kzdm_jdd}, '%')
+      </if>
+      <if test="map.kzdm_jdf != null">
+        and kzdm_jdf LIKE CONCAT('%', #{map.kzdm_jdf}, '%')
+      </if>
+      <if test="map.kzdm_jds != null">
+        and kzdm_jds LIKE CONCAT('%', #{map.kzdm_jds}, '%')
+      </if>
+      <if test="map.kzdm_wdd != null">
+        and kzdm_wdd LIKE CONCAT('%', #{map.kzdm_wdd}, '%')
+      </if>
+      <if test="map.kzdm_wdf != null">
+        and kzdm_wdf LIKE CONCAT('%', #{map.kzdm_wdf}, '%')
+      </if>
+      <if test="map.kzdm_wds != null">
+        and kzdm_wds LIKE CONCAT('%', #{map.kzdm_wds}, '%')
+      </if>
+      <if test="map.kzdm_szmb != null">
+        and kzdm_szmb LIKE CONCAT('%', #{map.kzdm_szmb}, '%')
+      </if>
+      <if test="map.kzdm_jd != null">
+        and kzdm_jd LIKE CONCAT('%', #{map.kzdm_jd}, '%')
+      </if>
+      <if test="map.kzdm_wd != null">
+        and kzdm_wd LIKE CONCAT('%', #{map.kzdm_wd}, '%')
+      </if>
+      <if test="map.kzdm_shhl != null">
+        and kzdm_shhl LIKE CONCAT('%', #{map.kzdm_shhl}, '%')
+      </if>
+      <if test="map.kzdm_time != null">
+        and kzdm_time LIKE CONCAT('%', #{map.kzdm_time}, '%')
+      </if>
+    </where>
+  </select>
+
+  <select id="getSearchCount" resultType="java.lang.Integer" parameterType="java.util.Map">
+    select
+    count(*)
+    from tbl_kzdm_jbxx
+    <where>
+      <if test="map.id != null">
+        id = #{map.id}
+      </if>
+      <if test="map.kzdm_bh != null">
+        and kzdm_bh LIKE CONCAT('%', #{map.kzdm_bh}, '%')
+      </if>
+      <if test="map.kzdm_dybh != null">
+        and kzdm_dybh LIKE CONCAT('%', #{map.kzdm_dybh}, '%')
+      </if>
+      <if test="map.kzdy_jb != null">
+        and kzdm_dymc LIKE CONCAT('%', #{map.kzdm_dymc}, '%')
+      </if>
+      <if test="map.kzdm_lymc != null">
+        and kzdm_lymc LIKE CONCAT('%', #{map.kzdm_lymc}, '%')
+      </if>
+      <if test="map.kzdm_szhl != null">
+        and kzdm_szhl LIKE CONCAT('%', #{map.kzdm_szhl}, '%')
+      </if>
+      <if test="map.kzdm_hljb != null">
+        and kzdm_hljb LIKE CONCAT('%', #{map.kzdm_hljb}, '%')
+      </if>
+      <if test="map.kzdm_hrhl != null">
+        and  kzdm_hrhl LIKE CONCAT('%', #{map.kzdm_hrhl}, '%')
+      </if>
+      <if test="map.kzdm_mc != null">
+        and  kzdm_mc LIKE CONCAT('%', #{map.kzdm_mc}, '%')
+      </if>
+      <if test="map.kzdm_sx != null">
+        and  kzdm_sx LIKE CONCAT('%', #{map.kzdm_sx}, '%')
+      </if>
+      <if test="map.kzdm_sheng != null">
+        and  kzdm_sheng LIKE CONCAT('%', #{map.kzdm_sheng}, '%')
+      </if>
+      <if test="map.kzdm_shi != null">
+        and kzdm_shi LIKE CONCAT('%', #{map.kzdm_shi}, '%')
+      </if>
+      <if test="map.kzdm_qx != null">
+        and kzdm_qx LIKE CONCAT('%', #{map.kzdm_qx}, '%')
+      </if>
+      <if test="map.kzdm_czmc != null">
+        and kzdm_czmc LIKE CONCAT('%', #{map.kzdm_czmc}, '%')
+      </if>
+      <if test="map.kzdm_jb != null">
+        and  kzdm_jb LIKE CONCAT('%', #{map.kzdm_jb}, '%')
+      </if>
+      <if test="map.kzdm_lx != null">
+        and  kzdm_lx LIKE CONCAT('%', #{map.kzdm_lx}, '%')
+      </if>
+      <if test="map.kzdm_sfcq != null">
+        and  kzdm_sfcq LIKE CONCAT('%', #{map.kzdm_sfcq}, '%')
+      </if>
+      <if test="map.kzdm_szzk != null">
+        and kzdm_szzk LIKE CONCAT('%', #{map.kzdm_szzk}, '%')
+      </if>
+      <if test="map.kzdm_jcpc != null">
+        and kzdm_jcpc LIKE CONCAT('%', #{map.kzdm_jcpc}, '%')
+      </if>
+      <if test="map.kzdm_jcxm != null">
+        and kzdm_jcxm LIKE CONCAT('%', #{map.kzdm_jcxm}, '%')
+      </if>
+      <if test="map.kzdm_jdd != null">
+        and kzdm_jdd LIKE CONCAT('%', #{map.kzdm_jdd}, '%')
+      </if>
+      <if test="map.kzdm_jdf != null">
+        and kzdm_jdf LIKE CONCAT('%', #{map.kzdm_jdf}, '%')
+      </if>
+      <if test="map.kzdm_jds != null">
+        and kzdm_jds LIKE CONCAT('%', #{map.kzdm_jds}, '%')
+      </if>
+      <if test="map.kzdm_wdd != null">
+        and kzdm_wdd LIKE CONCAT('%', #{map.kzdm_wdd}, '%')
+      </if>
+      <if test="map.kzdm_wdf != null">
+        and kzdm_wdf LIKE CONCAT('%', #{map.kzdm_wdf}, '%')
+      </if>
+      <if test="map.kzdm_wds != null">
+        and kzdm_wds LIKE CONCAT('%', #{map.kzdm_wds}, '%')
+      </if>
+      <if test="map.kzdm_szmb != null">
+        and kzdm_szmb LIKE CONCAT('%', #{map.kzdm_szmb}, '%')
+      </if>
+      <if test="map.kzdm_jd != null">
+        and kzdm_jd LIKE CONCAT('%', #{map.kzdm_jd}, '%')
+      </if>
+      <if test="map.kzdm_wd != null">
+        and kzdm_wd LIKE CONCAT('%', #{map.kzdm_wd}, '%')
+      </if>
+      <if test="map.kzdm_shhl != null">
+        and kzdm_shhl LIKE CONCAT('%', #{map.kzdm_shhl}, '%')
+      </if>
+      <if test="map.kzdm_time != null">
+        and kzdm_time LIKE CONCAT('%', #{map.kzdm_time}, '%')
+      </if>
+    </where>
+  </select>
+
+  <select id="searchByPage" resultMap="BaseResultMap" parameterType="java.util.Map">
+    select
+    *
+    from tbl_kzdm_jbxx
+    <where>
+      <if test="map.id != null">
+        id = #{map.id}
+      </if>
+      <if test="map.kzdm_bh != null">
+        and kzdm_bh LIKE CONCAT('%', #{map.kzdm_bh}, '%')
+      </if>
+      <if test="map.kzdm_dybh != null">
+        and kzdm_dybh LIKE CONCAT('%', #{map.kzdm_dybh}, '%')
+      </if>
+      <if test="map.kzdy_jb != null">
+        and kzdm_dymc LIKE CONCAT('%', #{map.kzdm_dymc}, '%')
+      </if>
+      <if test="map.kzdm_lymc != null">
+        and kzdm_lymc LIKE CONCAT('%', #{map.kzdm_lymc}, '%')
+      </if>
+      <if test="map.kzdm_szhl != null">
+        and kzdm_szhl LIKE CONCAT('%', #{map.kzdm_szhl}, '%')
+      </if>
+      <if test="map.kzdm_hljb != null">
+        and kzdm_hljb LIKE CONCAT('%', #{map.kzdm_hljb}, '%')
+      </if>
+      <if test="map.kzdm_hrhl != null">
+        and  kzdm_hrhl LIKE CONCAT('%', #{map.kzdm_hrhl}, '%')
+      </if>
+      <if test="map.kzdm_mc != null">
+        and  kzdm_mc LIKE CONCAT('%', #{map.kzdm_mc}, '%')
+      </if>
+      <if test="map.kzdm_sx != null">
+        and  kzdm_sx LIKE CONCAT('%', #{map.kzdm_sx}, '%')
+      </if>
+      <if test="map.kzdm_sheng != null">
+        and  kzdm_sheng LIKE CONCAT('%', #{map.kzdm_sheng}, '%')
+      </if>
+      <if test="map.kzdm_shi != null">
+        and kzdm_shi LIKE CONCAT('%', #{map.kzdm_shi}, '%')
+      </if>
+      <if test="map.kzdm_qx != null">
+        and kzdm_qx LIKE CONCAT('%', #{map.kzdm_qx}, '%')
+      </if>
+      <if test="map.kzdm_czmc != null">
+        and kzdm_czmc LIKE CONCAT('%', #{map.kzdm_czmc}, '%')
+      </if>
+      <if test="map.kzdm_jb != null">
+        and  kzdm_jb LIKE CONCAT('%', #{map.kzdm_jb}, '%')
+      </if>
+      <if test="map.kzdm_lx != null">
+        and  kzdm_lx LIKE CONCAT('%', #{map.kzdm_lx}, '%')
+      </if>
+      <if test="map.kzdm_sfcq != null">
+        and  kzdm_sfcq LIKE CONCAT('%', #{map.kzdm_sfcq}, '%')
+      </if>
+      <if test="map.kzdm_szzk != null">
+        and kzdm_szzk LIKE CONCAT('%', #{map.kzdm_szzk}, '%')
+      </if>
+      <if test="map.kzdm_jcpc != null">
+        and kzdm_jcpc LIKE CONCAT('%', #{map.kzdm_jcpc}, '%')
+      </if>
+      <if test="map.kzdm_jcxm != null">
+        and kzdm_jcxm LIKE CONCAT('%', #{map.kzdm_jcxm}, '%')
+      </if>
+      <if test="map.kzdm_jdd != null">
+        and kzdm_jdd LIKE CONCAT('%', #{map.kzdm_jdd}, '%')
+      </if>
+      <if test="map.kzdm_jdf != null">
+        and kzdm_jdf LIKE CONCAT('%', #{map.kzdm_jdf}, '%')
+      </if>
+      <if test="map.kzdm_jds != null">
+        and kzdm_jds LIKE CONCAT('%', #{map.kzdm_jds}, '%')
+      </if>
+      <if test="map.kzdm_wdd != null">
+        and kzdm_wdd LIKE CONCAT('%', #{map.kzdm_wdd}, '%')
+      </if>
+      <if test="map.kzdm_wdf != null">
+        and kzdm_wdf LIKE CONCAT('%', #{map.kzdm_wdf}, '%')
+      </if>
+      <if test="map.kzdm_wds != null">
+        and kzdm_wds LIKE CONCAT('%', #{map.kzdm_wds}, '%')
+      </if>
+      <if test="map.kzdm_szmb != null">
+        and kzdm_szmb LIKE CONCAT('%', #{map.kzdm_szmb}, '%')
+      </if>
+      <if test="map.kzdm_jd != null">
+        and kzdm_jd LIKE CONCAT('%', #{map.kzdm_jd}, '%')
+      </if>
+      <if test="map.kzdm_wd != null">
+        and kzdm_wd LIKE CONCAT('%', #{map.kzdm_wd}, '%')
+      </if>
+      <if test="map.kzdm_shhl != null">
+        and kzdm_shhl LIKE CONCAT('%', #{map.kzdm_shhl}, '%')
+      </if>
+      <if test="map.kzdm_time != null">
+        and kzdm_time LIKE CONCAT('%', #{map.kzdm_time}, '%')
+      </if>
+    </where>
+    limit #{startPos},#{pageSize}
+  </select>
+
+
+
+</mapper>

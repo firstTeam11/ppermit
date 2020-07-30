@@ -164,7 +164,7 @@ public class ControlUnitController {
 
         try {
             Class.forName(driver);
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env", "root", "18342212808y");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env", "root", "root");
             pstmt = (PreparedStatement) conn.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
             int col = rs.getMetaData().getColumnCount();
@@ -210,17 +210,6 @@ public class ControlUnitController {
         map.put("water_resource", (String) request.getParameter("water_resource"));
         map.put("hr_river", (String) request.getParameter("hr_river"));
         map.put("username", (String) request.getSession().getAttribute("userName"));
-
-
-        map.put("include_sx", (String) request.getParameter("include_sx"));
-        map.put("include_gl", (String) request.getParameter("include_gl"));
-        map.put("include_1jzl", (String) request.getParameter("include_1jzl"));
-        map.put("include_2jzl", (String) request.getParameter("include_2jzl"));
-        map.put("include_3jzl", (String) request.getParameter("include_3jzl"));
-        map.put("include_4jzl", (String) request.getParameter("include_4jzl"));
-        map.put("kzdy_time", (String) request.getParameter("kzdy_time"));
-
-
         if (request.getParameter("id") != null) {
             map.put("id", (String) request.getParameter("id"));
         }
@@ -341,18 +330,7 @@ public class ControlUnitController {
 		map.put("loc_lat_d",(String) request.getParameter("loc_lat_d"));
 		map.put("loc_lat_m",(String) request.getParameter("loc_lat_m"));
 		map.put("loc_lat_s",(String) request.getParameter("loc_lat_s"));
-
-
-        map.put("section_bh",(String) request.getParameter("section_bh"));
-        map.put("section_dybh",(String) request.getParameter("section_dybh"));
-        map.put("section_dymc",(String) request.getParameter("section_dymc"));
-        map.put("loc_lon",(String) request.getParameter("loc_lon"));
-        map.put("loc_lat",(String) request.getParameter("loc_lat"));
-        map.put("section_shhl",(String) request.getParameter("section_shhl"));
-
-
-
-
+		
 		map.put("username",(String) request.getSession().getAttribute("userName"));
 		//System.out.println("优控："+map.get("youkong"));
 		if(request.getParameter("id")!=null){
@@ -432,19 +410,8 @@ public class ControlUnitController {
 		map.put("loc_lat_d",(String) request.getParameter("loc_lat_d"));
 		map.put("loc_lat_m",(String) request.getParameter("loc_lat_m"));
 		map.put("loc_lat_s",(String) request.getParameter("loc_lat_s"));
-
-
-
-        map.put("section_bh",(String) request.getParameter("section_bh"));
-        map.put("section_dybh",(String) request.getParameter("section_dybh"));
-        map.put("section_dymc",(String) request.getParameter("section_dymc"));
-        map.put("loc_lon",(String) request.getParameter("loc_lon"));
-        map.put("loc_lat",(String) request.getParameter("loc_lat"));
-        map.put("section_shhl",(String) request.getParameter("section_shhl"));
-
-
-
-        map.put("username",(String) request.getSession().getAttribute("userName"));
+		
+		map.put("username",(String) request.getSession().getAttribute("userName"));
 		//System.out.println("优控："+map.get("youkong"));
 		if(request.getParameter("id")!=null){
 			map.put("id",(String) request.getParameter("id"));
@@ -540,7 +507,6 @@ public class ControlUnitController {
     public String selectForInfo(HttpServletRequest request, Model model) {
         ControlUnit controlUnit = controlUnitService.selectForInfo(request.getParameter("name"));
         Map map = new HashMap();
-        //Map<String,String> map = new HashMap<String, String>();
         map.put("id", controlUnit.getId());
         map.put("unitName", controlUnit.getUnitName());
         map.put("includeSection", controlUnit.getIncludeSection());
@@ -553,16 +519,6 @@ public class ControlUnitController {
         map.put("involveRiver", controlUnit.getInvolveRiver());
         map.put("waterResource", controlUnit.getWaterResource());
         map.put("hrRiver", controlUnit.getHrRiver());
-
-
-        map.put("include_sx", controlUnit.getIncludeSx());
-        map.put("include_gl", controlUnit.getIncludeGl());
-        map.put("include_1jzl", controlUnit.getInclude1jzl());
-        map.put("include_2jzl", controlUnit.getInclude2jzl());
-        map.put("include_3jzl", controlUnit.getInclude3jzl());
-        map.put("include_4jzl", controlUnit.getInclude4jzl());
-        map.put("kzdy_time", controlUnit.getKzdyTime());
-
         Gson gson = new Gson();
         String json = gson.toJson(map);
         return json;
@@ -700,8 +656,7 @@ public class ControlUnitController {
      */
     @RequestMapping("/yangZhiTotal")
     public String kzdyYangZhiTotal(HttpServletRequest request, Model model) {
-        Map<String,String> map = new HashMap<String, String>();
-    	//Map map = new HashMap();
+    	Map map = new HashMap();
 		map.put("youkong",(String) request.getParameter("youkong"));
 		map.put("watershed",(String) request.getParameter("watershed"));
 		map.put("river_name",(String) request.getParameter("river_name"));
@@ -725,19 +680,8 @@ public class ControlUnitController {
 		map.put("loc_lat_d",(String) request.getParameter("loc_lat_d"));
 		map.put("loc_lat_m",(String) request.getParameter("loc_lat_m"));
 		map.put("loc_lat_s",(String) request.getParameter("loc_lat_s"));
-
-
-
-        map.put("section_bh",(String) request.getParameter("section_bh"));
-        map.put("section_dybh",(String) request.getParameter("section_dybh"));
-        map.put("section_dymc",(String) request.getParameter("section_dymc"));
-        map.put("loc_lon",(String) request.getParameter("loc_lon"));
-        map.put("loc_lat",(String) request.getParameter("loc_lat"));
-        map.put("section_shhl",(String) request.getParameter("section_shhl"));
-
-
-
-        map.put("username",(String) request.getSession().getAttribute("userName"));
+		
+		map.put("username",(String) request.getSession().getAttribute("userName"));
 		//System.out.println("优控："+map.get("youkong"));
 		if(request.getParameter("id")!=null){
 			map.put("id",(String) request.getParameter("id"));
@@ -786,8 +730,7 @@ public class ControlUnitController {
      */
     @RequestMapping("/selectYangZhiTotal")
     public String selectYangZhiTotal(HttpServletRequest request, String name, Model model) {
-        Map<String,String> map = new HashMap<String, String>();
-       // Map map = new HashMap();
+    	Map map = new HashMap();
 		map.put("youkong",(String) request.getParameter("youkong"));
 		map.put("watershed",(String) request.getParameter("watershed"));
 		map.put("river_name",(String) request.getParameter("river_name"));
@@ -811,18 +754,8 @@ public class ControlUnitController {
 		map.put("loc_lat_d",(String) request.getParameter("loc_lat_d"));
 		map.put("loc_lat_m",(String) request.getParameter("loc_lat_m"));
 		map.put("loc_lat_s",(String) request.getParameter("loc_lat_s"));
-
-
-
-        map.put("section_bh",(String) request.getParameter("section_bh"));
-        map.put("section_dybh",(String) request.getParameter("section_dybh"));
-        map.put("section_dymc",(String) request.getParameter("section_dymc"));
-        map.put("loc_lon",(String) request.getParameter("loc_lon"));
-        map.put("loc_lat",(String) request.getParameter("loc_lat"));
-        map.put("section_shhl",(String) request.getParameter("section_shhl"));
-
-
-        map.put("username",(String) request.getSession().getAttribute("userName"));
+		
+		map.put("username",(String) request.getSession().getAttribute("userName"));
 		//System.out.println("优控："+map.get("youkong"));
 		if(request.getParameter("id")!=null){
 			map.put("id",(String) request.getParameter("id"));
@@ -871,8 +804,7 @@ public class ControlUnitController {
      */
     @RequestMapping("/factoryTotal")
     public String kzdyFactoryTotal(HttpServletRequest request, Model model) {
-    	//Map map = new HashMap();
-        Map<String,String> map = new HashMap<String, String>();
+    	Map map = new HashMap();
 		map.put("youkong",(String) request.getParameter("youkong"));
 		map.put("watershed",(String) request.getParameter("watershed"));
 		map.put("river_name",(String) request.getParameter("river_name"));
@@ -896,19 +828,8 @@ public class ControlUnitController {
 		map.put("loc_lat_d",(String) request.getParameter("loc_lat_d"));
 		map.put("loc_lat_m",(String) request.getParameter("loc_lat_m"));
 		map.put("loc_lat_s",(String) request.getParameter("loc_lat_s"));
-
-
-
-
-        map.put("section_bh",(String) request.getParameter("section_bh"));
-        map.put("section_dybh",(String) request.getParameter("section_dybh"));
-        map.put("section_dymc",(String) request.getParameter("section_dymc"));
-        map.put("loc_lon",(String) request.getParameter("loc_lon"));
-        map.put("loc_lat",(String) request.getParameter("loc_lat"));
-        map.put("section_shhl",(String) request.getParameter("section_shhl"));
-
-
-        map.put("username",(String) request.getSession().getAttribute("userName"));
+		
+		map.put("username",(String) request.getSession().getAttribute("userName"));
 		//System.out.println("优控："+map.get("youkong"));
 		if(request.getParameter("id")!=null){
 			map.put("id",(String) request.getParameter("id"));
@@ -959,8 +880,7 @@ public class ControlUnitController {
      */
     @RequestMapping("/selectFactoryTotal")
     public String selectFactoryTotal(HttpServletRequest request, String name, Model model) {
-    	//Map map = new HashMap();
-        Map<String,String> map = new HashMap<String, String>();
+    	Map map = new HashMap();
 		map.put("youkong",(String) request.getParameter("youkong"));
 		map.put("watershed",(String) request.getParameter("watershed"));
 		map.put("river_name",(String) request.getParameter("river_name"));
@@ -984,18 +904,8 @@ public class ControlUnitController {
 		map.put("loc_lat_d",(String) request.getParameter("loc_lat_d"));
 		map.put("loc_lat_m",(String) request.getParameter("loc_lat_m"));
 		map.put("loc_lat_s",(String) request.getParameter("loc_lat_s"));
-
-
-
-        map.put("section_bh",(String) request.getParameter("section_bh"));
-        map.put("section_dybh",(String) request.getParameter("section_dybh"));
-        map.put("section_dymc",(String) request.getParameter("section_dymc"));
-        map.put("loc_lon",(String) request.getParameter("loc_lon"));
-        map.put("loc_lat",(String) request.getParameter("loc_lat"));
-        map.put("section_shhl",(String) request.getParameter("section_shhl"));
-
-
-        map.put("username",(String) request.getSession().getAttribute("userName"));
+		
+		map.put("username",(String) request.getSession().getAttribute("userName"));
 		//System.out.println("优控："+map.get("youkong"));
 		if(request.getParameter("id")!=null){
 			map.put("id",(String) request.getParameter("id"));
@@ -1043,8 +953,7 @@ public class ControlUnitController {
     @RequestMapping("/searchYoukong") 
     @ResponseBody
     public ModelAndView searchYoukong(HttpServletRequest request, ModelAndView m){  
-		//Map map = new HashMap();
-        Map<String,String> map = new HashMap<String, String>();
+		Map map = new HashMap();
 		map.put("youkong",(String) request.getParameter("youkong"));
 		map.put("watershed",(String) request.getParameter("watershed"));
 		map.put("river_name",(String) request.getParameter("river_name"));
@@ -1068,18 +977,8 @@ public class ControlUnitController {
 		map.put("loc_lat_d",(String) request.getParameter("loc_lat_d"));
 		map.put("loc_lat_m",(String) request.getParameter("loc_lat_m"));
 		map.put("loc_lat_s",(String) request.getParameter("loc_lat_s"));
-
-
-
-        map.put("section_bh",(String) request.getParameter("section_bh"));
-        map.put("section_dybh",(String) request.getParameter("section_dybh"));
-        map.put("section_dymc",(String) request.getParameter("section_dymc"));
-        map.put("loc_lon",(String) request.getParameter("loc_lon"));
-        map.put("loc_lat",(String) request.getParameter("loc_lat"));
-        map.put("section_shhl",(String) request.getParameter("section_shhl"));
-
-
-        map.put("username",(String) request.getSession().getAttribute("userName"));
+		
+		map.put("username",(String) request.getSession().getAttribute("userName"));
 		
 		if(request.getParameter("id")!=null){
 			map.put("id",(String) request.getParameter("id"));
@@ -1103,7 +1002,7 @@ public class ControlUnitController {
      */
     @RequestMapping("/sum")
     public String kzdySum(HttpServletRequest request, Model model) {
-        Map<String,String> map = new HashMap<String, String>();
+    	Map map = new HashMap();
 		map.put("youkong",(String) request.getParameter("youkong"));
 		map.put("unit_name",null);
 		map.put("include_section",null);
@@ -1115,16 +1014,7 @@ public class ControlUnitController {
 		map.put("village_amount",null);
 		map.put("involve_river",null);	
 		map.put("unit_type",null);	
-		map.put("water_resource",null);
-
-        map.put("include_sx",null);
-        map.put("linclude_gl",null);
-        map.put("include_1jzl",null);
-        map.put("include_2jzl",null);
-        map.put("include_3jzl",null);
-        map.put("include_4jzl",null);
-        map.put("kzdy_time",null);
-
+		map.put("water_resource",null);	
 		//map.put("id",null);
 		map.put("username",(String) request.getSession().getAttribute("userName"));
 		if(request.getParameter("id")!=null){
@@ -1248,8 +1138,7 @@ public class ControlUnitController {
     @RequestMapping("/exportExcel")
     public void exportExcel(HttpServletRequest request, HttpServletResponse response) throws IOException{
     	
-    	//Map map = new HashMap();
-        Map<String,String> map = new HashMap<String, String>();
+    	Map map = new HashMap();
     	map.put("watershed",(String) request.getParameter("watershed"));
 		map.put("river_name",(String) request.getParameter("river_name"));
 		map.put("river_level",(String) request.getParameter("river_level"));
@@ -1272,18 +1161,7 @@ public class ControlUnitController {
 		map.put("loc_lat_d",(String) request.getParameter("loc_lat_d"));
 		map.put("loc_lat_m",(String) request.getParameter("loc_lat_m"));
 		map.put("loc_lat_s",(String) request.getParameter("loc_lat_s"));
-
-
-        map.put("section_bh",(String) request.getParameter("section_bh"));
-        map.put("section_dybh",(String) request.getParameter("section_dybh"));
-        map.put("section_dymc",(String) request.getParameter("section_dymc"));
-        map.put("loc_lon",(String) request.getParameter("loc_lon"));
-        map.put("loc_lat",(String) request.getParameter("loc_lat"));
-        map.put("section_shhl",(String) request.getParameter("section_shhl"));
-
-
-
-        map.put("username",(String) request.getSession().getAttribute("userName"));
+		map.put("username",(String) request.getSession().getAttribute("userName"));
 		if(request.getParameter("id")!=null){
 			map.put("id",(String) request.getParameter("id"));
 		}
@@ -1304,15 +1182,6 @@ public class ControlUnitController {
 	    title.add("控制单元类别");
 	    title.add("水资源区");
 	    title.add("汇入河流");
-
-        title.add("包含水系");
-        title.add("所含干流");
-        title.add("所含一级支流");
-        title.add("所含二级支流");
-        title.add("所含三级支流");
-        title.add("所含四级支流");
-        title.add("控制单元划分时间");
-
 	    
 	    response.setContentType("application/binary;charset=UTF-8");
 	    String fileName=new String(("temp").getBytes(),"UTF-8");
@@ -1548,7 +1417,7 @@ public class ControlUnitController {
         int col=0;
         try {
         	Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env?useUnicode=true&characterEncoding=utf8&useSSL=true", "root" , "18342212808y");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env?useUnicode=true&characterEncoding=utf8&useSSL=true", "root", "root");
 
             pstmt1 = (PreparedStatement) conn.prepareStatement(sql1);
             ResultSet rs1 = pstmt1.executeQuery();

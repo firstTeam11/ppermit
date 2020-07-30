@@ -8,77 +8,82 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import java.util.Map;
 
-	public interface QmpMapper extends GenericDao<Qmp, Long> {
-		long countByExample(QmpExample example);
+public interface QmpMapper extends GenericDao<Qmp, Long> {
+	long countByExample(QmpExample example);
 
-		int deleteByExample(QmpExample example);
+	int deleteByExample(QmpExample example);
 
-		int insert(Qmp record);
-		int insertSelective(Qmp record);
+	int insert(Qmp record);
 
-		List<Qmp> selectByExample(QmpExample example);
+	// Gen中继承的
+	int insertSelective(Qmp record);
 
-		int updateByExampleSelective(@Param("record") Qmp record, @Param("example") QmpExample example);
+	List<Qmp> selectByExample(QmpExample example);
 
-		int updateByExample(@Param("record") Qmp record, @Param("example") QmpExample example);
-		Qmp selectByPrimaryKey(Integer id);
+	int updateByExampleSelective(@Param("record") Qmp record, @Param("example") QmpExample example);
 
-		Qmp selectByName(String name);
+	int updateByExample(@Param("record") Qmp record, @Param("example") QmpExample example);
 
-		int updateByPrimaryKeySelective(Qmp record);
+	// 后添加的
+	// Gen中继承的
+	Qmp selectByPrimaryKey(Integer id);
 
-		int updateByPrimaryKey(Qmp record);
+	Qmp selectByName(String name);
 
-		int deleteByPrimaryKey(Integer id);
+	// Gen中继承的
+	int updateByPrimaryKeySelective(Qmp record);
 
-		List<Qmp> listAll();
+	int updateByPrimaryKey(Qmp record);
 
-		int deleteById(Integer id);
+	// Gen中继承的
+	int deleteByPrimaryKey(Integer id);
 
-		/**
-		 * 分页
-		 */
-		List<Qmp> selectByPage(@Param(value = "startPos") Integer startPos, @Param(value = "pageSize") Integer pageSize);
+	List<Qmp> listAll();
 
-		/**
-		 * 分页页数
-		 */
-		int getCount();
+	int deleteById(Integer id);
 
-		int getSearchCount(@Param(value = "map") Map map);
+	/**
+	 * 分页
+	 */
+	List<Qmp> selectByPage(@Param(value = "startPos") Integer startPos, @Param(value = "pageSize") Integer pageSize);
 
-		List<Qmp> searchByPage(@Param(value = "startPos") Integer startPos, @Param(value = "pageSize") Integer pageSize, @Param(value = "map") Map map);
-
-		List<Qmp> selectForMap(@Param(value = "map") Map map);
-
-		List<Qmp> selectQmpGoal();
-
-		List<String> getSections(@Param(value = "map") Map map);
-
-		//从qmp_bas_info中获取断面
-		List<String> getDMs(@Param(value = "map") Map map);
-
-		//qmp_test_data中获取各个指标值
-		List<Map<String, String>> getDmZbs(@Param(value = "map") Map map);
-
-		//获取断面属性：干流，库体，其它
-		String getDmProp(@Param(value = "section_name") String section_name);
-
-		//从qmp_bas_info中获取断面的基本信息
-		Map<String,String> getDmBasInfos(@Param(value = "section_name") String section_name);
-
-		//从qmp_bas_info中获取断面的部分基本信息
-		Map<String,String> getDmPartBasInfos(@Param(value = "section_name") String section_name);
-
-		List<Map<String,String>> getSzzbbz();
-
-		Map<String,Double> getTotalZbs(@Param(value = "param") Map<String, String> param);
-
-		List<Map<String, String>> getDmZbsPar(@Param(value = "month") String month, @Param(value = "year") String year, @Param(value = "section_name") String section_name);
-
-		int storeCountRes(List<Map<String, String>> result);
-
-		List<Map<String,String>> getStoredRes(Map<String, String> param);
-	}
-
+	/**
+	 * 分页页数
+	 */
+	int getCount();
 	
+	int getSearchCount(@Param(value = "map") Map map);
+	
+	List<Qmp> searchByPage(@Param(value = "startPos") Integer startPos, @Param(value = "pageSize") Integer pageSize, @Param(value = "map") Map map);
+	
+	List<Qmp> selectForMap(@Param(value = "map") Map map);
+	
+	List<Qmp> selectQmpGoal();
+
+    List<String> getSections(@Param(value = "map") Map map);
+
+    //从qmp_bas_info中获取断面
+    List<String> getDMs(@Param(value = "map") Map map);
+
+    //qmp_test_data中获取各个指标值
+	List<Map<String, String>> getDmZbs(@Param(value = "map") Map map);
+
+	//获取断面属性：干流，库体，其它
+	String getDmProp(@Param(value = "section_name") String section_name);
+
+	//从qmp_bas_info中获取断面的基本信息
+	Map<String,String> getDmBasInfos(@Param(value = "section_name") String section_name);
+
+	//从qmp_bas_info中获取断面的部分基本信息
+	Map<String,String> getDmPartBasInfos(@Param(value = "section_name") String section_name);
+
+	List<Map<String,String>> getSzzbbz();
+
+	Map<String,Double> getTotalZbs(@Param(value = "param") Map<String, String> param);
+
+	List<Map<String, String>> getDmZbsPar(@Param(value = "month") String month, @Param(value = "year") String year, @Param(value = "section_name") String section_name);
+
+    int storeCountRes(List<Map<String, String>> result);
+
+	List<Map<String,String>> getStoredRes(Map<String, String> param);
+}

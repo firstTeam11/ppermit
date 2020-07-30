@@ -1,14 +1,10 @@
-//补偿资金
 initMap();
-
 var map, layer, graphicLayer, graphic, featureLayer;
 var myrole = $("#myRole").val();
 
 var html = "";
 //html += "<button type='button' class='btnz btnz-info' id='xgCu' onclick='qmpToCu(\"${sectionName}\")'>相关单元</button>";
 //html += "<button type='button' class='btnz btnz-info' id='xgPo' onclick='qmpToPo(\"${sectionName}\")'>跳转至相关污染源</button>";
-
-//qmp_bas_info
 html += "<table border='0' class='tableBasic'>";
 html += "<tr><td>序号</td><td>${id}</td></tr>";
 html += "<tr><td>断面级别</td><td>${sectionLevel}</td></tr>";
@@ -290,7 +286,6 @@ function updateSzxzByAll(allData, szlb_data, start_m, end_m, region) {
             lon = allData[i].longitude;
             lat = allData[i].latitude;
             //console.log(allData);
-            //qmp_bas_info
             attr = {
                 "id": allData[i].id,
                 "sectionLevel": allData[i].sectionLevel,

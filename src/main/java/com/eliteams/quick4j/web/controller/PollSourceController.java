@@ -71,7 +71,7 @@ public class PollSourceController {
 				List<String> list=new ArrayList<String>();
 				try{  
 		            Class.forName("com.mysql.jdbc.Driver");  
-		            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env","root","18342212808y");
+		            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env","root","root");
 		            pstmt = (PreparedStatement)conn.prepareStatement(sql);
 		            ResultSet rs = pstmt.executeQuery();
 		            int col = rs.getMetaData().getColumnCount();
@@ -201,30 +201,6 @@ public class PollSourceController {
 		map.put("fszgpflQk",(String) request.getParameter("FSZGPFL_QK"));
 		map.put("fsljgpflQk",(String) request.getParameter("FSLJGPFL_QK"));
 
-
-		map.put("wtxhlD",(String) request.getParameter("WTXHL_D"));
-		map.put("rlyxhlD",(String) request.getParameter("RLYXHL_D"));
-		map.put("jtxhlD",(String) request.getParameter("JTXHL_D"));
-		map.put("trqxhlWLFM",(String) request.getParameter("TRQXHL_WLFM"));
-		map.put("qtryxhlDBZM",(String) request.getParameter("QTRYXHL_DBZM"));
-		map.put("ydlWQWS",(String) request.getParameter("YDL_WQWS"));
-		map.put("gyyslD",(String) request.getParameter("ZDPFL_D"));
-		map.put("zdpflD",(String) request.getParameter("ZPPFL_D"));
-		map.put("gyfqpflWLFM",(String) request.getParameter("GYFQPFL_WLFM"));
-		map.put("eyhspflD",(String) request.getParameter("EYHSPFL_D"));
-		map.put("dyhwpflD",(String) request.getParameter("DYHWPFL_D"));
-		map.put("ycpflD",(String) request.getParameter("YCPFL_D"));
-		map.put("vocspflD",(String) request.getParameter("VOCSPFL_D"));
-		map.put("fqspflQK",(String) request.getParameter("FQSPFL_QK"));
-		map.put("fqqpflQK",(String) request.getParameter("FQQPFL_QK"));
-		map.put("fqgpflQK",(String) request.getParameter("FQGPFL_QK"));
-		map.put("fqzgpflQK",(String) request.getParameter("FQZGPFL_QK"));
-		map.put("fqljgpflQK",(String) request.getParameter("FQLJGPFL_QK"));
-		map.put("ybgygtfwdqlD",(String) request.getParameter("YBGYGTFWDQL_D"));
-		map.put("wxfwdqlD",(String) request.getParameter("WXFWDQL_D"));
-
-
-
 		map.put("username",(String) request.getSession().getAttribute("userName"));
 		
 		//System.out.println("\n\n\n==========["+(String) request.getParameter("TJNF")+"]==========\n\n\n");
@@ -269,30 +245,6 @@ public class PollSourceController {
 		map.put("fsgpflQkDup1",(String) request.getParameter("FSGPFL_QK_DUP1"));	
 		map.put("fszgpflQk",(String) request.getParameter("FSZGPFL_QK"));
 		map.put("fsljgpflQk",(String) request.getParameter("FSLJGPFL_QK"));
-
-
-		map.put("wtxhlD",(String) request.getParameter("WTXHL_D"));
-		map.put("rlyxhlD",(String) request.getParameter("RLYXHL_D"));
-		map.put("jtxhlD",(String) request.getParameter("JTXHL_D"));
-		map.put("trqxhlWLFM",(String) request.getParameter("TRQXHL_WLFM"));
-		map.put("qtryxhlDBZM",(String) request.getParameter("QTRYXHL_DBZM"));
-		map.put("ydlWQWS",(String) request.getParameter("YDL_WQWS"));
-		map.put("gyyslD",(String) request.getParameter("ZDPFL_D"));
-		map.put("zdpflD",(String) request.getParameter("ZPPFL_D"));
-		map.put("gyfqpflWLFM",(String) request.getParameter("GYFQPFL_WLFM"));
-		map.put("eyhspflD",(String) request.getParameter("EYHSPFL_D"));
-		map.put("dyhwpflD",(String) request.getParameter("DYHWPFL_D"));
-		map.put("ycpflD",(String) request.getParameter("YCPFL_D"));
-		map.put("vocspflD",(String) request.getParameter("VOCSPFL_D"));
-		map.put("fqspflQK",(String) request.getParameter("FQSPFL_QK"));
-		map.put("fqqpflQK",(String) request.getParameter("FQQPFL_QK"));
-		map.put("fqgpflQK",(String) request.getParameter("FQGPFL_QK"));
-		map.put("fqzgpflQK",(String) request.getParameter("FQZGPFL_QK"));
-		map.put("fqljgpflQK",(String) request.getParameter("FQLJGPFL_QK"));
-		map.put("ybgygtfwdqlD",(String) request.getParameter("YBGYGTFWDQL_D"));
-		map.put("wxfwdqlD",(String) request.getParameter("WXFWDQL_D"));
-
-
 		map.put("username",(String) request.getSession().getAttribute("userName"));
  
 		if(request.getParameter("ID")!=null){
@@ -389,7 +341,7 @@ public class PollSourceController {
 		
 		try{  
             Class.forName("com.mysql.jdbc.Driver");  
-            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env","root","18342212808y");
+            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env","root","root");
             pstmt = (PreparedStatement)conn.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
             int col = rs.getMetaData().getColumnCount();
@@ -445,30 +397,6 @@ public class PollSourceController {
 		map.put("fsgpflQkDup1",(String) request.getParameter("FSGPFL_QK_DUP1"));	
 		map.put("fszgpflQk",(String) request.getParameter("FSZGPFL_QK"));
 		map.put("fsljgpflQk",(String) request.getParameter("FSLJGPFL_QK"));
-
-
-		map.put("wtxhlD",(String) request.getParameter("WTXHL_D"));
-		map.put("rlyxhlD",(String) request.getParameter("RLYXHL_D"));
-		map.put("jtxhlD",(String) request.getParameter("JTXHL_D"));
-		map.put("trqxhlWLFM",(String) request.getParameter("TRQXHL_WLFM"));
-		map.put("qtryxhlDBZM",(String) request.getParameter("QTRYXHL_DBZM"));
-		map.put("ydlWQWS",(String) request.getParameter("YDL_WQWS"));
-		map.put("gyyslD",(String) request.getParameter("ZDPFL_D"));
-		map.put("zdpflD",(String) request.getParameter("ZPPFL_D"));
-		map.put("gyfqpflWLFM",(String) request.getParameter("GYFQPFL_WLFM"));
-		map.put("eyhspflD",(String) request.getParameter("EYHSPFL_D"));
-		map.put("dyhwpflD",(String) request.getParameter("DYHWPFL_D"));
-		map.put("ycpflD",(String) request.getParameter("YCPFL_D"));
-		map.put("vocspflD",(String) request.getParameter("VOCSPFL_D"));
-		map.put("fqspflQK",(String) request.getParameter("FQSPFL_QK"));
-		map.put("fqqpflQK",(String) request.getParameter("FQQPFL_QK"));
-		map.put("fqgpflQK",(String) request.getParameter("FQGPFL_QK"));
-		map.put("fqzgpflQK",(String) request.getParameter("FQZGPFL_QK"));
-		map.put("fqljgpflQK",(String) request.getParameter("FQLJGPFL_QK"));
-		map.put("ybgygtfwdqlD",(String) request.getParameter("YBGYGTFWDQL_D"));
-		map.put("wxfwdqlD",(String) request.getParameter("WXFWDQL_D"));
-
-
 		map.put("username",(String) request.getSession().getAttribute("userName"));
 		
 		//System.out.println("\n\n\n=====exportExcel=====["+(String) request.getParameter("TJNF")+"]==========\n\n\n");

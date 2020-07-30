@@ -120,8 +120,7 @@ public class QmpWrxxServiceImpl extends GenericServiceImpl<QmpWrxx, Long> implem
             for (QmpWrxx qw : qmpWrxxList) {
                 switch (szsb_std) {//判断化学指标
                     case "ad":
-                      //  String ads = qw.getAd().replace("L", "").trim();
-                        String ads = String.valueOf(qw.getAd()).replace("L", "").trim();
+                        String ads = qw.getAd().replace("L", "").trim();
                         if ("-1".equals(ads)) {
                             continue;
                         }
@@ -141,7 +140,7 @@ public class QmpWrxxServiceImpl extends GenericServiceImpl<QmpWrxx, Long> implem
                         }
                         break;
                     case "hxxyl":
-                        String hxxyls =String.valueOf(qw.getHxxyl()).replace("L", "").trim();
+                        String hxxyls = qw.getHxxyl().replace("L", "").trim();
                         if ("-1".equals(hxxyls)) {
                             continue;
                         }
@@ -161,7 +160,7 @@ public class QmpWrxxServiceImpl extends GenericServiceImpl<QmpWrxx, Long> implem
                         }
                         break;
                     case "zd":
-                        String zds = String.valueOf(qw.getZd()).replace("L", "").trim();
+                        String zds = qw.getZd().replace("L", "").trim();
                         if ("-1".equals(zds)) {
                             continue;
                         }
@@ -181,7 +180,7 @@ public class QmpWrxxServiceImpl extends GenericServiceImpl<QmpWrxx, Long> implem
                         }
                         break;
                     case "zl":
-                        String zls = String.valueOf(qw.getZl()).replace("L", "").trim();
+                        String zls = qw.getZl().replace("L", "").trim();
                         if ("-1".equals(zls)) {
                             continue;
                         }
@@ -207,7 +206,7 @@ public class QmpWrxxServiceImpl extends GenericServiceImpl<QmpWrxx, Long> implem
             for (QmpWrxx qm : qmpWrxxList) {
                 switch (szsb_std) {
                     case "ad":
-                        String ads = String.valueOf(qm.getAd()).replace("L", "").trim();
+                        String ads = qm.getAd().replace("L", "").trim();
                         if ("-1".equals(ads)) {
                             continue;
                         }
@@ -227,7 +226,7 @@ public class QmpWrxxServiceImpl extends GenericServiceImpl<QmpWrxx, Long> implem
                         }
                         break;
                     case "zd":
-                        String zds = String.valueOf(qm.getZd()).replace("L", "").trim();
+                        String zds = qm.getZd().replace("L", "").trim();
                         if ("-1".equals(zds)) {
                             continue;
                         }
@@ -248,7 +247,7 @@ public class QmpWrxxServiceImpl extends GenericServiceImpl<QmpWrxx, Long> implem
                         }
                         break;
                     case "hxxyl":
-                        String hxxyls = String.valueOf(qm.getHxxyl()).replace("L", "").trim();
+                        String hxxyls = qm.getHxxyl().replace("L", "").trim();
                         if ("-1".equals(hxxyls)) {
                             continue;
                         }
@@ -268,7 +267,7 @@ public class QmpWrxxServiceImpl extends GenericServiceImpl<QmpWrxx, Long> implem
                         }
                         break;
                     case "zl":
-                        String zls = String.valueOf(qm.getZl()).replace("L", "").trim();
+                        String zls = qm.getZl().replace("L", "").trim();
                         if ("-1".equals(zls)) {
                             continue;
                         }
@@ -363,153 +362,152 @@ public class QmpWrxxServiceImpl extends GenericServiceImpl<QmpWrxx, Long> implem
         for (String section_name : section_names_new) {
             Dmzljs dmzljs = new Dmzljs();//每个月份的现在的通量（化学指标量×流量）
             for (QmpWrxx qmpWrxx : qmpWrxxes) {
-                if (qmpWrxx.getAd().equals(Double.valueOf(""))) {
-                    qmpWrxx.setAd(1.1);
+                if (qmpWrxx.getAd().equals("")) {
+                    qmpWrxx.setAd("1.1");
                 }
-                if (qmpWrxx.getHxxyl().equals(Double.valueOf(""))) {
-                    //qmpWrxx.setHxxyl("1.1");
-                    qmpWrxx.setHxxyl(1.1);
+                if (qmpWrxx.getHxxyl().equals("")) {
+                    qmpWrxx.setHxxyl("1.1");
                 }
-                if (qmpWrxx.getZl().equals(Double.valueOf(""))) {
-                    qmpWrxx.setZl(1.1);
+                if (qmpWrxx.getZl().equals("")) {
+                    qmpWrxx.setZl("1.1");
                 }
 
-                if (qmpWrxx.getFlowRate().equals(Double.valueOf(""))) {
-                    qmpWrxx.setFlowRate(1.1);
+                if (qmpWrxx.getFlowRate().equals("")) {
+                    qmpWrxx.setFlowRate("1.1");
                 }
                 if (section_name.equals(qmpWrxx.getSectionName())) {
                     dmzljs.setName(section_name);
                     switch (qmpWrxx.getMonth()) {//判断该记录的月份
-                        case 1:
+                        case "1":
                             if (zhibiao.trim().equals("ad")) {
-                                dmzljs.setJan(String.valueOf(Double.valueOf(qmpWrxx.getAd()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setJan(String.valueOf(Float.valueOf(qmpWrxx.getAd()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("hxxyl")) {
-                                dmzljs.setJan(String.valueOf(Double.valueOf(qmpWrxx.getHxxyl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setJan(String.valueOf(Float.valueOf(qmpWrxx.getHxxyl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("zl")) {
-                                dmzljs.setJan(String.valueOf(Double.valueOf(qmpWrxx.getZl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setJan(String.valueOf(Float.valueOf(qmpWrxx.getZl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             break;
-                        case 2:
+                        case "2":
                             if (zhibiao.trim().equals("ad")) {
-                                dmzljs.setFeb(String.valueOf(Double.valueOf(qmpWrxx.getAd()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setFeb(String.valueOf(Float.valueOf(qmpWrxx.getAd()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("hxxyl")) {
-                                dmzljs.setFeb(String.valueOf(Double.valueOf(qmpWrxx.getHxxyl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setFeb(String.valueOf(Float.valueOf(qmpWrxx.getHxxyl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("zl")) {
-                                dmzljs.setFeb(String.valueOf(Double.valueOf(qmpWrxx.getZl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setFeb(String.valueOf(Float.valueOf(qmpWrxx.getZl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             break;
-                        case 3:
+                        case "3":
                             if (zhibiao.trim().equals("ad")) {
-                                dmzljs.setMar(String.valueOf(Double.valueOf(qmpWrxx.getAd()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setMar(String.valueOf(Float.valueOf(qmpWrxx.getAd()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("hxxyl")) {
-                                dmzljs.setMar(String.valueOf(Double.valueOf(qmpWrxx.getHxxyl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setMar(String.valueOf(Float.valueOf(qmpWrxx.getHxxyl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("zl")) {
-                                dmzljs.setMar(String.valueOf(Double.valueOf(qmpWrxx.getZl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setMar(String.valueOf(Float.valueOf(qmpWrxx.getZl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             break;
-                        case 4:
+                        case "4":
                             if (zhibiao.trim().equals("ad")) {
-                                dmzljs.setApr(String.valueOf(Double.valueOf(qmpWrxx.getAd()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setApr(String.valueOf(Float.valueOf(qmpWrxx.getAd()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("hxxyl")) {
-                                dmzljs.setApr(String.valueOf(Double.valueOf(qmpWrxx.getHxxyl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setApr(String.valueOf(Float.valueOf(qmpWrxx.getHxxyl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("zl")) {
-                                dmzljs.setApr(String.valueOf(Double.valueOf(qmpWrxx.getZl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setApr(String.valueOf(Float.valueOf(qmpWrxx.getZl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             break;
-                        case 5:
+                        case "5":
                             if (zhibiao.trim().equals("ad")) {
-                                dmzljs.setMay(String.valueOf(Double.valueOf(qmpWrxx.getAd()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setMay(String.valueOf(Float.valueOf(qmpWrxx.getAd()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("hxxyl")) {
-                                dmzljs.setMay(String.valueOf(Double.valueOf(qmpWrxx.getHxxyl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setMay(String.valueOf(Float.valueOf(qmpWrxx.getHxxyl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("zl")) {
-                                dmzljs.setMay(String.valueOf(Double.valueOf(qmpWrxx.getZl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setMay(String.valueOf(Float.valueOf(qmpWrxx.getZl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             break;
-                        case 6:
+                        case "6":
                             if (zhibiao.trim().equals("ad")) {
-                                dmzljs.setJune(String.valueOf(Double.valueOf(qmpWrxx.getAd()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setJune(String.valueOf(Float.valueOf(qmpWrxx.getAd()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("hxxyl")) {
-                                dmzljs.setJune(String.valueOf(Double.valueOf(qmpWrxx.getHxxyl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setJune(String.valueOf(Float.valueOf(qmpWrxx.getHxxyl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("zl")) {
-                                dmzljs.setJune(String.valueOf(Double.valueOf(qmpWrxx.getZl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setJune(String.valueOf(Float.valueOf(qmpWrxx.getZl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             break;
-                        case 7:
+                        case "7":
                             if (zhibiao.trim().equals("ad")) {
-                                dmzljs.setJuly(String.valueOf(Double.valueOf(qmpWrxx.getAd()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setJuly(String.valueOf(Float.valueOf(qmpWrxx.getAd()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("hxxyl")) {
-                                dmzljs.setJuly(String.valueOf(Double.valueOf(qmpWrxx.getHxxyl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setJuly(String.valueOf(Float.valueOf(qmpWrxx.getHxxyl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("zl")) {
-                                dmzljs.setJuly(String.valueOf(Double.valueOf(qmpWrxx.getZl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setJuly(String.valueOf(Float.valueOf(qmpWrxx.getZl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             break;
-                        case 8:
+                        case "8":
                             if (zhibiao.trim().equals("ad")) {
-                                dmzljs.setAug(String.valueOf(Double.valueOf(qmpWrxx.getAd()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setAug(String.valueOf(Float.valueOf(qmpWrxx.getAd()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("hxxyl")) {
-                                dmzljs.setAug(String.valueOf(Double.valueOf(qmpWrxx.getHxxyl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setAug(String.valueOf(Float.valueOf(qmpWrxx.getHxxyl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("zl")) {
-                                dmzljs.setAug(String.valueOf(Double.valueOf(qmpWrxx.getZl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setAug(String.valueOf(Float.valueOf(qmpWrxx.getZl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             break;
-                        case 9:
+                        case "9":
                             if (zhibiao.trim().equals("ad")) {
-                                dmzljs.setSept(String.valueOf(Double.valueOf(qmpWrxx.getAd()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setSept(String.valueOf(Float.valueOf(qmpWrxx.getAd()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("hxxyl")) {
-                                dmzljs.setSept(String.valueOf(Double.valueOf(qmpWrxx.getHxxyl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setSept(String.valueOf(Float.valueOf(qmpWrxx.getHxxyl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("zl")) {
-                                dmzljs.setSept(String.valueOf(Double.valueOf(qmpWrxx.getZl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setSept(String.valueOf(Float.valueOf(qmpWrxx.getZl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             break;
-                        case 10:
+                        case "10":
                             if (zhibiao.trim().equals("ad")) {
-                                dmzljs.setOct(String.valueOf(Double.valueOf(qmpWrxx.getAd()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setOct(String.valueOf(Float.valueOf(qmpWrxx.getAd()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("hxxyl")) {
-                                dmzljs.setOct(String.valueOf(Double.valueOf(qmpWrxx.getHxxyl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setOct(String.valueOf(Float.valueOf(qmpWrxx.getHxxyl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("zl")) {
-                                dmzljs.setOct(String.valueOf(Double.valueOf(qmpWrxx.getZl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setOct(String.valueOf(Float.valueOf(qmpWrxx.getZl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             break;
-                        case 11:
+                        case "11":
                             if (zhibiao.trim().equals("ad")) {
-                                dmzljs.setNov(String.valueOf(Double.valueOf(qmpWrxx.getAd()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setNov(String.valueOf(Float.valueOf(qmpWrxx.getAd()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("hxxyl")) {
-                                dmzljs.setNov(String.valueOf(Double.valueOf(qmpWrxx.getHxxyl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setNov(String.valueOf(Float.valueOf(qmpWrxx.getHxxyl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("zl")) {
-                                dmzljs.setNov(String.valueOf(Double.valueOf(qmpWrxx.getZl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setNov(String.valueOf(Float.valueOf(qmpWrxx.getZl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             break;
-                        case 12:
+                        case "12":
                             if (zhibiao.trim().equals("ad")) {
-                                dmzljs.setDev(String.valueOf(Double.valueOf(qmpWrxx.getAd()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setDev(String.valueOf(Float.valueOf(qmpWrxx.getAd()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("hxxyl")) {
-                                dmzljs.setDev(String.valueOf(Double.valueOf(qmpWrxx.getHxxyl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setDev(String.valueOf(Float.valueOf(qmpWrxx.getHxxyl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             if (zhibiao.trim().equals("zl")) {
-                                dmzljs.setDev(String.valueOf(Double.valueOf(qmpWrxx.getZl()) * Double.valueOf(qmpWrxx.getFlowRate())));
+                                dmzljs.setDev(String.valueOf(Float.valueOf(qmpWrxx.getZl()) * Float.valueOf(qmpWrxx.getFlowRate())));
                             }
                             break;
                     }

@@ -24,10 +24,7 @@ $(function() {
 		"is_addition" : "现有/拟增设",
 		"test_frequency" : "监测频次",
 		"test_items" : "监测项目",
-		"quality_target" : "功能区水质目标",
-
-		"sectionBymc": "所属控制单元名称",
-		"sectionShhl": "收纳河流"
+		"quality_target" : "功能区水质目标"
 	}
 
 	var reHash = {
@@ -48,21 +45,17 @@ $(function() {
 		"现有/拟增设" : "is_addition",
 		"监测频次" : "test_frequency",
 		"监测项目" : "test_items",
-		"功能区水质目标" : "quality_target",
-
-		"所属控制单元名称" :"sectionBymc",
-		"收纳河流":"sectionShhl"
-
+		"功能区水质目标" : "quality_target"
 	}
-
+	
 	function JSONLength(obj) {
 		var size = 0, key;
 		for (key in obj) {
 			if (obj.hasOwnProperty(key)) size++;
 		}
 		return size;
-	}
-
+	};
+	
 	function createJson(json, prop, val) {
 		if (typeof val === "undefined") {
 			delete json[prop];
@@ -70,15 +63,15 @@ $(function() {
 			json[prop] = val;
 		}
 	}
-
+	
 	function appendSelect(splitArray) {
 		for (i = 0; i < splitArray.length; i++) {
 			if (splitArray[i] != "is_del" && splitArray[i] != "loc_lon_d"
-				&& splitArray[i] != "loc_lon_m"
-				&& splitArray[i] != "loc_lon_s"
-				&& splitArray[i] != "loc_lat_d"
-				&& splitArray[i] != "loc_lat_m"
-				&& splitArray[i] != "loc_lat_s") {
+					&& splitArray[i] != "loc_lon_m"
+					&& splitArray[i] != "loc_lon_s"
+					&& splitArray[i] != "loc_lat_d"
+					&& splitArray[i] != "loc_lat_m"
+					&& splitArray[i] != "loc_lat_s") {
 				var selectLi = "";
 				selectLi += "<li><a>";
 				selectLi += hash[splitArray[i]];
@@ -96,19 +89,7 @@ $(function() {
 			}
 		}
 	}
-
-	/*$.ajax({
-        type : "POST",
-        url : "rest/qmp/" +
-        "",
-        dataType : "json",
-        async : false,
-        success : function(result) {
-            selectArray = result.toString().split(",");
-            appendSelect(selectArray);
-        }
-    });*/
-
+	
 	$.ajax({
 		type : "POST",
 		url : "rest/qmp/getTableName",
@@ -137,7 +118,7 @@ $(function() {
 				temp += "'>";
 				temp += "</ul></div></td>";
 				temp += "<td><input type='text' size='40' class='inpMain' /></td>";
-				temp += "</tr>";
+				temp += "</tr>";	
 
 				$("#searchSelectTable").append(temp);
 				appendSelect(selectArray);
@@ -150,29 +131,29 @@ $(function() {
 	});
 
 	$("#removeSearch").click(function() {
-		if(searchCount == 2){
+		if(searchCount == 2){		
 			alert("您必须保留至少一条查询条件 ：）")
 		}else{
 			selectArray.push(reHash[$('#searchSelectTable tr:last td:first div button').text()]);
 			$("#searchSelectTable tr:last").remove();
 			searchCount--;
 		}
-
+		
 	});
 
-	$("#searchSelectTable").on("blur","tr:last td:last input",function(){
+	$("#searchSelectTable").on("blur","tr:last td:last input",function(){  
 		if ($('#searchSelectTable tr:last td:first div button').text().replace(/(^\s*)|(\s*$)/g, '') != "Dropdown") {
 			if (reHash[$(this).parent().parent().find('button').text()] != "undefined") {
 				var key = reHash[$(this).parent().parent().find('button').text()];
 			}else{
 				var key = $(this).parent().parent().find('button').text();
-			}
+			}			
 			var value = $(this).val();
 			createJson(json, key, value);
 			createJson(json, "test");
 		}
-	});
-
+	}); 
+	
 	$('#searchSelectTable').on("click","tr td div ul a",function(e) {
 		e.preventDefault();
 		var text = reHash[$(this).text()];
@@ -185,7 +166,7 @@ $(function() {
 		$('#jsonInput').val("");
 		$('#jsonInput').val(JSON.stringify(json));
 		$('#jumpTmp').val("");
-
+		
 		var username = $('.username').text();
 		createJson(json, "username", username);
 
@@ -196,11 +177,10 @@ $(function() {
 			url : "rest/qmp/search",
 			data : json,
 			success : function(data) {
-				//alert("000000");
 				$('#listAll').html(data);
 			}
 		});
-
+		
 		$.ajax({
 			type : "POST",
 			async : false,

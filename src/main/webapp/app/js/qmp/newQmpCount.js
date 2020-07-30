@@ -30,9 +30,6 @@ html += "<button type='button' class='btnz btnz-info' id='xgPo' onclick='qmpToPo
 html += "<table border='0' class='table-bordered table-striped'>";
 html += "<tr><td>序号</td><td>${id}</td></tr>";
 html += "<tr><td>断面名称</td><td>${sectionName}</td></tr>";
-
-html += "<tr><td>所属控制单元名称</td><td>${sectionBymc}</td></tr>";
-
 html += "<tr><td>流域名称</td><td>${watershed}</td></tr>";
 html += "<tr><td>所在河流</td><td>${riverName}</td></tr>";
 html += "<tr><td>所属省份</td><td>${locProvince}</td></tr>";
@@ -49,9 +46,6 @@ html += "<tr><td>现有/拟增设</td><td>${isAddition}</td></tr>";
 html += "<tr><td>监测频次</td><td>${testFrequency}</td></tr>";
 html += "<tr><td>监测项目</td><td>${testItems}</td></tr>";
 html += "<tr><td>功能区水质目标</td><td>${qualityTarget}</td></tr>";
-
-html += "<tr><td>收纳河流</td><td>${sectionShhl}</td></tr>";
-
 html += "</table><br/>";
 html += "<table border='0' class='tableBasic'>";
 html += "超标倍数：请选择下面要计算的属性";
@@ -300,10 +294,7 @@ function wait4globaldata() {
             "isAddition": allDataGlobal[i].isAddition,
             "testFrequency": allDataGlobal[i].testFrequency,
             "testItems": allDataGlobal[i].testItems,
-            "qualityTarget": allDataGlobal[i].qualityTarget,
-
-            "sectionBymc": allData[i].sectionBymc,
-            "sectionShhl": allData[i].sectionShhl
+            "qualityTarget": allDataGlobal[i].qualityTarget
         };
         lon = allDataGlobal[i].longitude;
         lat = allDataGlobal[i].latitude;
@@ -836,7 +827,7 @@ $(document).off("click", "tr[id^='qmpx']").on({
         var lat = parseFloat($("#qmpwd" + this.id.substr(4)).val());
         var infodata = {};
         var qmpname = ["sectionName", "basin", "riverName", "sectionSx", "riverLevel", "sksk", "sectionLevel", "locCity",
-            "locDistrict", "czName", "sectionBymc", "sectionShhl", "longitude", "latitude"];
+            "locDistrict", "czName", "riverName", "sectionSx", "riverLevel", "sksk", "longitude", "latitude"];
         for (var i = 0; i < $(this).children('td').length; i++) {
             infodata[qmpname[i]] = $(this).children('td').eq(i + 1).text();
         }
@@ -965,12 +956,7 @@ function updateQmpInMap(allData) {
                 "isAddition": allData[i].isAddition,
                 "testFrequency": allData[i].testFrequency,
                 "testItems": allData[i].testItems,
-                "qualityTarget": allData[i].qualityTarget,
-
-                "sectionBymc": allData[i].sectionBymc,
-                "sectionShhl": allData[i].sectionShhl
-
-
+                "qualityTarget": allData[i].qualityTarget
             };
             var point = new Point(lon, lat, map.spatialReference);
             var infoTemplate = new InfoTemplate("控制断面信息", html);
@@ -1027,10 +1013,7 @@ function updateQmpInMapWithSzsb(allData, szsb_data, szsb_std) {
                 "isAddition": allData[i].isAddition,
                 "testFrequency": allData[i].testFrequency,
                 "testItems": allData[i].testItems,
-                "qualityTarget": allData[i].qualityTarget,
-
-                "sectionBymc": allData[i].sectionBymc,
-                "sectionShhl": allData[i].sectionShhl
+                "qualityTarget": allData[i].qualityTarget
             };
             var point = new Point(lon, lat, map.spatialReference);
             var infoTemplate = new InfoTemplate("控制断面信息", html);

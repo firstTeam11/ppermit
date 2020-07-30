@@ -1,428 +1,442 @@
 package com.eliteams.quick4j.web.controller;
 
-import com.eliteams.quick4j.web.model.MikeJbxx;
-import com.eliteams.quick4j.web.model.Shui;
+import com.eliteams.quick4j.web.model.*;
+
+import com.eliteams.quick4j.web.service.KzdyService;
 import com.eliteams.quick4j.web.service.MikeService;
+import com.eliteams.quick4j.web.service.impl.MikeServiceImpl;
+import com.google.gson.Gson;
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import sun.awt.SunHints;
 
 import javax.annotation.Resource;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
+import java.io.*;
+import java.lang.reflect.Field;
 import java.sql.*;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import java.util.List;
 import java.util.*;
+import java.util.List;
 
 @Controller
 @RequestMapping("/mike")
 public class MikeController {
 
 
-
+    @Resource
+    private KzdyService kzdyService;
 
     @Resource
     private MikeService mikeService;
 
 
-//    @RequestMapping("/getShuixi")
-//    @ResponseBody
-//    public List<Shui> filelist(Model model) {
-//        String path = "C:\\Users\\Administrator\\Desktop\\project";
-//        List<Object> list = new GetFiles().getFiles(path);
-//        List<String> bb = new ArrayList<String>();
-//        List<Shui> cc = new ArrayList<Shui>();
-//        List<String> dd = new ArrayList<String>();
-//
-//        for (Object obj : list) {
-//
-//            // System.out.println(obj);
-//            String a = (String) obj;
-//            String b = "C:\\Users\\Administrator\\Desktop\\project\\";
-//
-//            String c = a.replace(b, "");
-//            bb.add(c);
-//
-//        }
-//        for (String str : bb) {
-//            Shui s = new Shui();
-//            int a = str.length();
-//            String str2 = str.replace("\\", "");
-//            int b = str2.length();
-//            if (a == b) {
-//                // shuixi.add(str);
-//                dd.add(str);
-//            }
-//
-//        }
-//
-//
-//        List newList = new ArrayList();
-//        for (Object o : dd) {
-//            if (!newList.contains(o)) newList.add(o);
-//        }
-//        return newList;
-//
-//    }
-//
-//
-//    @RequestMapping("/getYiJi")
-//    @ResponseBody
-//    public List<Shui> filelis(HttpServletRequest request, Model model) {
-//        String shuixi = request.getParameter("shuixi");
-//        String path = "C:\\Users\\Administrator\\Desktop\\project";
-//        List<Object> list = new GetFiles().getFiles(path);
-//        List<String> bb = new ArrayList<String>();
-//        List<Shui> cc = new ArrayList<Shui>();
-//
-//
-//        for (Object obj : list) {
-//
-//            // System.out.println(obj);
-//            String a = (String) obj;
-//            String b = "C:\\Users\\Administrator\\Desktop\\project\\";
-//
-//            String c = a.replace(b, "");
-//            bb.add(c);
-//
-//        }
-//        for (String str : bb) {
-//            Shui s = new Shui();
-//            int a = str.length();
-//            String str2 = str.replace("\\", "");
-//            int b = str2.length();
-//            if (a - b == 1) {
-//                String temp[] = str.split("\\\\");
-//                if (temp[0].equals(shuixi)) {
-//                    s.setShuixi(temp[0]);
-//                    s.setYijiheliu(temp[1]);
-//                    cc.add(s);
-//                }
-//            }
-//        }
-//
-//        // model.addAttribute("addtwo",cc);
-//
-//        return cc;
-//    }
-//
-//    @RequestMapping("/getMoNi")
-//    @ResponseBody
-//    public List<Shui> filels(HttpServletRequest request, Model model) {
-//        String yiji = request.getParameter("yiji");
-//        String path = "C:\\Users\\Administrator\\Desktop\\project";
-//        List<Object> list = new GetFiles().getFiles(path);
-//        List<String> bb = new ArrayList<String>();
-//        List<Shui> cc = new ArrayList<Shui>();
-//
-//
-//        for (Object obj : list) {
-//
-//
-//            String a = (String) obj;
-//            String b = "C:\\Users\\Administrator\\Desktop\\project\\";
-//
-//            String c = a.replace(b, "");
-//            bb.add(c);
-//
-//        }
-//        for (String str : bb) {
-//            Shui s = new Shui();
-//            int a = str.length();
-//            String str2 = str.replace("\\", "");
-//            int b = str2.length();
-//            if (a - b == 2) {
-//                String temp[] = str.split("\\\\");
-//                if (temp[1].equals(yiji)) {
-//                    s.setShuixi(temp[0]);
-//                    s.setYijiheliu(temp[1]);
-//                    s.setMoni(temp[2]);
-//                    cc.add(s);
-//                }
-//            }
-//        }
-//
-//        // model.addAttribute("addtwo",cc);
-//
-//        return cc;
-//    }
-//
-//    @RequestMapping("/getFangan")
-//    @ResponseBody
-//    public List<Shui> filelwqs(HttpServletRequest request, Model model) {
-//        String moni = request.getParameter("moni");
-//        String yiji = request.getParameter("yiji");
-//        String path = "C:\\Users\\Administrator\\Desktop\\project";
-//        List<Object> list = new GetFiles().getFiles(path);
-//        List<String> bb = new ArrayList<String>();
-//        List<Shui> cc = new ArrayList<Shui>();
-//
-//
-//        for (Object obj : list) {
-//
-//
-//            String a = (String) obj;
-//            String b = "C:\\Users\\Administrator\\Desktop\\project\\";
-//
-//            String c = a.replace(b, "");
-//            bb.add(c);
-//
-//        }
-//        for (String str : bb) {
-//            Shui s = new Shui();
-//            int a = str.length();
-//            String str2 = str.replace("\\", "");
-//            int b = str2.length();
-//            if (a - b == 3) {
-//                String temp[] = str.split("\\\\");
-//                if (temp[2].equals(moni)&&temp[1].equals(yiji)) {
-//                    s.setShuixi(temp[0]);
-//                    s.setYijiheliu(temp[1]);
-//                    s.setMoni(temp[2]);
-//                    s.setFangan(temp[3]);
-//                    cc.add(s);
-//                }
-//            }
-//        }
-//
-//        // model.addAttribute("addtwo",cc);
-//
-//        return cc;
-//    }
-//
-//    @RequestMapping("/newOne")
-//    @ResponseBody
-//    public List<MikeSelect> newOne(HttpServletRequest request, Model model) {
-//        String sheng = request.getParameter("sheng");
-//        String shi = request.getParameter("shi");
-//        String qu = request.getParameter("qu");
-//        String dateb = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
-//        String date = dateb.replaceAll("[[\\s-:punct:]]", "");
-//
-//        String path = "C:\\Users\\Administrator\\Desktop\\project";
-//        path += "\\" + sheng + "\\" + shi + "\\" + qu + "\\" + date;
-//        File dir = new File(path);
-//        if (!dir.exists()) {// 判断目录是否存在
-//            dir.mkdir();
-//        }
-//        List<MikeSelect> list= getShuJuList(shi,qu);
-//        return list;
-//    }
+    @RequestMapping("/getShuixi")
+    @ResponseBody
+    public List<Shui> filelist(Model model) {
+        String path = "C:\\Users\\Administrator\\Desktop\\project";
+        List<Object> list = new GetFiles().getFiles(path);
+        List<String> bb = new ArrayList<String>();
+        List<Shui> cc = new ArrayList<Shui>();
+        List<String> dd = new ArrayList<String>();
 
-//    @RequestMapping("/openresult")
-//    @ResponseBody
-//    public void resultlist(HttpServletRequest request, String sheng, String shi, String qu, String hr) throws AWTException {
-//
-//        sheng = request.getParameter("sheng");
-//        shi = request.getParameter("shi");
-//        qu = request.getParameter("qu");
-//        hr = request.getParameter("hr");
-//        String path = "C:\\Users\\Administrator\\Desktop\\project";
-//        path += "\\" + sheng + "\\" + shi + "\\" + qu + "\\" + hr;
-//        HashMap<Long,String> h= search(path);
-//        Long a = Long.valueOf(0);
-//        for (Long key : h.keySet()) {
-//
-//            if(key>=a){
-//                a = key;
-//            }
-//        }
-//        String str  = "C:\\Program Files (x86)\\DHI\\2014\\bin\\x64\\MikeView.exe" + " " + path + "\\"+h.get(a) ;
-//
-//        try {
-//
-//            Runtime.getRuntime().exec(str);
-//        } catch (Exception e) {
-//            System.out.println("open failure");
-//        }
-////鼠标模拟
-//        //sleep
-//        try {
-//            Thread.currentThread().sleep(1000);
-//            System.out.println("执行延迟");
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//        openExe();
-//
-//    }
+        for (Object obj : list) {
+
+            // System.out.println(obj);
+            String a = (String) obj;
+            String b = "C:\\Users\\Administrator\\Desktop\\project\\";
+
+            String c = a.replace(b, "");
+            bb.add(c);
+
+        }
+        for (String str : bb) {
+            Shui s = new Shui();
+            int a = str.length();
+            String str2 = str.replace("\\", "");
+            int b = str2.length();
+            if (a == b) {
+                // shuixi.add(str);
+                dd.add(str);
+            }
+
+        }
 
 
+        List newList = new ArrayList();
+        for (Object o : dd) {
+            if (!newList.contains(o)) newList.add(o);
+        }
+        return newList;
+
+    }
 
 
-//    public List<MikeSelect> getShuJuList(String shi, String qu)  {
-//
-//
-//        String sql = "SELECT * FROM mike_qy_htxx WHERE htqy_tjnf='"+qu+"' AND htqy_snstmc='"+shi+"' ";
-//        System.out.println(sql);
-//        PreparedStatement pstmt;
-//        List<MikeSelect> list=new ArrayList<MikeSelect>();
-//
-//            try{
-//                Class.forName("com.mysql.jdbc.Driver");
-//                Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env","root","root");
-//                pstmt = (PreparedStatement)conn.prepareStatement(sql);
-//                ResultSet rs = pstmt.executeQuery();
-//                DecimalFormat df3 = new DecimalFormat("###.000");
-//
-//
-//                while (rs.next()) {
-//                    MikeSelect s = new MikeSelect();
-//                    s.setQiyename(rs.getString("htqy_dwmc"));
-//                    s.setLiuliang(df3.format(rs.getDouble("htqy_ll")));
-//                    if(rs.getDouble("htqy_codnd")==0.0){
-//                        s.setCodnd("无");
-//                    }else{
-//                        s.setCodnd(MikeController.double2ScientificNotation(rs.getDouble("htqy_codnd")));
-//                    }
-//
-//
-//
-//                    if(rs.getDouble("htqy_codpfl")==0.0){
-//                        s.setCodpfl("无");
-//                    }else{
-//                        String str1 = Double.toString(rs.getDouble("htqy_codpfl"));
-//                        s.setCodpfl(str1);
-//                    }
-//
-//                    if(rs.getDouble("htqy_tnnd")==0.0){
-//                        s.setTnnd("无");
-//                    }else{
-//                        s.setTnnd(MikeController.double2ScientificNotation(rs.getDouble("htqy_tnnd")));
-//                    }
-//
-//
-//
-//
-//                    if(rs.getDouble("htqy_tnpfl")==0.0){
-//                        s.setTnpfl("无");
-//                    }else{
-//                        String str2 = Double.toString(rs.getDouble("htqy_tnpfl"));
-//                        s.setTnpfl(str2);
-//                    }
-//
-//                    if(rs.getDouble("htqy_tpnd")==0.0){
-//                        s.setTpnd("无");
-//                    }else{
-//                        s.setTpnd(MikeController.double2ScientificNotation(rs.getDouble("htqy_tpnd")));
-//                    }
-//
-//                    if(rs.getDouble("htqy_tppfl")==0.0){
-//                        s.setTppfl("无");
-//                    }else{
-//                        String str3 = Double.toString(rs.getDouble("htqy_tppfl"));
-//                        s.setTppfl(str3);
-//
-//                    }
-//
-//                    //  System.out.println("cod浓度"+rs.getDouble("htqy_codnd")+"cod排放量"+rs.getDouble("htqy_codpfl")+"总氮浓度"+rs.getDouble("htqy_tnnd")+"总氮排放量"+rs.getDouble("htqy_tnpfl")+"总磷浓度"+rs.getDouble("htqy_tpnd")+"总磷排放量"+rs.getDouble("htqy_tppfl"));
-//                   list.add(s);
-//                }
-//
-//
-//                conn.close();
-//            }catch(ClassNotFoundException e){
-//                e.printStackTrace();
-//            }catch(SQLException e){
-//                e.printStackTrace();
-//            }
-//            return  list;
-//        }
-//    @RequestMapping("/searchAllQiYe")
-//    @ResponseBody
-//    public List<MikeSelect> getQiYeList(HttpServletRequest request,String snscmc, String tjnf)  {
-//        snscmc = request.getParameter("snscmc");
-//        tjnf = request.getParameter("tjnf");
-//
-//        String sql = "SELECT * FROM mike_qy_htxx2 WHERE htqy_tjnf='"+tjnf+"' AND htqy_snstmc='"+snscmc+"' ";
-//        System.out.println(sql);
-//        PreparedStatement pstmt;
-//        List<MikeSelect> list=new ArrayList<MikeSelect>();
-//
-//        try{
-//            Class.forName("com.mysql.jdbc.Driver");
-//            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env","root","root");
-//            pstmt = (PreparedStatement)conn.prepareStatement(sql);
-//            ResultSet rs = pstmt.executeQuery();
-//            DecimalFormat df3 = new DecimalFormat("###.000");
-//
-//
-//            while (rs.next()) {
-//                MikeSelect s = new MikeSelect();
-//                s.setQiyename(rs.getString("htqy_dwmc"));
-//                s.setLiuliang(df3.format(rs.getDouble("htqy_ll")));
-//                if(rs.getDouble("htqy_codnd")==0.0){
-//                    s.setCodnd("无");
-//                }else{
-//                    s.setCodnd(MikeController.double2ScientificNotation(rs.getDouble("htqy_codnd")));
-//                }
-//
-//
-//
-//                if(rs.getDouble("htqy_codpfl")==0.0){
-//                    s.setCodpfl("无");
-//                }else{
-//                    String str1 = Double.toString(rs.getDouble("htqy_codpfl"));
-//                    s.setCodpfl(str1);
-//                }
-//
-//                if(rs.getDouble("htqy_tnnd")==0.0){
-//                    s.setTnnd("无");
-//                }else{
-//                    s.setTnnd(MikeController.double2ScientificNotation(rs.getDouble("htqy_tnnd")));
-//                }
-//
-//
-//
-//
-//                if(rs.getDouble("htqy_tnpfl")==0.0){
-//                    s.setTnpfl("无");
-//                }else{
-//                    String str2 = Double.toString(rs.getDouble("htqy_tnpfl"));
-//                    s.setTnpfl(str2);
-//                }
-//
-//                if(rs.getDouble("htqy_tpnd")==0.0){
-//                    s.setTpnd("无");
-//                }else{
-//                    s.setTpnd(MikeController.double2ScientificNotation(rs.getDouble("htqy_tpnd")));
-//                }
-//
-//                if(rs.getDouble("htqy_tppfl")==0.0){
-//                    s.setTppfl("无");
-//                }else{
-//                    String str3 = Double.toString(rs.getDouble("htqy_tppfl"));
-//                    s.setTppfl(str3);
-//
-//                }
-//
-//
-//
-//                s.setJd(rs.getDouble("htqy_jdjz"));
-//
-//                s.setWd(rs.getDouble("htqy_wdjz"));
-//
-//               // System.out.println("cod浓度"+rs.getDouble("htqy_codnd")+"cod排放量"+rs.getDouble("htqy_codpfl")+"总氮浓度"+rs.getDouble("htqy_tnnd")+"总氮排放量"+rs.getDouble("htqy_tnpfl")+"总磷浓度"+rs.getDouble("htqy_tpnd")+"总磷排放量"+rs.getDouble("htqy_tppfl"));
-//                list.add(s);
-//            }
-//
-//
-//            conn.close();
-//        }catch(ClassNotFoundException e){
-//            e.printStackTrace();
-//        }catch(SQLException e){
-//            e.printStackTrace();
-//        }
-//        return  list;
-//    }
+    @RequestMapping("/getYiJi")
+    @ResponseBody
+    public List<Shui> filelis(HttpServletRequest request, Model model) {
+        String shuixi = request.getParameter("shuixi");
+        String path = "C:\\Users\\Administrator\\Desktop\\project";
+        List<Object> list = new GetFiles().getFiles(path);
+        List<String> bb = new ArrayList<String>();
+        List<Shui> cc = new ArrayList<Shui>();
+
+
+        for (Object obj : list) {
+
+            // System.out.println(obj);
+            String a = (String) obj;
+            String b = "C:\\Users\\Administrator\\Desktop\\project\\";
+
+            String c = a.replace(b, "");
+            bb.add(c);
+
+        }
+        for (String str : bb) {
+            Shui s = new Shui();
+            int a = str.length();
+            String str2 = str.replace("\\", "");
+            int b = str2.length();
+            if (a - b == 1) {
+                String temp[] = str.split("\\\\");
+                if (temp[0].equals(shuixi)) {
+                    s.setShuixi(temp[0]);
+                    s.setYijiheliu(temp[1]);
+                    cc.add(s);
+                }
+            }
+        }
+
+        // model.addAttribute("addtwo",cc);
+
+        return cc;
+    }
+
+    @RequestMapping("/getMoNi")
+    @ResponseBody
+    public List<Shui> filels(HttpServletRequest request, Model model) {
+        String yiji = request.getParameter("yiji");
+        String path = "C:\\Users\\Administrator\\Desktop\\project";
+        List<Object> list = new GetFiles().getFiles(path);
+        List<String> bb = new ArrayList<String>();
+        List<Shui> cc = new ArrayList<Shui>();
+
+
+        for (Object obj : list) {
+
+
+            String a = (String) obj;
+            String b = "C:\\Users\\Administrator\\Desktop\\project\\";
+
+            String c = a.replace(b, "");
+            bb.add(c);
+
+        }
+        for (String str : bb) {
+            Shui s = new Shui();
+            int a = str.length();
+            String str2 = str.replace("\\", "");
+            int b = str2.length();
+            if (a - b == 2) {
+                String temp[] = str.split("\\\\");
+                if (temp[1].equals(yiji)) {
+                    s.setShuixi(temp[0]);
+                    s.setYijiheliu(temp[1]);
+                    s.setMoni(temp[2]);
+                    cc.add(s);
+                }
+            }
+        }
+
+        // model.addAttribute("addtwo",cc);
+
+        return cc;
+    }
+
+    @RequestMapping("/getFangan")
+    @ResponseBody
+    public List<Shui> filelwqs(HttpServletRequest request, Model model) {
+        String moni = request.getParameter("moni");
+        String yiji = request.getParameter("yiji");
+        String path = "C:\\Users\\Administrator\\Desktop\\project";
+        List<Object> list = new GetFiles().getFiles(path);
+        List<String> bb = new ArrayList<String>();
+        List<Shui> cc = new ArrayList<Shui>();
+
+
+        for (Object obj : list) {
+
+
+            String a = (String) obj;
+            String b = "C:\\Users\\Administrator\\Desktop\\project\\";
+
+            String c = a.replace(b, "");
+            bb.add(c);
+
+        }
+        for (String str : bb) {
+            Shui s = new Shui();
+            int a = str.length();
+            String str2 = str.replace("\\", "");
+            int b = str2.length();
+            if (a - b == 3) {
+                String temp[] = str.split("\\\\");
+                if (temp[2].equals(moni)&&temp[1].equals(yiji)) {
+                    s.setShuixi(temp[0]);
+                    s.setYijiheliu(temp[1]);
+                    s.setMoni(temp[2]);
+                    s.setFangan(temp[3]);
+                    cc.add(s);
+                }
+            }
+        }
+
+        // model.addAttribute("addtwo",cc);
+
+        return cc;
+    }
+
+    @RequestMapping("/newOne")
+    @ResponseBody
+    public List<MikeSelect> newOne(HttpServletRequest request, Model model) {
+        String sheng = request.getParameter("sheng");
+        String shi = request.getParameter("shi");
+        String qu = request.getParameter("qu");
+        String dateb = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
+        String date = dateb.replaceAll("[[\\s-:punct:]]", "");
+
+        String path = "C:\\Users\\Administrator\\Desktop\\project";
+        path += "\\" + sheng + "\\" + shi + "\\" + qu + "\\" + date;
+        File dir = new File(path);
+        if (!dir.exists()) {// 判断目录是否存在
+            dir.mkdir();
+        }
+        List<MikeSelect> list= getShuJuList(shi,qu);
+        return list;
+    }
+
+    @RequestMapping("/openresult")
+    @ResponseBody
+    public void resultlist(HttpServletRequest request, String sheng, String shi, String qu, String hr) throws AWTException {
+
+        sheng = request.getParameter("sheng");
+        shi = request.getParameter("shi");
+        qu = request.getParameter("qu");
+        hr = request.getParameter("hr");
+        String path = "C:\\Users\\Administrator\\Desktop\\project";
+        path += "\\" + sheng + "\\" + shi + "\\" + qu + "\\" + hr;
+        HashMap<Long,String> h= search(path);
+        Long a = Long.valueOf(0);
+        for (Long key : h.keySet()) {
+
+            if(key>=a){
+                a = key;
+            }
+        }
+        String str  = "C:\\Program Files (x86)\\DHI\\2014\\bin\\x64\\MikeView.exe" + " " + path + "\\"+h.get(a) ;
+
+        try {
+
+            Runtime.getRuntime().exec(str);
+        } catch (Exception e) {
+            System.out.println("open failure");
+        }
+//鼠标模拟
+        //sleep
+        try {
+            Thread.currentThread().sleep(1000);
+            System.out.println("执行延迟");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        openExe();
+
+    }
+
+
+
+
+    public List<MikeSelect> getShuJuList(String shi, String qu)  {
+
+
+        String sql = "SELECT * FROM mike_qy_htxx WHERE htqy_tjnf='"+qu+"' AND htqy_snstmc='"+shi+"' ";
+        System.out.println(sql);
+        PreparedStatement pstmt;
+        List<MikeSelect> list=new ArrayList<MikeSelect>();
+
+            try{
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env","root","root");
+                pstmt = (PreparedStatement)conn.prepareStatement(sql);
+                ResultSet rs = pstmt.executeQuery();
+                DecimalFormat df3 = new DecimalFormat("###.000");
+
+
+                while (rs.next()) {
+                    MikeSelect s = new MikeSelect();
+                    s.setQiyename(rs.getString("htqy_dwmc"));
+                    s.setLiuliang(df3.format(rs.getDouble("htqy_ll")));
+                    if(rs.getDouble("htqy_codnd")==0.0){
+                        s.setCodnd("无");
+                    }else{
+                        s.setCodnd(MikeController.double2ScientificNotation(rs.getDouble("htqy_codnd")));
+                    }
+
+
+
+                    if(rs.getDouble("htqy_codpfl")==0.0){
+                        s.setCodpfl("无");
+                    }else{
+                        String str1 = Double.toString(rs.getDouble("htqy_codpfl"));
+                        s.setCodpfl(str1);
+                    }
+
+                    if(rs.getDouble("htqy_tnnd")==0.0){
+                        s.setTnnd("无");
+                    }else{
+                        s.setTnnd(MikeController.double2ScientificNotation(rs.getDouble("htqy_tnnd")));
+                    }
+
+
+
+
+                    if(rs.getDouble("htqy_tnpfl")==0.0){
+                        s.setTnpfl("无");
+                    }else{
+                        String str2 = Double.toString(rs.getDouble("htqy_tnpfl"));
+                        s.setTnpfl(str2);
+                    }
+
+                    if(rs.getDouble("htqy_tpnd")==0.0){
+                        s.setTpnd("无");
+                    }else{
+                        s.setTpnd(MikeController.double2ScientificNotation(rs.getDouble("htqy_tpnd")));
+                    }
+
+                    if(rs.getDouble("htqy_tppfl")==0.0){
+                        s.setTppfl("无");
+                    }else{
+                        String str3 = Double.toString(rs.getDouble("htqy_tppfl"));
+                        s.setTppfl(str3);
+
+                    }
+
+                    //  System.out.println("cod浓度"+rs.getDouble("htqy_codnd")+"cod排放量"+rs.getDouble("htqy_codpfl")+"总氮浓度"+rs.getDouble("htqy_tnnd")+"总氮排放量"+rs.getDouble("htqy_tnpfl")+"总磷浓度"+rs.getDouble("htqy_tpnd")+"总磷排放量"+rs.getDouble("htqy_tppfl"));
+                   list.add(s);
+                }
+
+
+                conn.close();
+            }catch(ClassNotFoundException e){
+                e.printStackTrace();
+            }catch(SQLException e){
+                e.printStackTrace();
+            }
+            return  list;
+        }
+    @RequestMapping("/searchAllQiYe")
+    @ResponseBody
+    public List<MikeSelect> getQiYeList(HttpServletRequest request,String snscmc, String tjnf)  {
+        snscmc = request.getParameter("snscmc");
+        tjnf = request.getParameter("tjnf");
+
+        String sql = "SELECT * FROM mike_qy_htxx2 WHERE htqy_tjnf='"+tjnf+"' AND htqy_snstmc='"+snscmc+"' ";
+        System.out.println(sql);
+        PreparedStatement pstmt;
+        List<MikeSelect> list=new ArrayList<MikeSelect>();
+
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env","root","root");
+            pstmt = (PreparedStatement)conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            DecimalFormat df3 = new DecimalFormat("###.000");
+
+
+            while (rs.next()) {
+                MikeSelect s = new MikeSelect();
+                s.setQiyename(rs.getString("htqy_dwmc"));
+                s.setLiuliang(df3.format(rs.getDouble("htqy_ll")));
+                if(rs.getDouble("htqy_codnd")==0.0){
+                    s.setCodnd("无");
+                }else{
+                    s.setCodnd(MikeController.double2ScientificNotation(rs.getDouble("htqy_codnd")));
+                }
+
+
+
+                if(rs.getDouble("htqy_codpfl")==0.0){
+                    s.setCodpfl("无");
+                }else{
+                    String str1 = Double.toString(rs.getDouble("htqy_codpfl"));
+                    s.setCodpfl(str1);
+                }
+
+                if(rs.getDouble("htqy_tnnd")==0.0){
+                    s.setTnnd("无");
+                }else{
+                    s.setTnnd(MikeController.double2ScientificNotation(rs.getDouble("htqy_tnnd")));
+                }
+
+
+
+
+                if(rs.getDouble("htqy_tnpfl")==0.0){
+                    s.setTnpfl("无");
+                }else{
+                    String str2 = Double.toString(rs.getDouble("htqy_tnpfl"));
+                    s.setTnpfl(str2);
+                }
+
+                if(rs.getDouble("htqy_tpnd")==0.0){
+                    s.setTpnd("无");
+                }else{
+                    s.setTpnd(MikeController.double2ScientificNotation(rs.getDouble("htqy_tpnd")));
+                }
+
+                if(rs.getDouble("htqy_tppfl")==0.0){
+                    s.setTppfl("无");
+                }else{
+                    String str3 = Double.toString(rs.getDouble("htqy_tppfl"));
+                    s.setTppfl(str3);
+
+                }
+
+
+
+                s.setJd(rs.getDouble("htqy_jdjz"));
+
+                s.setWd(rs.getDouble("htqy_wdjz"));
+
+               // System.out.println("cod浓度"+rs.getDouble("htqy_codnd")+"cod排放量"+rs.getDouble("htqy_codpfl")+"总氮浓度"+rs.getDouble("htqy_tnnd")+"总氮排放量"+rs.getDouble("htqy_tnpfl")+"总磷浓度"+rs.getDouble("htqy_tpnd")+"总磷排放量"+rs.getDouble("htqy_tppfl"));
+                list.add(s);
+            }
+
+
+            conn.close();
+        }catch(ClassNotFoundException e){
+            e.printStackTrace();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return  list;
+    }
     @RequestMapping("/searchAllQiYeTwo")
     @ResponseBody
     public HashMap get2(HttpServletRequest request,String snscmc, String tjnf)  {

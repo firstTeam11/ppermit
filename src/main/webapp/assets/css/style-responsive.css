@@ -65,7 +65,8 @@ From Medium Devices Up To Larger Devices
   	Fixed Sidebar
   	***/
 	.page-sidebar-fixed .page-content {
-		min-height: 600px; 
+		min-height: 600px;
+
 	}
 
 	.page-sidebar-fixed .page-sidebar {

@@ -8,8 +8,7 @@ function initFileInput1() {
 
     $("#file").fileinput({
         language: 'zh', //设置语言
-      //  uploadUrl: "rest/qmp/fileUpload", //上传的地址
-        uploadUrl: "F:/项目源码/quich4j/src/main/webapp/upload/qmp", //上传的地址
+        uploadUrl: "rest/qmp/fileUpload", //上传的地址
         allowedPreviewTypes: ['xls,XLS'],
         allowedPreviewMimeTypes: ['xls,XLS'],
         allowedFileTypes : ['xls,XLS','xlsx','XLSX'],

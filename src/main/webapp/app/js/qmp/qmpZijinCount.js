@@ -467,8 +467,8 @@ $(document).off("click", "tr[id^='qmpx']").on({
     var lon = parseFloat($("#qmpjd" + this.id.substr(4)).val());
     var lat = parseFloat($("#qmpwd" + this.id.substr(4)).val());
     var infodata = {};
-    var qmpname = ["sectionName", "sectionBymc","watershed", "riverName", "riverLevel", "riverTo", "sectionProperty", "locCity", "locCounty",
-      "testBy", "sectionLevel", "sectionType", "isUrban", "isAddition", "testFrequency", "testItems", "qualityTarget","sectionShhl"];
+    var qmpname = ["sectionName", "watershed", "riverName", "riverLevel", "riverTo", "sectionProperty", "locCity", "locCounty",
+      "testBy", "sectionLevel", "sectionType", "isUrban", "isAddition", "testFrequency", "testItems", "qualityTarget"];
     for (var i = 0; i < $(this).children('td').length; i++) {
       infodata[qmpname[i]] = $(this).children('td').eq(i + 1).text();
     }
@@ -487,9 +487,6 @@ $(document).off("click", "tr[id^='qmpx']").on({
       html += "<button type='button' class='btn' id='xgPo' onclick='qmpToPo(\"${sectionName}\")'>相关污染源</button>";
       html += "<table border='0' class='tableBasic'>";
       html += "<tr><td>断面名称</td><td>${sectionName}</td></tr>";
-
-      html += "<tr><td>所属控制单元名称</td><td>${sectionBymc}</td></tr>";
-
       html += "<tr><td>流域名称</td><td>${watershed}</td></tr>";
       html += "<tr><td>所在河流</td><td>${riverName}</td></tr>";
       html += "<tr><td>所属地市</td><td>${locCity}</td></tr>";
@@ -505,7 +502,6 @@ $(document).off("click", "tr[id^='qmpx']").on({
       html += "<tr><td>监测频次</td><td>${testFrequency}</td></tr>";
       html += "<tr><td>监测项目</td><td>${testItems}</td></tr>";
       html += "<tr><td>功能区水质目标</td><td>${qualityTarget}</td></tr>";
-      html += "<tr><td>收纳河流</td><td>${sectionShhl}</td></tr>";
       html += "</table><br/>";
       html += "<table border='0' class='tableBasic'>";
       html += "总量计算：请选择下面要计算的属性";
@@ -589,11 +585,7 @@ function updateQmpInMap(allData) {
         "isAddition": allData[i].isAddition,
         "testFrequency": allData[i].testFrequency,
         "testItems": allData[i].testItems,
-        "qualityTarget": allData[i].qualityTarget,
-
-        "sectionBymc": allData[i].sectionBymc,
-        "sectionShhl": allData[i].sectionShhl
-
+        "qualityTarget": allData[i].qualityTarget
       };
       var point = new Point(lon, lat, map.spatialReference);
       var infoTemplate = new InfoTemplate("控制断面信息", html);
@@ -1012,11 +1004,7 @@ function updateQmpInMapWithSzsb(allData, szsb_data, szsb_std) {
         "isAddition": allData[i].isAddition,
         "testFrequency": allData[i].testFrequency,
         "testItems": allData[i].testItems,
-        "qualityTarget": allData[i].qualityTarget,
-
-        "sectionBymc": allData[i].sectionBymc,
-        "sectionShhl": allData[i].sectionShhl
-
+        "qualityTarget": allData[i].qualityTarget
       };
       var point = new Point(lon, lat, map.spatialReference);
       var infoTemplate = new InfoTemplate("控制断面信息", html);
@@ -1138,17 +1126,12 @@ function updateBadQmpInMapWithSzsb(allData, szsb_data, szsb_std) {
         "isAddition": allData[i].isAddition,
         "testFrequency": allData[i].testFrequency,
         "testItems": allData[i].testItems,
-        "qualityTarget": allData[i].qualityTarget,
-
-        "sectionBymc": allData[i].sectionBymc,
-        "sectionShhl": allData[i].sectionShhl
-
+        "qualityTarget": allData[i].qualityTarget
       };
       var point = new Point(lon, lat, map.spatialReference);
       var infoTemplate = new InfoTemplate("控制断面信息", html2);
       var symbol2;
       for (var j = 0; j < szsb_data.length; j++) {//找到污染源中对应的断面
-        //qmp_wrxx
         attr2 = {
           "sectionName": szsb_data[j].sectionName,
           "basin": szsb_data[j].basin,
@@ -1286,11 +1269,7 @@ function updateGoodQmpInMapWithSzsb(allData, szsb_data, szsb_std) {
         "isAddition": allData[i].isAddition,
         "testFrequency": allData[i].testFrequency,
         "testItems": allData[i].testItems,
-        "qualityTarget": allData[i].qualityTarget,
-
-        "sectionBymc": allData[i].sectionBymc,
-        "sectionShhl": allData[i].sectionShhl
-
+        "qualityTarget": allData[i].qualityTarget
       };
       var point = new Point(lon, lat, map.spatialReference);
       var infoTemplate = new InfoTemplate("控制断面信息", html);

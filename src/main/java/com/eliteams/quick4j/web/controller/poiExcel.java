@@ -20,7 +20,7 @@ public class poiExcel {
         String url = "jdbc:mysql://localhost:3306/new_env";
 //        String url = "jdbc:mysql://127.0.0.1:3306/quick4j";
         String username = "root";
-        String password = "18342212808y";
+        String password = "root";
 //        String password = "123456";
 
         Connection conn = null;
@@ -100,7 +100,7 @@ public class poiExcel {
         String url = "jdbc:mysql://localhost:3306/new_env";
 //        String url = "jdbc:mysql://127.0.0.1:3306/quick4j";
         String username = "root";
-        String password = "18342212808y";
+        String password = "root";
 //        String password = "123456";
 
         Connection conn = null;

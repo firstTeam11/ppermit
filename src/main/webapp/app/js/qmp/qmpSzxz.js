@@ -5,8 +5,6 @@ var myrole = $("#myRole").val();
 var html1 = "";
 //html += "<button type='button' class='btnz btnz-info' id='xgCu' onclick='qmpToCu(\"${sectionName}\")'>相关单元</button>";
 //html += "<button type='button' class='btnz btnz-info' id='xgPo' onclick='qmpToPo(\"${sectionName}\")'>跳转至相关污染源</button>";
-
-//qmp_bas_info
 html1 += "<table border='0' class='tableBasic'>";
 html1 += "<tr><td>序号</td><td>${id}</td></tr>";
 html1 += "<tr><td>断面级别</td><td>${sectionLevel}</td></tr>";

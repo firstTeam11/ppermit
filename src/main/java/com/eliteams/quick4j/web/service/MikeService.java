@@ -1,6 +1,7 @@
 package com.eliteams.quick4j.web.service;
 
 import com.eliteams.quick4j.core.generic.GenericService;
+import com.eliteams.quick4j.web.model.KzdyJbxx;
 import com.eliteams.quick4j.web.model.MikeJbxx;
 
 import java.util.List;

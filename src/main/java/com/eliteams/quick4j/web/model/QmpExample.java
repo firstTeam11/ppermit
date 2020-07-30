@@ -1,6 +1,5 @@
 package com.eliteams.quick4j.web.model;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -162,216 +161,6 @@ public class QmpExample {
 
         public Criteria andIdNotBetween(Integer value1, Integer value2) {
             addCriterion("id not between", value1, value2, "id");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBhIsNull() {
-            addCriterion("section_bh is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBhIsNotNull() {
-            addCriterion("section_bh is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBhEqualTo(String value) {
-            addCriterion("section_bh =", value, "sectionBh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBhNotEqualTo(String value) {
-            addCriterion("section_bh <>", value, "sectionBh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBhGreaterThan(String value) {
-            addCriterion("section_bh >", value, "sectionBh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBhGreaterThanOrEqualTo(String value) {
-            addCriterion("section_bh >=", value, "sectionBh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBhLessThan(String value) {
-            addCriterion("section_bh <", value, "sectionBh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBhLessThanOrEqualTo(String value) {
-            addCriterion("section_bh <=", value, "sectionBh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBhLike(String value) {
-            addCriterion("section_bh like", value, "sectionBh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBhNotLike(String value) {
-            addCriterion("section_bh not like", value, "sectionBh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBhIn(List<String> values) {
-            addCriterion("section_bh in", values, "sectionBh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBhNotIn(List<String> values) {
-            addCriterion("section_bh not in", values, "sectionBh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBhBetween(String value1, String value2) {
-            addCriterion("section_bh between", value1, value2, "sectionBh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBhNotBetween(String value1, String value2) {
-            addCriterion("section_bh not between", value1, value2, "sectionBh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDybhIsNull() {
-            addCriterion("section_dybh is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDybhIsNotNull() {
-            addCriterion("section_dybh is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDybhEqualTo(String value) {
-            addCriterion("section_dybh =", value, "sectionDybh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDybhNotEqualTo(String value) {
-            addCriterion("section_dybh <>", value, "sectionDybh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDybhGreaterThan(String value) {
-            addCriterion("section_dybh >", value, "sectionDybh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDybhGreaterThanOrEqualTo(String value) {
-            addCriterion("section_dybh >=", value, "sectionDybh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDybhLessThan(String value) {
-            addCriterion("section_dybh <", value, "sectionDybh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDybhLessThanOrEqualTo(String value) {
-            addCriterion("section_dybh <=", value, "sectionDybh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDybhLike(String value) {
-            addCriterion("section_dybh like", value, "sectionDybh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDybhNotLike(String value) {
-            addCriterion("section_dybh not like", value, "sectionDybh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDybhIn(List<String> values) {
-            addCriterion("section_dybh in", values, "sectionDybh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDybhNotIn(List<String> values) {
-            addCriterion("section_dybh not in", values, "sectionDybh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDybhBetween(String value1, String value2) {
-            addCriterion("section_dybh between", value1, value2, "sectionDybh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDybhNotBetween(String value1, String value2) {
-            addCriterion("section_dybh not between", value1, value2, "sectionDybh");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDymcIsNull() {
-            addCriterion("section_dymc is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDymcIsNotNull() {
-            addCriterion("section_dymc is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDymcEqualTo(String value) {
-            addCriterion("section_dymc =", value, "sectionDymc");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDymcNotEqualTo(String value) {
-            addCriterion("section_dymc <>", value, "sectionDymc");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDymcGreaterThan(String value) {
-            addCriterion("section_dymc >", value, "sectionDymc");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDymcGreaterThanOrEqualTo(String value) {
-            addCriterion("section_dymc >=", value, "sectionDymc");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDymcLessThan(String value) {
-            addCriterion("section_dymc <", value, "sectionDymc");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDymcLessThanOrEqualTo(String value) {
-            addCriterion("section_dymc <=", value, "sectionDymc");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDymcLike(String value) {
-            addCriterion("section_dymc like", value, "sectionDymc");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDymcNotLike(String value) {
-            addCriterion("section_dymc not like", value, "sectionDymc");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDymcIn(List<String> values) {
-            addCriterion("section_dymc in", values, "sectionDymc");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDymcNotIn(List<String> values) {
-            addCriterion("section_dymc not in", values, "sectionDymc");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDymcBetween(String value1, String value2) {
-            addCriterion("section_dymc between", value1, value2, "sectionDymc");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionDymcNotBetween(String value1, String value2) {
-            addCriterion("section_dymc not between", value1, value2, "sectionDymc");
             return (Criteria) this;
         }
 
@@ -1625,52 +1414,52 @@ public class QmpExample {
             return (Criteria) this;
         }
 
-        public Criteria andLocLonSEqualTo(Integer value) {
+        public Criteria andLocLonSEqualTo(Double value) {
             addCriterion("loc_lon_s =", value, "locLonS");
             return (Criteria) this;
         }
 
-        public Criteria andLocLonSNotEqualTo(Integer value) {
+        public Criteria andLocLonSNotEqualTo(Double value) {
             addCriterion("loc_lon_s <>", value, "locLonS");
             return (Criteria) this;
         }
 
-        public Criteria andLocLonSGreaterThan(Integer value) {
+        public Criteria andLocLonSGreaterThan(Double value) {
             addCriterion("loc_lon_s >", value, "locLonS");
             return (Criteria) this;
         }
 
-        public Criteria andLocLonSGreaterThanOrEqualTo(Integer value) {
+        public Criteria andLocLonSGreaterThanOrEqualTo(Double value) {
             addCriterion("loc_lon_s >=", value, "locLonS");
             return (Criteria) this;
         }
 
-        public Criteria andLocLonSLessThan(Integer value) {
+        public Criteria andLocLonSLessThan(Double value) {
             addCriterion("loc_lon_s <", value, "locLonS");
             return (Criteria) this;
         }
 
-        public Criteria andLocLonSLessThanOrEqualTo(Integer value) {
+        public Criteria andLocLonSLessThanOrEqualTo(Double value) {
             addCriterion("loc_lon_s <=", value, "locLonS");
             return (Criteria) this;
         }
 
-        public Criteria andLocLonSIn(List<Integer> values) {
+        public Criteria andLocLonSIn(List<Double> values) {
             addCriterion("loc_lon_s in", values, "locLonS");
             return (Criteria) this;
         }
 
-        public Criteria andLocLonSNotIn(List<Integer> values) {
+        public Criteria andLocLonSNotIn(List<Double> values) {
             addCriterion("loc_lon_s not in", values, "locLonS");
             return (Criteria) this;
         }
 
-        public Criteria andLocLonSBetween(Integer value1, Integer value2) {
+        public Criteria andLocLonSBetween(Double value1, Double value2) {
             addCriterion("loc_lon_s between", value1, value2, "locLonS");
             return (Criteria) this;
         }
 
-        public Criteria andLocLonSNotBetween(Integer value1, Integer value2) {
+        public Criteria andLocLonSNotBetween(Double value1, Double value2) {
             addCriterion("loc_lon_s not between", value1, value2, "locLonS");
             return (Criteria) this;
         }
@@ -1805,52 +1594,52 @@ public class QmpExample {
             return (Criteria) this;
         }
 
-        public Criteria andLocLatSEqualTo(Integer value) {
+        public Criteria andLocLatSEqualTo(Double value) {
             addCriterion("loc_lat_s =", value, "locLatS");
             return (Criteria) this;
         }
 
-        public Criteria andLocLatSNotEqualTo(Integer value) {
+        public Criteria andLocLatSNotEqualTo(Double value) {
             addCriterion("loc_lat_s <>", value, "locLatS");
             return (Criteria) this;
         }
 
-        public Criteria andLocLatSGreaterThan(Integer value) {
+        public Criteria andLocLatSGreaterThan(Double value) {
             addCriterion("loc_lat_s >", value, "locLatS");
             return (Criteria) this;
         }
 
-        public Criteria andLocLatSGreaterThanOrEqualTo(Integer value) {
+        public Criteria andLocLatSGreaterThanOrEqualTo(Double value) {
             addCriterion("loc_lat_s >=", value, "locLatS");
             return (Criteria) this;
         }
 
-        public Criteria andLocLatSLessThan(Integer value) {
+        public Criteria andLocLatSLessThan(Double value) {
             addCriterion("loc_lat_s <", value, "locLatS");
             return (Criteria) this;
         }
 
-        public Criteria andLocLatSLessThanOrEqualTo(Integer value) {
+        public Criteria andLocLatSLessThanOrEqualTo(Double value) {
             addCriterion("loc_lat_s <=", value, "locLatS");
             return (Criteria) this;
         }
 
-        public Criteria andLocLatSIn(List<Integer> values) {
+        public Criteria andLocLatSIn(List<Double> values) {
             addCriterion("loc_lat_s in", values, "locLatS");
             return (Criteria) this;
         }
 
-        public Criteria andLocLatSNotIn(List<Integer> values) {
+        public Criteria andLocLatSNotIn(List<Double> values) {
             addCriterion("loc_lat_s not in", values, "locLatS");
             return (Criteria) this;
         }
 
-        public Criteria andLocLatSBetween(Integer value1, Integer value2) {
+        public Criteria andLocLatSBetween(Double value1, Double value2) {
             addCriterion("loc_lat_s between", value1, value2, "locLatS");
             return (Criteria) this;
         }
 
-        public Criteria andLocLatSNotBetween(Integer value1, Integer value2) {
+        public Criteria andLocLatSNotBetween(Double value1, Double value2) {
             addCriterion("loc_lat_s not between", value1, value2, "locLatS");
             return (Criteria) this;
         }
@@ -1925,256 +1714,6 @@ public class QmpExample {
             return (Criteria) this;
         }
 
-        public Criteria andLocLonIsNull() {
-            addCriterion("loc_lon is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLonIsNotNull() {
-            addCriterion("loc_lon is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLonEqualTo(BigDecimal value) {
-            addCriterion("loc_lon =", value, "locLon");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLonNotEqualTo(BigDecimal value) {
-            addCriterion("loc_lon <>", value, "locLon");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLonGreaterThan(BigDecimal value) {
-            addCriterion("loc_lon >", value, "locLon");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLonGreaterThanOrEqualTo(BigDecimal value) {
-            addCriterion("loc_lon >=", value, "locLon");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLonLessThan(BigDecimal value) {
-            addCriterion("loc_lon <", value, "locLon");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLonLessThanOrEqualTo(BigDecimal value) {
-            addCriterion("loc_lon <=", value, "locLon");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLonIn(List<BigDecimal> values) {
-            addCriterion("loc_lon in", values, "locLon");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLonNotIn(List<BigDecimal> values) {
-            addCriterion("loc_lon not in", values, "locLon");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLonBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("loc_lon between", value1, value2, "locLon");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLonNotBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("loc_lon not between", value1, value2, "locLon");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLatIsNull() {
-            addCriterion("loc_lat is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLatIsNotNull() {
-            addCriterion("loc_lat is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLatEqualTo(BigDecimal value) {
-            addCriterion("loc_lat =", value, "locLat");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLatNotEqualTo(BigDecimal value) {
-            addCriterion("loc_lat <>", value, "locLat");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLatGreaterThan(BigDecimal value) {
-            addCriterion("loc_lat >", value, "locLat");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLatGreaterThanOrEqualTo(BigDecimal value) {
-            addCriterion("loc_lat >=", value, "locLat");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLatLessThan(BigDecimal value) {
-            addCriterion("loc_lat <", value, "locLat");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLatLessThanOrEqualTo(BigDecimal value) {
-            addCriterion("loc_lat <=", value, "locLat");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLatIn(List<BigDecimal> values) {
-            addCriterion("loc_lat in", values, "locLat");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLatNotIn(List<BigDecimal> values) {
-            addCriterion("loc_lat not in", values, "locLat");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLatBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("loc_lat between", value1, value2, "locLat");
-            return (Criteria) this;
-        }
-
-        public Criteria andLocLatNotBetween(BigDecimal value1, BigDecimal value2) {
-            addCriterion("loc_lat not between", value1, value2, "locLat");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionShhlIsNull() {
-            addCriterion("section_shhl is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionShhlIsNotNull() {
-            addCriterion("section_shhl is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionShhlEqualTo(String value) {
-            addCriterion("section_shhl =", value, "sectionShhl");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionShhlNotEqualTo(String value) {
-            addCriterion("section_shhl <>", value, "sectionShhl");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionShhlGreaterThan(String value) {
-            addCriterion("section_shhl >", value, "sectionShhl");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionShhlGreaterThanOrEqualTo(String value) {
-            addCriterion("section_shhl >=", value, "sectionShhl");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionShhlLessThan(String value) {
-            addCriterion("section_shhl <", value, "sectionShhl");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionShhlLessThanOrEqualTo(String value) {
-            addCriterion("section_shhl <=", value, "sectionShhl");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionShhlLike(String value) {
-            addCriterion("section_shhl like", value, "sectionShhl");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionShhlNotLike(String value) {
-            addCriterion("section_shhl not like", value, "sectionShhl");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionShhlIn(List<String> values) {
-            addCriterion("section_shhl in", values, "sectionShhl");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionShhlNotIn(List<String> values) {
-            addCriterion("section_shhl not in", values, "sectionShhl");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionShhlBetween(String value1, String value2) {
-            addCriterion("section_shhl between", value1, value2, "sectionShhl");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionShhlNotBetween(String value1, String value2) {
-            addCriterion("section_shhl not between", value1, value2, "sectionShhl");
-            return (Criteria) this;
-        }
-
-        public Criteria andTjnfIsNull() {
-            addCriterion("tjnf is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTjnfIsNotNull() {
-            addCriterion("tjnf is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTjnfEqualTo(Integer value) {
-            addCriterion("tjnf =", value, "tjnf");
-            return (Criteria) this;
-        }
-
-        public Criteria andTjnfNotEqualTo(Integer value) {
-            addCriterion("tjnf <>", value, "tjnf");
-            return (Criteria) this;
-        }
-
-        public Criteria andTjnfGreaterThan(Integer value) {
-            addCriterion("tjnf >", value, "tjnf");
-            return (Criteria) this;
-        }
-
-        public Criteria andTjnfGreaterThanOrEqualTo(Integer value) {
-            addCriterion("tjnf >=", value, "tjnf");
-            return (Criteria) this;
-        }
-
-        public Criteria andTjnfLessThan(Integer value) {
-            addCriterion("tjnf <", value, "tjnf");
-            return (Criteria) this;
-        }
-
-        public Criteria andTjnfLessThanOrEqualTo(Integer value) {
-            addCriterion("tjnf <=", value, "tjnf");
-            return (Criteria) this;
-        }
-
-        public Criteria andTjnfIn(List<Integer> values) {
-            addCriterion("tjnf in", values, "tjnf");
-            return (Criteria) this;
-        }
-
-        public Criteria andTjnfNotIn(List<Integer> values) {
-            addCriterion("tjnf not in", values, "tjnf");
-            return (Criteria) this;
-        }
-
-        public Criteria andTjnfBetween(Integer value1, Integer value2) {
-            addCriterion("tjnf between", value1, value2, "tjnf");
-            return (Criteria) this;
-        }
-
-        public Criteria andTjnfNotBetween(Integer value1, Integer value2) {
-            addCriterion("tjnf not between", value1, value2, "tjnf");
-            return (Criteria) this;
-        }
-
         public Criteria andIsDelIsNull() {
             addCriterion("is_del is null");
             return (Criteria) this;
@@ -2185,413 +1724,53 @@ public class QmpExample {
             return (Criteria) this;
         }
 
-        public Criteria andIsDelEqualTo(String value) {
+        public Criteria andIsDelEqualTo(Integer value) {
             addCriterion("is_del =", value, "isDel");
             return (Criteria) this;
         }
 
-        public Criteria andIsDelNotEqualTo(String value) {
+        public Criteria andIsDelNotEqualTo(Integer value) {
             addCriterion("is_del <>", value, "isDel");
             return (Criteria) this;
         }
 
-        public Criteria andIsDelGreaterThan(String value) {
+        public Criteria andIsDelGreaterThan(Integer value) {
             addCriterion("is_del >", value, "isDel");
             return (Criteria) this;
         }
 
-        public Criteria andIsDelGreaterThanOrEqualTo(String value) {
+        public Criteria andIsDelGreaterThanOrEqualTo(Integer value) {
             addCriterion("is_del >=", value, "isDel");
             return (Criteria) this;
         }
 
-        public Criteria andIsDelLessThan(String value) {
+        public Criteria andIsDelLessThan(Integer value) {
             addCriterion("is_del <", value, "isDel");
             return (Criteria) this;
         }
 
-        public Criteria andIsDelLessThanOrEqualTo(String value) {
+        public Criteria andIsDelLessThanOrEqualTo(Integer value) {
             addCriterion("is_del <=", value, "isDel");
             return (Criteria) this;
         }
 
-        public Criteria andIsDelLike(String value) {
-            addCriterion("is_del like", value, "isDel");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDelNotLike(String value) {
-            addCriterion("is_del not like", value, "isDel");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDelIn(List<String> values) {
+        public Criteria andIsDelIn(List<Integer> values) {
             addCriterion("is_del in", values, "isDel");
             return (Criteria) this;
         }
 
-        public Criteria andIsDelNotIn(List<String> values) {
+        public Criteria andIsDelNotIn(List<Integer> values) {
             addCriterion("is_del not in", values, "isDel");
             return (Criteria) this;
         }
 
-        public Criteria andIsDelBetween(String value1, String value2) {
+        public Criteria andIsDelBetween(Integer value1, Integer value2) {
             addCriterion("is_del between", value1, value2, "isDel");
             return (Criteria) this;
         }
 
-        public Criteria andIsDelNotBetween(String value1, String value2) {
+        public Criteria andIsDelNotBetween(Integer value1, Integer value2) {
             addCriterion("is_del not between", value1, value2, "isDel");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl1IsNull() {
-            addCriterion("section_bl1 is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl1IsNotNull() {
-            addCriterion("section_bl1 is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl1EqualTo(String value) {
-            addCriterion("section_bl1 =", value, "sectionBl1");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl1NotEqualTo(String value) {
-            addCriterion("section_bl1 <>", value, "sectionBl1");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl1GreaterThan(String value) {
-            addCriterion("section_bl1 >", value, "sectionBl1");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl1GreaterThanOrEqualTo(String value) {
-            addCriterion("section_bl1 >=", value, "sectionBl1");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl1LessThan(String value) {
-            addCriterion("section_bl1 <", value, "sectionBl1");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl1LessThanOrEqualTo(String value) {
-            addCriterion("section_bl1 <=", value, "sectionBl1");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl1Like(String value) {
-            addCriterion("section_bl1 like", value, "sectionBl1");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl1NotLike(String value) {
-            addCriterion("section_bl1 not like", value, "sectionBl1");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl1In(List<String> values) {
-            addCriterion("section_bl1 in", values, "sectionBl1");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl1NotIn(List<String> values) {
-            addCriterion("section_bl1 not in", values, "sectionBl1");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl1Between(String value1, String value2) {
-            addCriterion("section_bl1 between", value1, value2, "sectionBl1");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl1NotBetween(String value1, String value2) {
-            addCriterion("section_bl1 not between", value1, value2, "sectionBl1");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl2IsNull() {
-            addCriterion("section_bl2 is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl2IsNotNull() {
-            addCriterion("section_bl2 is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl2EqualTo(String value) {
-            addCriterion("section_bl2 =", value, "sectionBl2");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl2NotEqualTo(String value) {
-            addCriterion("section_bl2 <>", value, "sectionBl2");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl2GreaterThan(String value) {
-            addCriterion("section_bl2 >", value, "sectionBl2");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl2GreaterThanOrEqualTo(String value) {
-            addCriterion("section_bl2 >=", value, "sectionBl2");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl2LessThan(String value) {
-            addCriterion("section_bl2 <", value, "sectionBl2");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl2LessThanOrEqualTo(String value) {
-            addCriterion("section_bl2 <=", value, "sectionBl2");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl2Like(String value) {
-            addCriterion("section_bl2 like", value, "sectionBl2");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl2NotLike(String value) {
-            addCriterion("section_bl2 not like", value, "sectionBl2");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl2In(List<String> values) {
-            addCriterion("section_bl2 in", values, "sectionBl2");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl2NotIn(List<String> values) {
-            addCriterion("section_bl2 not in", values, "sectionBl2");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl2Between(String value1, String value2) {
-            addCriterion("section_bl2 between", value1, value2, "sectionBl2");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl2NotBetween(String value1, String value2) {
-            addCriterion("section_bl2 not between", value1, value2, "sectionBl2");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl3IsNull() {
-            addCriterion("section_bl3 is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl3IsNotNull() {
-            addCriterion("section_bl3 is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl3EqualTo(String value) {
-            addCriterion("section_bl3 =", value, "sectionBl3");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl3NotEqualTo(String value) {
-            addCriterion("section_bl3 <>", value, "sectionBl3");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl3GreaterThan(String value) {
-            addCriterion("section_bl3 >", value, "sectionBl3");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl3GreaterThanOrEqualTo(String value) {
-            addCriterion("section_bl3 >=", value, "sectionBl3");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl3LessThan(String value) {
-            addCriterion("section_bl3 <", value, "sectionBl3");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl3LessThanOrEqualTo(String value) {
-            addCriterion("section_bl3 <=", value, "sectionBl3");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl3Like(String value) {
-            addCriterion("section_bl3 like", value, "sectionBl3");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl3NotLike(String value) {
-            addCriterion("section_bl3 not like", value, "sectionBl3");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl3In(List<String> values) {
-            addCriterion("section_bl3 in", values, "sectionBl3");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl3NotIn(List<String> values) {
-            addCriterion("section_bl3 not in", values, "sectionBl3");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl3Between(String value1, String value2) {
-            addCriterion("section_bl3 between", value1, value2, "sectionBl3");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl3NotBetween(String value1, String value2) {
-            addCriterion("section_bl3 not between", value1, value2, "sectionBl3");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl4IsNull() {
-            addCriterion("section_bl4 is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl4IsNotNull() {
-            addCriterion("section_bl4 is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl4EqualTo(String value) {
-            addCriterion("section_bl4 =", value, "sectionBl4");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl4NotEqualTo(String value) {
-            addCriterion("section_bl4 <>", value, "sectionBl4");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl4GreaterThan(String value) {
-            addCriterion("section_bl4 >", value, "sectionBl4");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl4GreaterThanOrEqualTo(String value) {
-            addCriterion("section_bl4 >=", value, "sectionBl4");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl4LessThan(String value) {
-            addCriterion("section_bl4 <", value, "sectionBl4");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl4LessThanOrEqualTo(String value) {
-            addCriterion("section_bl4 <=", value, "sectionBl4");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl4Like(String value) {
-            addCriterion("section_bl4 like", value, "sectionBl4");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl4NotLike(String value) {
-            addCriterion("section_bl4 not like", value, "sectionBl4");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl4In(List<String> values) {
-            addCriterion("section_bl4 in", values, "sectionBl4");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl4NotIn(List<String> values) {
-            addCriterion("section_bl4 not in", values, "sectionBl4");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl4Between(String value1, String value2) {
-            addCriterion("section_bl4 between", value1, value2, "sectionBl4");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl4NotBetween(String value1, String value2) {
-            addCriterion("section_bl4 not between", value1, value2, "sectionBl4");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl5IsNull() {
-            addCriterion("section_bl5 is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl5IsNotNull() {
-            addCriterion("section_bl5 is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl5EqualTo(String value) {
-            addCriterion("section_bl5 =", value, "sectionBl5");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl5NotEqualTo(String value) {
-            addCriterion("section_bl5 <>", value, "sectionBl5");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl5GreaterThan(String value) {
-            addCriterion("section_bl5 >", value, "sectionBl5");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl5GreaterThanOrEqualTo(String value) {
-            addCriterion("section_bl5 >=", value, "sectionBl5");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl5LessThan(String value) {
-            addCriterion("section_bl5 <", value, "sectionBl5");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl5LessThanOrEqualTo(String value) {
-            addCriterion("section_bl5 <=", value, "sectionBl5");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl5Like(String value) {
-            addCriterion("section_bl5 like", value, "sectionBl5");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl5NotLike(String value) {
-            addCriterion("section_bl5 not like", value, "sectionBl5");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl5In(List<String> values) {
-            addCriterion("section_bl5 in", values, "sectionBl5");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl5NotIn(List<String> values) {
-            addCriterion("section_bl5 not in", values, "sectionBl5");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl5Between(String value1, String value2) {
-            addCriterion("section_bl5 between", value1, value2, "sectionBl5");
-            return (Criteria) this;
-        }
-
-        public Criteria andSectionBl5NotBetween(String value1, String value2) {
-            addCriterion("section_bl5 not between", value1, value2, "sectionBl5");
             return (Criteria) this;
         }
     }

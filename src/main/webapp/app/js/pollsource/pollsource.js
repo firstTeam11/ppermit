@@ -34,33 +34,6 @@ html += "<tr><td>市州盟</td><td>${xxdzdqSZM}</td></tr>";
 html += "<tr><td>区市旗</td><td>${xxdzxQSQ}</td></tr>";
 html += "<tr><td>乡镇</td><td>${xxdzxZ}</td></tr>";
 html += "<tr><td>受纳水体</td><td>${snstmc}</td></tr>";
-
-
-
-html += "<tr><td>煤炭消耗量</td><td>${wtxhlD}</td></tr>";
-html += "<tr><td>燃料油消耗量</td><td>${rlyxhlD}</td></tr>";
-html += "<tr><td>焦炭消耗量</td><td>${jtxhlD}</td></tr>";
-html += "<tr><td>天然气消耗量</td><td>${trqxhlWLFM}</td></tr>";
-html += "<tr><td>其他燃油消耗量</td><td>${qtryxhlDBZM}</td></tr>";
-html += "<tr><td>用电量</td><td>${ydlWQWS}</td></tr>";
-html += "<tr><td>工业用水量</td><td>${gyyslD}</td></tr>";
-html += "<tr><td>总氮</td><td>${zdpflD}</td></tr>";
-html += "<tr><td>总磷</td><td>${zppflD}</td></tr>";
-html += "<tr><td>工业废气</td><td>${gyfqpflWLFM}</td></tr>";
-html += "<tr><td>二氧化硫</td><td>${eyhspflD}</td></tr>";
-html += "<tr><td>氮氧化物</td><td>${dyhwpflD}</td></tr>";
-html += "<tr><td>烟尘</td><td>${ycpflD}</td></tr>";
-html += "<tr><td>挥发性有机物</td><td>${vocspflD}</td></tr>";
-html += "<tr><td>废气砷</td><td>${fqspflQK}</td></tr>";
-html += "<tr><td>废气铅</td><td>${fqqpflQK}</td></tr>";
-html += "<tr><td>废气镉</td><td>${fqgpflQK}</td></tr>";
-html += "<tr><td>废气总铬</td><td>${fqzgpflQK}</td></tr>";
-html += "<tr><td>废气六价铬</td><td>${fqljgpflQK}</td></tr>";
-html += "<tr><td>一般工业固体废物倾倒丢弃量</td><td>${ybgygtfwdqlD}</td></tr>";
-html += "<tr><td>危险废物倾倒丢弃量</td><td>${wxfwdqlD}</td></tr>";
-
-
-
 html += "<tr><td>废水</td><td>${gyfspflD}</td></tr>";
 html += "<tr><td>需氧量</td><td>${hxxylpflD}</td></tr>";
 html += "<tr><td>氨氮</td><td>${adpflD}</td></tr>";
@@ -73,8 +46,6 @@ html += "<tr><td>镉</td><td>${fsgpflQk}</td></tr>";
 html += "<tr><td>汞</td><td>${fsgpflQkDup1}</td></tr>";
 html += "<tr><td>总铬</td><td>${fszgpflQk}</td></tr>";
 html += "<tr><td>六价铬</td><td>${fsljgpflQk}</td></tr>";
-
-
 html += "</table>";
 var html1 = "";
 //html1 += "<button type='button' class='btnz btnz-info' onclick='poToCu(\"${sskzdy}\")'>相关单元</button>";
@@ -106,28 +77,7 @@ html1 += "<tr><td>出口</td><td>${zdckndHkS}</td></tr>";
 html1 += "<tr><td>总磷去除量</td><td>${zlqclQk}</td></tr>";
 html1 += "<tr><td>进口</td><td>${zljkndHkS}</td></tr>";
 html1 += "<tr><td>出口</td><td>${zlckndHkS}</td></tr>";
-
-html1 += "<tr><td>污泥倾倒丢弃量</td><td>${wnqddqlD}</td></tr>";
-html1 += "<tr><td>生化需氧量去除量</td><td>${shxylqclD}</td></tr>";
-html1 += "<tr><td>进口</td><td>${shxyljkndHKS}</td></tr>";
-html1 += "<tr><td>出口</td><td>${shxylckndHKS}</td></tr>";
-html1 += "<tr><td>悬浮物去除量</td><td>${xfwqclD}</td></tr>";
-html1 += "<tr><td>进口</td><td>${xfwjkndHKS}</td></tr>";
-html1 += "<tr><td>出口</td><td>${xfwckndHKS}</td></tr>";
-html1 += "<tr><td>动植物油去除量</td><td>${dzwyqclD}</td></tr>";
-html1 += "<tr><td>进口</td><td>${dzwyjkndHKS}</td></tr>";
-html1 += "<tr><td>出口</td><td>${dzwyckndHKS}</td></tr>";
-html1 += "<tr><td>石油类去除量</td><td>${sylqclD}</td></tr>";
-html1 += "<tr><td>进口</td><td>${syljkndHKS}</td></tr>";
-html1 += "<tr><td>出口</td><td>${sylckndHKS}</td></tr>";
-html1 += "<tr><td>阴离子活性剂去除量</td><td>${ylzhxjqclD}</td></tr>";
-html1 += "<tr><td>进口</td><td>${ylzhxjjkndHKS}</td></tr>";
-html1 += "<tr><td>出口</td><td>${ylzhxjckndHKS}</td></tr>";
-
-
 html1 += "</table>";
-
-
 
 var html2 = "";
 //html2 += "<button type='button' class='btnz btnz-info' onclick='poToCu(\"${kzdy}\")'>相关单元</button>";
@@ -299,51 +249,27 @@ function initMap() {
 							lon = allData[i].jdG;
 							lat = allData[i].wdG;
 							attr = {
-							    "id":allData[i].id,
-                                "xzqhmc":allData[i].xzqhmc,
-                                "tbdwxxmc":allData[i].tbdwxxmc,
-                                "kzdy":allData[i].kzdy,
-                                "kzdm":allData[i].kzdm,
-                                "xxdzdqSZM":allData[i].xxdzdqSZM,
-                                "xxdzxQSQ":allData[i].xxdzxQSQ,
-                                "xxdzxZ":allData[i].xxdzxZ,
-                                "snstmc":allData[i].snstmc,
-                                "gyfspflD":allData[i].gyfspflD,
-                                "hxxylpflD":allData[i].hxxylpflD,
-                                "adpflD":allData[i].adpflD,
-                                "sylpflD":allData[i].sylpflD,
-                                "hffpflQk":allData[i].hffpflQk,
-                                "qhwpflQk":allData[i].qhwpflQk,
-                                "fsspflQk":allData[i].fsspflQk,
-                                "fsqpflQk":allData[i].fsqpflQk,
-                                "fsgpflQk":allData[i].fsgpflQk,
-                                "fsgpflQkDup1":allData[i].fsgpflQkDup1,
-                                "fszgpflQk":allData[i].fszgpflQk,
-                                "fsljgpflQk":allData[i].fsljgpflQk,
-
-
-                                "wtxhlD":allData[i].wtxhlD,
-                                "rlyxhlD":allData[i].rlyxhlD,
-                                "jtxhlD":allData[i].jtxhlD,
-                                "trqxhlWLFM":allData[i].trqxhlWLFM,
-                                "qtryxhlDBZM":allData[i].qtryxhlDBZM,
-                                "ydlWQWS":allData[i].ydlWQWS,
-                                "gyyslD":allData[i].gyyslD,
-                                "zdpflD":allData[i].zdpflD,
-                                "gyfqpflWLFM":allData[i].gyfqpflWLFM,
-                                "eyhspflD":allData[i].eyhspflD,
-                                "dyhwpflD":allData[i].dyhwpflD,
-                                "ycpflD":allData[i].ycpflD,
-                                "vocspflD":allData[i].vocspflD,
-                                "fqspflQK":allData[i].fqspflQK,
-                                "fqqpflQK":allData[i].fqqpflQK,
-                                "fqgpflQK":allData[i].fqgpflQK,
-                                "fqzgpflQK":allData[i].fqzgpflQK,
-                                "fqljgpflQK":allData[i].fqljgpflQK,
-                                "ybgygtfwdqlD":allData[i].ybgygtfwdqlD,
-                                "wxfwdqlD":allData[i].wxfwdqlD
-
-
+									"id":allData[i].id, 
+									"xzqhmc":allData[i].xzqhmc, 
+									"tbdwxxmc":allData[i].tbdwxxmc, 
+									"kzdy":allData[i].kzdy, 
+									"kzdm":allData[i].kzdm, 
+									"xxdzdqSZM":allData[i].xxdzdqSZM, 
+									"xxdzxQSQ":allData[i].xxdzxQSQ, 
+									"xxdzxZ":allData[i].xxdzxZ, 
+									"snstmc":allData[i].snstmc, 
+									"gyfspflD":allData[i].gyfspflD, 
+									"hxxylpflD":allData[i].hxxylpflD, 
+									"adpflD":allData[i].adpflD, 
+									"sylpflD":allData[i].sylpflD, 
+									"hffpflQk":allData[i].hffpflQk, 
+									"qhwpflQk":allData[i].qhwpflQk, 
+									"fsspflQk":allData[i].fsspflQk, 
+									"fsqpflQk":allData[i].fsqpflQk, 
+									"fsgpflQk":allData[i].fsgpflQk, 
+									"fsgpflQkDup1":allData[i].fsgpflQkDup1, 
+									"fszgpflQk":allData[i].fszgpflQk, 
+									"fsljgpflQk":allData[i].fsljgpflQk 
 							};	 
 							var point = new Point(lon,lat,map.spatialReference);
 							var infoTemplate = new InfoTemplate("直排企业信息", html);
@@ -385,29 +311,9 @@ function initMap() {
 									"zdckndHkS":allData[i].zdckndHkS,
 									"zlqclQk":allData[i].zlqclQk,
 									"zljkndHkS":allData[i].zljkndHkS,
-									"zlckndHkS":allData[i].zlckndHkS,
-
-
-                                "wnqddqlD":allData[i].wnqddqlD,
-                                "shxylqclD":allData[i].shxylqclD,
-                                "shxyljkndHKS":allData[i].shxyljkndHKS,
-                                "shxylckndHKS":allData[i].shxylckndHKS,
-                                "xfwqclD":allData[i].xfwqclD,
-                                "xfwjkndHKS":allData[i].xfwjkndHKS,
-                                "xfwckndHKS":allData[i].xfwckndHKS,
-                                "dzwyqclD":allData[i].dzwyqclD,
-                                "dzwyjkndHKS":allData[i].dzwyjkndHKS,
-                                "dzwyckndHKS":allData[i].dzwyckndHKS,
-                                "sylqclD":allData[i].sylqclD,
-                                "syljkndHKS":allData[i].syljkndHKS,
-                                "sylckndHKS":allData[i].sylckndHKS,
-                                "ylzhxjqclD":allData[i].ylzhxjqclD,
-                                "ylzhxjjkndHKS":allData[i].ylzhxjjkndHKS,
-                                "ylzhxjckndHKS":allData[i].ylzhxjckndHKS
-
-
-
-                        };
+									"zlckndHkS":allData[i].zlckndHkS
+		
+							};	 
 							var point = new Point(lon,lat,map.spatialReference);
 							var infoTemplate = new InfoTemplate("污水处理厂信息", html1);
 							var symbol1 = new PictureMarkerSymbol("app/img/wsclc1.gif", 10,10);
@@ -517,33 +423,7 @@ function updatePsrcInMap(allData, flag) {
                     "fsgpflQk": allData[i].fsgpflQk,
                     "fsgpflQkDup1": allData[i].fsgpflQkDup1,
                     "fszgpflQk": allData[i].fszgpflQk,
-                    "fsljgpflQk": allData[i].fsljgpflQk,
-
-
-
-                    "wtxhlD":allData[i].wtxhlD,
-                    "rlyxhlD":allData[i].rlyxhlD,
-                    "jtxhlD":allData[i].jtxhlD,
-                    "trqxhlWLFM":allData[i].trqxhlWLFM,
-                    "qtryxhlDBZM":allData[i].qtryxhlDBZM,
-                    "ydlWQWS":allData[i].ydlWQWS,
-                    "gyyslD":allData[i].gyyslD,
-                    "zdpflD":allData[i].zdpflD,
-                    "gyfqpflWLFM":allData[i].gyfqpflWLFM,
-                    "eyhspflD":allData[i].eyhspflD,
-                    "dyhwpflD":allData[i].dyhwpflD,
-                    "ycpflD":allData[i].ycpflD,
-                    "vocspflD":allData[i].vocspflD,
-                    "fqspflQK":allData[i].fqspflQK,
-                    "fqqpflQK":allData[i].fqqpflQK,
-                    "fqgpflQK":allData[i].fqgpflQK,
-                    "fqzgpflQK":allData[i].fqzgpflQK,
-                    "fqljgpflQK":allData[i].fqljgpflQK,
-                    "ybgygtfwdqlD":allData[i].ybgygtfwdqlD,
-                    "wxfwdqlD":allData[i].wxfwdqlD
-
-
-
+                    "fsljgpflQk": allData[i].fsljgpflQk
                 };
                 var point = new Point(lon, lat, map.spatialReference);
                 var infoTemplate = new InfoTemplate("直排企业信息", html);
@@ -584,29 +464,7 @@ function updatePsrcInMap(allData, flag) {
                     "zdckndHkS": allData[i].zdckndHkS,
                     "zlqclQk": allData[i].zlqclQk,
                     "zljkndHkS": allData[i].zljkndHkS,
-                    "zlckndHkS": allData[i].zlckndHkS,
-
-
-
-
-                    "wnqddqlD":allData[i].wnqddqlD,
-                    "shxylqclD":allData[i].shxylqclD,
-                    "shxyljkndHKS":allData[i].shxyljkndHKS,
-                    "shxylckndHKS":allData[i].shxylckndHKS,
-                    "xfwqclD":allData[i].xfwqclD,
-                    "xfwjkndHKS":allData[i].xfwjkndHKS,
-                    "xfwckndHKS":allData[i].xfwckndHKS,
-                    "dzwyqclD":allData[i].dzwyqclD,
-                    "dzwyjkndHKS":allData[i].dzwyjkndHKS,
-                    "dzwyckndHKS":allData[i].dzwyckndHKS,
-                    "sylqclD":allData[i].sylqclD,
-                    "syljkndHKS":allData[i].syljkndHKS,
-                    "sylckndHKS":allData[i].sylckndHKS,
-                    "ylzhxjqclD":allData[i].ylzhxjqclD,
-                    "ylzhxjjkndHKS":allData[i].ylzhxjjkndHKS,
-                    "ylzhxjckndHKS":allData[i].ylzhxjckndHKS
-
-
+                    "zlckndHkS": allData[i].zlckndHkS
                 };
                 var point = new Point(lon, lat, map.spatialReference);
                 var infoTemplate = new InfoTemplate("污水处理厂信息", html1);
@@ -716,29 +574,7 @@ function updatePftyInMap(allData, flag) {
                 "zdckndHkS": allData[i].zdckndHkS,
                 "zlqclQk": allData[i].zlqclQk,
                 "zljkndHkS": allData[i].zljkndHkS,
-                "zlckndHkS": allData[i].zlckndHkS,
-
-
-
-                "wnqddqlD":allData[i].wnqddqlD,
-                "shxylqclD":allData[i].shxylqclD,
-                "shxyljkndHKS":allData[i].shxyljkndHKS,
-                "shxylckndHKS":allData[i].shxylckndHKS,
-                "xfwqclD":allData[i].xfwqclD,
-                "xfwjkndHKS":allData[i].xfwjkndHKS,
-                "xfwckndHKS":allData[i].xfwckndHKS,
-                "dzwyqclD":allData[i].dzwyqclD,
-                "dzwyjkndHKS":allData[i].dzwyjkndHKS,
-                "dzwyckndHKS":allData[i].dzwyckndHKS,
-                "sylqclD":allData[i].sylqclD,
-                "syljkndHKS":allData[i].syljkndHKS,
-                "sylckndHKS":allData[i].sylckndHKS,
-                "ylzhxjqclD":allData[i].ylzhxjqclD,
-                "ylzhxjjkndHKS":allData[i].ylzhxjjkndHKS,
-                "ylzhxjckndHKS":allData[i].ylzhxjckndHKS
-
-
-
+                "zlckndHkS": allData[i].zlckndHkS
             };
             var point = new Point(lon, lat, map.spatialReference);
             var infoTemplate = new InfoTemplate("污水处理厂信息", html1);
@@ -1303,9 +1139,7 @@ $(document).off("click", "tr[id^='psrcx']").on({
         var lat = parseFloat($("#psrcwd" + this.id.substr(5)).val());
         var infodata = {};
         var qmpname = ["tbdwxxmc", "xzqhmc", "kzdy", "kzdm", "xxdzdqSZM", "xxdzxQSQ", "xxdzxZ", "snstmc", "gyfspflD", "hxxylpflD",
-            "adpflD", "sylpflD", "hffpflQk", "qhwpflQk", "fsspflQk", "fsqpflQk", "fsgpflQk", "fsgpflQkDup1", "fszgpflQk", "fsljgpflQk","wtxhlD",
-             "rlyxhlD","jtxhlD","trqxhlWLFM","qtryxhlDBZM","ydlWQWS","gyyslD","zdpflD","gyfqpflWLFM","eyhspflD","dyhwpflD","ycpflD","vocspflD",
-              "fqspflQK","fqqpflQK","fqgpflQK","fqgpflQK","fqzgpflQK","fqljgpflQK","ybgygtfwdqlD","wxfwdqlD"];
+            "adpflD", "sylpflD", "hffpflQk", "qhwpflQk", "fsspflQk", "fsqpflQk", "fsgpflQk", "fsgpflQkDup1", "fszgpflQk", "fsljgpflQk"];
         for (var i = 0; i < $(this).children('td').length; i++) {
             infodata[qmpname[i]] = $(this).children('td').eq(i + 1).text();
         }
@@ -1334,7 +1168,6 @@ $(document).off("click", "tr[id^='psrcx']").on({
 }, "tr[id^='psrcx']");
 
 
-
 var elder;
 $(document).off("click", "tr[id^='pftyx']").on({
     click: function () {
@@ -1344,8 +1177,7 @@ $(document).off("click", "tr[id^='pftyx']").on({
         var lat = parseFloat($("#pftywd" + this.id.substr(5)).val());
         var infodata = {};
         var qmpname = ["xzqhmc", "dwmcGz", "ssdm", "sskzdy", "qyxxdzDqSZM", "qyxxdzXQSQ", "qyxxdzXZ", "qyxxdzJCMph", "wsclffmc1", "psqxlxmc", "snstmc", "yxtsT", "wssjclnlDR",
-            "wssjcllWd", "hxxylqclD", "hxxyljkndHkS", "hxxylckndHkS", "adqclD", "adjkndHkS", "adckndHkS", "zdqclD", "zdjkndHkS", "zdckndHkS", "zlqclQk", "zljkndHkS", "zlckndHkS",
-             "wnqddqlD","shxylqclD","shxyljkndHKS","shxylckndHKS","xfwqclD","xfwjkndHKS","xfwckndHKS","dzwyqclD","dzwyjkndHKS","dzwyckndHKS","sylqclD","syljkndHKS","sylckndHKS","ylzhxjqclD","ylzhxjjkndHKS","ylzhxjckndHKS"];
+            "wssjcllWd", "hxxylqclD", "hxxyljkndHkS", "hxxylckndHkS", "adqclD", "adjkndHkS", "adckndHkS", "zdqclD", "zdjkndHkS", "zdckndHkS", "zlqclQk", "zljkndHkS", "zlckndHkS"];
         for (var i = 0; i < $(this).children('td').length; i++) {
             infodata[qmpname[i]] = $(this).children('td').eq(i + 1).text();
         }

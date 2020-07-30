@@ -21,8 +21,7 @@ require(["esri/map", "esri/layers/ArcGISDynamicMapServiceLayer", "esri/layers/Fe
        zoom:12,  //显示地图的级别  
        maxZoom:16  //最大空间等级  
       });
-    //var url = "http://localhost:6080/arcgis/rest/services/liaoheliuyu/MapServer/MapServer";
-	 var url = "http://localhost:6080/arcgis/rest/services/liaoheliuyu/MapServer";
+    var url = "http://localhost:6080/arcgis/rest/services/liaoheliuyu/MapServer/MapServer";
     agoLayer = new ArcGISDynamicMapServiceLayer(url);
    
     agoLayer.setVisibleLayers([8]);
@@ -133,18 +132,7 @@ require(["esri/map", "esri/layers/ArcGISDynamicMapServiceLayer", "esri/layers/Fe
 				        "<tr><td width='120'>涉及河流名称：</td><td>"+data.involveRiver+"</td></tr>" +
 				        "<tr><td width='120'>水资源区：</td><td>"+data.waterResource+"</td></tr>" +
 				        "<tr><td width='120'>汇入河流：</td><td>"+data.hrRiver+"</td></tr>" +
-
-						"<tr><td width='120'>控制单元级别：</td><td>"+data.unitType+"</td></tr>"+
-						"<tr><td width='120'>包含水系：</td><td>"+data.includeSx+"</td></tr>" +
-						"<tr><td width='120'>所含干流：</td><td>"+data.includeGl+"</td></tr>" +
-						"<tr><td width='120'>所含一级支流：</td><td>"+data.include1jzl+"</td></tr>" +
-						"<tr><td width='120'>所含二级支流：</td><td>"+data.include2jzl+"</td></tr>" +
-						"<tr><td width='120'>所含三级支流：</td><td>"+data.include3jzl+"</td></tr>" +
-						"<tr><td width='120'>所含四级支流：</td><td>"+data.include4jzl+"</td></tr>" +
-						"<tr><td width='120'>控制单元划分时间：</td><td>"+data.kzdyTime+"</td></tr>" +
-
-
-						"</table><br/>"+
+				        "</table><br/>"+
 				        "<table border='0' class='tableBasic'>" +
 				        "总量计算：请选择下面要计算的属性"+
 				        "<tr><td><select name='prop' id='prop' onchange='cal($(\"#prop\").val(),\"${单元名称}\")'>"+

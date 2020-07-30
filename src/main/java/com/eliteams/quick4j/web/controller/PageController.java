@@ -668,7 +668,24 @@ public class PageController {
 		return "qmp/bulkImportQmpBas";
 	}
 
+/**
+ * 控制单元基本信息（新）
+ * **/
+    @RequestMapping("/kzdy")
+	public  String kzdyjbxx(){return "kzdy/kzdyJbxx"; }
 
+
+	/**
+	 * 控制单元基本信息（新）
+	 * **/
+	@RequestMapping("/kzdm")
+	public  String kzdmjbxx(){return "kzdm/kzdmJbxx"; }
+
+	/**
+	 * 测试页面
+	 * **/
+	@RequestMapping("/kzdmtest")
+	public  String kzdmtest(){return "kzdm/test"; }
 
 	/**
 	 * 测试页面

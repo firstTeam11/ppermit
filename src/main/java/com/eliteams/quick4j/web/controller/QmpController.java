@@ -8,7 +8,7 @@ import com.eliteams.quick4j.web.model.*;
 import com.eliteams.quick4j.web.service.*;
 import com.eliteams.quick4j.web.util.DBUtil;
 import com.eliteams.quick4j.web.util.DocUtil;
-//import com.sun.org.apache.xerces.internal.impl.xpath.XPath;
+import com.sun.org.apache.xerces.internal.impl.xpath.XPath;
 import org.apache.poi.ss.util.CellRangeAddress;
 import com.google.gson.Gson;
 
@@ -63,6 +63,7 @@ import com.eliteams.quick4j.web.model.Qmp;
 import com.eliteams.quick4j.web.model.QmpWrxx;
 import com.eliteams.quick4j.web.service.QmpService;
 import com.eliteams.quick4j.web.service.QmpBaseInfoService;
+
 
 class formatResult {
     List<Map<String, String>> result;
@@ -126,7 +127,7 @@ public class QmpController {
                 List<String> list = new ArrayList<String>();
                 try {
                     Class.forName("com.mysql.jdbc.Driver");
-                    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env", "root", "18342212808y");
+                    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env", "root", "root");
                     pstmt = (PreparedStatement) conn.prepareStatement(sql);
                     ResultSet rs = pstmt.executeQuery();
                     int col = rs.getMetaData().getColumnCount();
@@ -3115,22 +3116,6 @@ public class QmpController {
         return "qmp/qmpList";
     }
 
-
-/*
-    @RequestMapping("/list")
-    public String list(HttpServletRequest request, Model model) {
-//        List<Qmp> list = qmpService.listAll();
-//        model.addAttribute("ulist", list);
-//        request.setAttribute("ulist", list);
-
-        String pageNow = request.getParameter("pageNow");
-        List<Qmp> list = qmpService.selectByPage(pageNow);
-        Page page = qmpService.getPage(pageNow);
-        model.addAttribute("list", list);
-        model.addAttribute("page", page);
-        return "qmp/qmpList";
-    }
-*/
     /**
      * 查询qmp_bas_info列表
      */
@@ -3173,7 +3158,6 @@ public class QmpController {
         return "qmp/editQmp";
     }
 
-
     @RequestMapping("/Basid")
     public String updateBasid(HttpServletRequest request, int id, Model model) {
         //System.out.println(id);
@@ -3199,7 +3183,6 @@ public class QmpController {
     @ResponseBody
     public String update(HttpServletRequest request, Qmp qmp) {
         int result = qmpService.update(qmp);
-
         request.setAttribute("result", result);
         return "success";
     }
@@ -3318,13 +3301,13 @@ public class QmpController {
     public void getTableName(HttpServletRequest request, HttpServletResponse response) {
         String driver = "com.mysql.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/new_env";
-        String sql = "select column_name from information_schema.columns where table_schema='new_env' and table_name='qmp';";
+        String sql = "select column_name from information_schema.columns where table_schema='quick4j' and table_name='qmp';";
         PreparedStatement pstmt;
         List list = new ArrayList<String>();
 
         try {
             Class.forName(driver);
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env", "root", "18342212808y");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env", "root", "root");
             pstmt = (PreparedStatement) conn.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
             int col = rs.getMetaData().getColumnCount();
@@ -3362,7 +3345,7 @@ public class QmpController {
 
         try {
             Class.forName(driver);
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env", "root", "18342212808y");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env", "root", "root");
             pstmt = (PreparedStatement) conn.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
             int col = rs.getMetaData().getColumnCount();
@@ -3377,7 +3360,6 @@ public class QmpController {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
-
         }
 
         Gson gson = new Gson();
@@ -3401,7 +3383,7 @@ public class QmpController {
 
         try {
             Class.forName(driver);
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env", "root", "18342212808y");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/new_env", "root", "root");
             pstmt = (PreparedStatement) conn.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
             int col = rs.getMetaData().getColumnCount();
@@ -3434,11 +3416,6 @@ public class QmpController {
     public ModelAndView search(HttpServletRequest request, ModelAndView m) {
         Map map = new HashMap();
 
-        map.put("section_bh", (String) request.getParameter("section_bh"));
-        map.put("section_dybh", (String) request.getParameter("section_dybh"));
-        map.put("section_dymc", (String) request.getParameter("section_dymc"));
-        map.put("section_shhl", (String) request.getParameter("section_shhl"));
-
         map.put("tjnf", (String) request.getParameter("tjnf"));
         map.put("watershed", (String) request.getParameter("watershed"));
         map.put("river_name", (String) request.getParameter("river_name"));
@@ -3463,9 +3440,6 @@ public class QmpController {
         map.put("loc_lat_d", (String) request.getParameter("loc_lat_d"));
         map.put("loc_lat_m", (String) request.getParameter("loc_lat_m"));
         map.put("loc_lat_s", (String) request.getParameter("loc_lat_s"));
-
-        map.put("loc_lon", (String) request.getParameter("loc_lon"));
-        map.put("loc_lat", (String) request.getParameter("loc_lat"));
 
         map.put("username", (String) request.getSession().getAttribute("userName"));
 
@@ -3614,10 +3588,6 @@ public class QmpController {
         map.put("test_items", (String) request.getParameter("test_items"));
         map.put("quality_target", (String) request.getParameter("quality_target"));
         map.put("username", (String) request.getSession().getAttribute("userName"));
-
-        map.put("section_dymc", (String) request.getParameter("section_dymc"));
-        map.put("section_shhl", (String) request.getParameter("section_shhl"));
-
         if (request.getParameter("id") != null) {
             map.put("id", (String) request.getParameter("id"));
         }
@@ -3668,11 +3638,6 @@ public class QmpController {
     @RequestMapping("/total")
     public String kzdmTotal(HttpServletRequest request, Model model) {
         Map map = new HashMap();
-
-        map.put("section_bh", (String) request.getParameter("section_bh"));
-        map.put("section_dybh", (String) request.getParameter("section_dybh"));
-        map.put("section_dymc", (String) request.getParameter("section_dymc"));
-        map.put("section_shhl", (String) request.getParameter("section_shhl"));
 
         map.put("tjnf", (String) request.getParameter("tjnf"));
         map.put("youkong", (String) request.getParameter("youkong"));
@@ -3789,11 +3754,6 @@ public class QmpController {
     @RequestMapping("/selectTotal")
     public String selectTotal(HttpServletRequest request, String name, Model model) {
         Map map = new HashMap();
-
-        map.put("section_bh", (String) request.getParameter("section_bh"));
-        map.put("section_dybh", (String) request.getParameter("section_dybh"));
-        map.put("section_dymc", (String) request.getParameter("section_dymc"));
-        map.put("section_shhl", (String) request.getParameter("section_shhl"));
 
         map.put("tjnf", (String) request.getParameter("tjnf"));
         map.put("youkong", (String) request.getParameter("youkong"));
@@ -4324,11 +4284,6 @@ public class QmpController {
     public ModelAndView searchYoukong(HttpServletRequest request, ModelAndView m) {
         Map map = new HashMap();
 
-        map.put("section_bh", (String) request.getParameter("section_bh"));
-        map.put("section_dybh", (String) request.getParameter("section_dybh"));
-        map.put("section_dymc", (String) request.getParameter("section_dymc"));
-        map.put("section_shhl", (String) request.getParameter("section_shhl"));
-
         map.put("tjnf", (String) request.getParameter("tjnf"));
         map.put("youkong", (String) request.getParameter("youkong"));
         map.put("watershed", (String) request.getParameter("watershed"));
@@ -4376,11 +4331,6 @@ public class QmpController {
     @RequestMapping("/yangZhiTotal")
     public String kzdmYangZhiTotal(HttpServletRequest request, Model model) {
         Map map = new HashMap();
-
-        map.put("section_bh", (String) request.getParameter("section_bh"));
-        map.put("section_dybh", (String) request.getParameter("section_dybh"));
-        map.put("section_dymc", (String) request.getParameter("section_dymc"));
-        map.put("section_shhl", (String) request.getParameter("section_shhl"));
 
         map.put("tjnf", (String) request.getParameter("tjnf"));
         map.put("youkong", (String) request.getParameter("youkong"));
@@ -4463,11 +4413,6 @@ public class QmpController {
     public String selectYangZhiTotal(HttpServletRequest request, String name, Model model) {
         Map map = new HashMap();
 
-        map.put("section_bh", (String) request.getParameter("section_bh"));
-        map.put("section_dybh", (String) request.getParameter("section_dybh"));
-        map.put("section_dymc", (String) request.getParameter("section_dymc"));
-        map.put("section_shhl", (String) request.getParameter("section_shhl"));
-
         map.put("tjnf", (String) request.getParameter("tjnf"));
         map.put("youkong", (String) request.getParameter("youkong"));
         map.put("watershed", (String) request.getParameter("watershed"));
@@ -4549,11 +4494,6 @@ public class QmpController {
     public String kzdmFactoryTotal(HttpServletRequest request, Model model) {
         Map map = new HashMap();
 
-        map.put("section_bh", (String) request.getParameter("section_bh"));
-        map.put("section_dybh", (String) request.getParameter("section_dybh"));
-        map.put("section_dymc", (String) request.getParameter("section_dymc"));
-        map.put("section_shhl", (String) request.getParameter("section_shhl"));
-
         map.put("tjnf", (String) request.getParameter("tjnf"));
         map.put("youkong", (String) request.getParameter("youkong"));
         map.put("watershed", (String) request.getParameter("watershed"));
@@ -4629,11 +4569,6 @@ public class QmpController {
     @RequestMapping("/selectFactoryTotal")
     public String selectFactoryTotal(HttpServletRequest request, String name, Model model) {
         Map map = new HashMap();
-
-        map.put("section_bh", (String) request.getParameter("section_bh"));
-        map.put("section_dybh", (String) request.getParameter("section_dybh"));
-        map.put("section_dymc", (String) request.getParameter("section_dymc"));
-        map.put("section_shhl", (String) request.getParameter("section_shhl"));
 
 
         map.put("tjnf", (String) request.getParameter("tjnf"));
@@ -4757,11 +4692,6 @@ public class QmpController {
 
         Map map = new HashMap();
 
-        map.put("section_bh", (String) request.getParameter("section_bh"));
-        map.put("section_dybh", (String) request.getParameter("section_dybh"));
-        map.put("section_dymc", (String) request.getParameter("section_dymc"));
-        map.put("section_shhl", (String) request.getParameter("section_shhl"));
-
         map.put("tjnf", (String) request.getParameter("tjnf"));
         map.put("watershed", (String) request.getParameter("watershed"));
         map.put("river_name", (String) request.getParameter("river_name"));
@@ -4790,11 +4720,6 @@ public class QmpController {
         Field[] fields = allList.get(0).getClass().getDeclaredFields();
 
         title.add("序号");
-        title.add("断面编号");
-        title.add("所属控制单元编号");
-        title.add("所属控制单元名称");
-        title.add("收纳河流");
-
         title.add("流域名称");
         title.add("所在河流（湖库）");
         title.add("河流级别/湖库属性");
@@ -5166,11 +5091,6 @@ public class QmpController {
     public String kzdmSum(HttpServletRequest request, Model model) {
         Map map = new HashMap();
 
-        map.put("section_bh", (String) request.getParameter("section_bh"));
-        map.put("section_dybh", (String) request.getParameter("section_dybh"));
-        map.put("section_dymc", (String) request.getParameter("section_dymc"));
-        map.put("section_shhl", (String) request.getParameter("section_shhl"));
-
         map.put("tjnf", (String) request.getParameter("tjnf"));
         map.put("youkong", (String) request.getParameter("youkong"));
         map.put("watershed", (String) request.getParameter("watershed"));
@@ -5377,7 +5297,7 @@ public class QmpController {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/new_env?useUnicode=true&characterEncoding=utf8&useSSL=true", "root", "18342212808y");
+                    "jdbc:mysql://localhost:3306/new_env?useUnicode=true&characterEncoding=utf8&useSSL=true", "root", "root");
             pstmt = (PreparedStatement) conn.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
             col = rs.getMetaData().getColumnCount();

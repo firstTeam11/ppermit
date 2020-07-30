@@ -22,7 +22,7 @@ public class poiExcelBas {
         String url = "jdbc:mysql://localhost:3306/new_env";
 //        String url = "jdbc:mysql://127.0.0.1:3306/quick4j";
         String username = "root";
-        String password = "18342212808y";
+        String password = "root";
 //        String password = "123456";
 
         Connection conn = null;
@@ -53,7 +53,7 @@ public class poiExcelBas {
         String url = "jdbc:mysql://localhost:3306/new_env";
 //        String url = "jdbc:mysql://127.0.0.1:3306/quick4j";
         String username = "root";
-        String password = "18342212808y";
+        String password = "root";
 //        String password = "123456";
 
         Connection conn = null;
@@ -87,7 +87,7 @@ public class poiExcelBas {
         String url = "jdbc:mysql://localhost:3306/new_env";
 //        String url = "jdbc:mysql://127.0.0.1:3306/quick4j";
         String username = "root";
-        String password = "18342212808y";
+        String password = "root";
 //        String password = "123456";
 
         Connection conn = null;
@@ -158,7 +158,7 @@ public class poiExcelBas {
         String url = "jdbc:mysql://localhost:3306/new_env";
 //        String url = "jdbc:mysql://127.0.0.1:3306/quick4j";
         String username = "root";
-        String password = "18342212808y";
+        String password = "root";
 //        String password = "123456";
 
         Connection conn = null;
@@ -419,7 +419,7 @@ public class poiExcelBas {
                     String url = "jdbc:mysql://localhost:3306/new_env";
                     //        String url = "jdbc:mysql://127.0.0.1:3306/quick4j";
                     String username = "root";
-                    String password = "18342212808y";
+                    String password = "root";
                     //        String password = "123456";
 
                     Connection conn = null;
@@ -472,7 +472,7 @@ public class poiExcelBas {
     public static void main(String args[]) throws Exception {
         String OriFileName = "上报总站监测司-辽宁省点位信息及数据---2013.xls";
         String localFileName = "上报总站监测司-辽宁省点位信息及数据---2013_20170817161501.xls";
-        String localFilePath = "C:/Users/笑笑/Desktop/断面基本信息模板.xls";
+        String localFilePath = "C:/Users/Administrator/Desktop/断面基本信息模板.xls";
         String localFileUploadTime = "20170817161501";
 
 

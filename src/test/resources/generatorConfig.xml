@@ -41,7 +41,7 @@
         </javaClientGenerator>
 
         <!--对应数据库表名 -->
-        <table tableName="tbl_kzdm_jbxx" domainObjectName="KzdmJbxx">
+        <table tableName="tbl_mike_jbxx" domainObjectName="MikeJbxx">
 
         </table>
     </context>
